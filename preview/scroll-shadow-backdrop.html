@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .stage { position: relative; height: 130px; border-radius: 12px; overflow: hidden; border: 1px solid var(--zzt-border-subtle); }
+  .stage.scroll { background: #fff; overflow-y: auto; padding: 12px 16px; font-size: 12.5px; line-height: 1.7; color: var(--zzt-fg); }
+  .stage .grad-top { position: sticky; top: -12px; left: 0; right: 0; height: 32px; margin: -12px -16px 0;
+                     background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0) 100%); z-index: 1; }
+  .stage .grad-bot { position: sticky; bottom: -12px; left: 0; right: 0; height: 32px; margin: 0 -16px -12px;
+                     background: linear-gradient(0deg, #fff 0%, rgba(255,255,255,0) 100%); z-index: 1; }
+  .row-stage { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .lab { font-size: 11px; color: var(--zzt-fg-muted); margin-bottom: 4px; }
+  .pill-h { display:flex; gap: 6px; padding: 8px 12px; overflow-x: auto; background:#fff; position: relative; }
+  .pill-h::after { content:""; position:absolute; right: 0; top: 0; bottom: 0; width: 36px;
+                   background: linear-gradient(270deg, #fff 0%, rgba(255,255,255,0) 100%); pointer-events: none; }
+  .pill-h .p { display: inline-block; flex-shrink: 0; padding: 5px 12px; border-radius: 999px;
+               background: var(--zzt-zinc-100); font-size: 12.5px; }
+  .protect {
+    height: 60px;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 70%);
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-bottom: 10px;
+  }
+  .protect .cta { background: var(--zzt-zinc-900); color: #fff; padding: 6px 14px; border-radius: 999px; font-size: 12.5px; }
+  .scrim-on { background: rgba(24,24,27,0.45); height: 100%; backdrop-filter: blur(2px); display:flex; align-items:center; justify-content:center; color: #fff; font-size: 13px; }
+</style></head><body>
+<div class="lab">Scroll fade · top + bottom protection on long lists</div>
+<div class="row-stage">
+  <div>
+    <div class="stage scroll">
+      <div class="grad-top"></div>
+      A 级 · 在售 28<br>B 级 · 在售 12<br>C 级 · 在售 8<br>S 级 · 在售 4<br>下架 · 32<br>退回 · 7<br>翻新 · 5<br>报废 · 1<br>样品 · 2
+      <div class="grad-bot"></div>
+    </div>
+    <div class="note" style="margin-top: 4px;">vertical · scrollable list</div>
+  </div>
+  <div>
+    <div class="pill-h">
+      <span class="p">手机</span><span class="p">平板</span><span class="p">笔记本</span><span class="p">耳机</span><span class="p">手表</span><span class="p">摄影</span><span class="p">配件</span>
+    </div>
+    <div class="note" style="margin-top: 4px;">horizontal · pill list with right fade</div>
+  </div>
+  <div>
+    <div style="height: 130px; border-radius: 12px; overflow: hidden; border: 1px solid var(--zzt-border-subtle); display: flex; flex-direction: column;">
+      <div style="flex: 1; padding: 12px 14px; font-size: 12.5px; line-height: 1.6; background: #fff;">
+        本批次共质检 24 件，A 级 18 件，B 级 4 件，C 级 2 件。建议处置：A 级直接上架，B 级下调价格 8 - 12%……
+      </div>
+      <div class="protect"><span class="cta">查看完整报告</span></div>
+    </div>
+    <div class="note" style="margin-top: 4px;">protection gradient · sticky CTA</div>
+  </div>
+</div>
+
+<div class="lab" style="margin-top: 18px;">Backdrop scrim · modal & drawer</div>
+<div class="row-stage">
+  <div>
+    <div class="stage" style="background: var(--zzt-zinc-200);">
+      <div class="scrim-on">opaque · rgba(24,24,27,0.45)</div>
+    </div>
+    <div class="note" style="margin-top: 4px;">used by drawer · modal</div>
+  </div>
+  <div>
+    <div class="stage" style="background: var(--zzt-zinc-200);">
+      <div style="background: rgba(255,255,255,0.45); backdrop-filter: blur(8px); height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px;">blur · 8px</div>
+    </div>
+    <div class="note" style="margin-top: 4px;">used by full-screen modal on mobile</div>
+  </div>
+  <div>
+    <div class="stage" style="background: var(--zzt-zinc-200);">
+      <div style="background: rgba(0,0,0,0); height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--zzt-fg-muted);">no scrim · click-out closes</div>
+    </div>
+    <div class="note" style="margin-top: 4px;">used by popover · menu</div>
+  </div>
+</div>
+</body></html>

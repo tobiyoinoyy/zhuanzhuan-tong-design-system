@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>转转通 · 商户经营管理</title>
+  <meta name="viewport" content="width=1440">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <link rel="stylesheet" href="console.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Primitives.jsx"></script>
+  <script type="text/babel" src="Shell.jsx"></script>
+  <script type="text/babel" src="Dashboard.jsx"></script>
+  <script type="text/babel" src="Products.jsx"></script>
+  <script type="text/babel" src="Promotion.jsx"></script>
+  <script type="text/babel" src="Orders.jsx"></script>
+  <script type="text/babel" src="QCDrawer.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [active, setActive] = React.useState("dashboard");
+      const [qc, setQc] = React.useState(null);
+      const [toast, setToast] = React.useState(null);
+
+      const CRUMBS = {
+        dashboard: ["首页", "工作台"],
+        products:  ["首页", "商品管理"],
+        supply:    ["首页", "供货管理"],
+        qc:        ["首页", "质检流程"],
+        promotion: ["首页", "营销活动"],
+        orders:    ["首页", "订单售后"],
+        cost:      ["首页", "成本中心"],
+        data:      ["首页", "数据中心"],
+        cs:        ["首页", "客服协同"],
+      };
+
+      const handleNav = (id) => {
+        setActive(id);
+        // QC nav shortcut → open first reject sample in drawer
+        if (id === "qc") {
+          setActive("products");
+          // open a sample reject product directly
+          const sample = { name:"小米 13 Ultra 16+512", id:"SKU-58212" };
+          setTimeout(() => setQc(sample), 80);
+        }
+      };
+
+      let page;
+      if (active === "dashboard")      page = <Dashboard onNav={handleNav} />;
+      else if (active === "products")  page = <Products onOpenQC={(p) => setQc(p)} />;
+      else if (active === "promotion") page = <Promotion />;
+      else if (active === "orders")    page = <Orders />;
+      else page = (
+        <div className="zzt-page" data-screen-label={"99 " + active}>
+          <div className="zzt-page-header">
+            <div>
+              <h1 className="zzt-h1">{CRUMBS[active] ? CRUMBS[active][1] : active}</h1>
+              <div className="zzt-page-sub">该模块占位 · UI Kit 重点演示工作台、商品管理、营销活动、订单售后与质检</div>
+            </div>
+          </div>
+          <Card>
+            <EmptyState
+              icon="hammer"
+              title="此模块为占位"
+              subtitle="本 UI Kit 重点演示 工作台 · 商品管理 · 营销活动 · 订单售后 · 质检结果 五个核心场景。点击左侧导航回到这些模块。"
+              cta={<Button variant="outline" onClick={() => setActive("dashboard")}>回到工作台</Button>}
+            />
+          </Card>
+        </div>
+      );
+
+      React.useEffect(() => { window.lucide && window.lucide.createIcons(); });
+
+      return (
+        <Shell active={active} onNav={setActive} crumbs={CRUMBS[active]}>
+          {page}
+          {qc && <QCDrawer product={qc} onClose={() => { setQc(null); setToast("已记录质检处置 · 待审核"); setTimeout(() => setToast(null), 2400); }} />}
+          {toast && (
+            <div className="zzt-toast zzt-tone-success">
+              <i data-lucide="check"></i>
+              <span>{toast}</span>
+            </div>
+          )}
+        </Shell>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

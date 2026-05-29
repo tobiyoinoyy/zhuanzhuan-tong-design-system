@@ -1,0 +1,62 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { background: var(--zzt-zinc-75); padding: 18px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .c { background:#fff; border-radius: 14px; padding: 14px; border: 1px solid rgba(0,0,0,.06); display:flex; flex-direction: column; gap: 10px; }
+  .c h4 { margin: 0; font-size: 14px; font-weight: 600; }
+  .c .meta { font-size: 12px; color: var(--zzt-fg-muted); }
+  .c .img { height: 96px; border-radius: 10px; background-image: linear-gradient(135deg, #EBEBEC 25%, #F5F5F5 25%, #F5F5F5 50%, #EBEBEC 50%, #EBEBEC 75%, #F5F5F5 75%, #F5F5F5); background-size: 8px 8px; }
+  .c.elev { box-shadow: var(--zzt-shadow-sm); border: 0; }
+  .c.basic .stripe { height: 2px; background: var(--zzt-accent-500); border-radius: 2px; align-self: flex-start; width: 24px; }
+  .c.cta { background: var(--zzt-zinc-900); color: #fff; }
+  .c.cta .meta { color: rgba(255,255,255,0.7); }
+  .c.cta .btn { background: var(--zzt-accent-500); color:#fff; border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 500; border: 0; align-self: flex-start; cursor: pointer; }
+  .c.support { background: var(--zzt-purple-50); }
+  .row-bot { display: flex; justify-content: space-between; align-items: center; }
+  .price { font-family: var(--zzt-font-num); font-size: 18px; font-weight: 600; }
+  .price small { font-size: 12px; color: var(--zzt-fg-muted); font-weight: 500; margin-left: 4px; text-decoration: line-through; }
+  .more { width: 24px; height: 24px; border-radius: 6px; background: var(--zzt-zinc-100); display: inline-flex; align-items: center; justify-content: center; }
+</style></head><body>
+<div class="grid">
+  <div class="c basic">
+    <div class="stripe"></div>
+    <h4>基础卡片 · basic</h4>
+    <div class="meta">最常用 · 用于列表、设置组、内容容器。1 px border + 12 px radius。</div>
+  </div>
+  <div class="c elev">
+    <h4>悬浮卡片 · elevated</h4>
+    <div class="meta">用于 KPI tile、活动卡。无 border + sm shadow。鼠标悬停时使用。</div>
+  </div>
+  <div class="c">
+    <div class="img"></div>
+    <h4>iPhone 14 Pro 256GB</h4>
+    <div class="row-bot">
+      <div class="price">¥ 4,599 <small>¥ 5,299</small></div>
+      <span class="meta">A 级 · 在售 28</span>
+    </div>
+  </div>
+  <div class="c support">
+    <h4 style="display:flex; gap: 6px; align-items: center;">
+      <span style="display:inline-block; width: 8px; height: 8px; background: var(--zzt-purple-500); border-radius:999px;"></span>
+      618 大促 · 进行中
+    </h4>
+    <div class="meta">满 200 减 30 · 至 06-20 · 62 SKU 参与</div>
+    <div class="row-bot"><div class="price" style="color: var(--zzt-purple-600)">¥ 84,210</div><span class="meta">+ 22.4%</span></div>
+  </div>
+  <div class="c cta">
+    <h4>升级为 KA 商户</h4>
+    <div class="meta">获得专属客户经理 · 优先回款 · 自定义会场</div>
+    <button class="btn">了解详情</button>
+  </div>
+  <div class="c">
+    <div class="row-bot" style="margin-bottom: -4px;">
+      <h4>本月成本</h4>
+      <div class="more">⋯</div>
+    </div>
+    <div class="price" style="font-size: 24px;">¥ 48,920</div>
+    <div class="meta">入仓 ¥ 32,400 · 物流 ¥ 8,200 · 翻新 ¥ 8,320</div>
+  </div>
+</div>
+</body></html>

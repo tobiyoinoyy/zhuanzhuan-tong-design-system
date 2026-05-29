@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>成色标签 · Condition Badge</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 28px; background: #fff; font-family: var(--zzt-font-sans); color: var(--zzt-fg); }
+  .doc-grid { display: grid; grid-template-columns: 180px 1fr; gap: 28px 24px; align-items: center; max-width: 720px; }
+  .doc-lab { font-size: 12px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); }
+  .doc-h { font-size: 13px; font-weight: 600; letter-spacing: -0.005em; margin: 18px 0 6px; grid-column: 1 / -1; padding-top: 18px; border-top: 1px dashed var(--zzt-border-subtle); }
+  .doc-h:first-of-type { border-top: 0; padding-top: 0; }
+  .row { display: inline-flex; align-items: center; gap: 14px; }
+
+  /* ===== Condition Badge (成色标签) — fig /page6/components ===== */
+  .cond-badge {
+    display: inline-flex; align-items: stretch;
+    height: 16px;
+    font-family: var(--zzt-font-num);
+    vertical-align: middle;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .cond-badge .ap,
+  .cond-badge .fn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0 5px;
+    color: #fff;
+    font-weight: 700;
+  }
+  /* Appearance side (外观) — teal — left half of combo */
+  .cond-badge .ap {
+    background: #2E6E89;
+    border-radius: 3px 0 0 3px;
+    gap: 1px;
+    align-items: flex-start;
+    padding-top: 2px;
+  }
+  /* Function side (功能) — orange — right half of combo */
+  .cond-badge .fn {
+    background: #EE8B57;
+    border-radius: 0 3px 3px 0;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+  /* Number + suffix inside appearance: big digit + tiny "新" */
+  .cond-badge .ap b {
+    font-size: 12px; line-height: 12px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .cond-badge .ap b + .suf {
+    font-size: 7px;
+    line-height: 7px;        /* = font-size: no leading → top of box = top of glyph */
+    font-family: "PingFang SC", var(--zzt-font-sans);
+    font-weight: 500;
+    margin-left: 1px;
+    align-self: flex-start;
+  }
+  /* Chinese-only appearance variant (e.g. 瑕疵, 9成新) — needs vertical centering */
+  .cond-badge .ap.zh {
+    align-items: center;
+    padding-top: 0;
+    font-family: "PingFang SC", var(--zzt-font-sans);
+    font-size: 9px; font-weight: 500;
+    padding: 0 4px;
+    letter-spacing: 0;
+  }
+  /* Solo (single side) — fully rounded */
+  .cond-badge.solo-ap .ap { border-radius: 3px; }
+  .cond-badge.solo-fn .fn { border-radius: 3px; padding: 0 6px; }
+  /* "+" variant for function */
+  .cond-badge .fn .plus { font-size: 11px; margin-left: -1px; }
+</style></head>
+<body>
+
+<div class="doc-grid">
+
+  <div class="doc-h">成色标签=组合 · appearance + function</div>
+
+  <div class="doc-lab">99新 · A</div>
+  <div class="row">
+    <span class="cond-badge"><span class="ap"><b>99</b><span class="suf">新</span></span><span class="fn">A</span></span>
+    <span class="cond-badge"><span class="ap"><b>95</b><span class="suf">新</span></span><span class="fn">B</span></span>
+    <span class="cond-badge"><span class="ap"><b>8</b><span class="suf">新</span></span><span class="fn">C</span></span>
+  </div>
+
+  <div class="doc-lab">中文 · function</div>
+  <div class="row">
+    <span class="cond-badge"><span class="ap zh">瑕疵</span><span class="fn">A</span></span>
+  </div>
+
+  <div class="doc-h">成色标签 · solo appearance</div>
+
+  <div class="doc-lab">单外观=数字</div>
+  <div class="row">
+    <span class="cond-badge solo-ap"><span class="ap"><b>99</b><span class="suf">新</span></span></span>
+    <span class="cond-badge solo-ap"><span class="ap"><b>95</b><span class="suf">新</span></span></span>
+    <span class="cond-badge solo-ap"><span class="ap"><b>8</b><span class="suf">新</span></span></span>
+  </div>
+
+  <div class="doc-lab">单外观=中文</div>
+  <div class="row">
+    <span class="cond-badge solo-ap"><span class="ap zh">瑕疵</span></span>
+    <span class="cond-badge solo-ap"><span class="ap zh">9成新</span></span>
+    <span class="cond-badge solo-ap"><span class="ap zh">全新</span></span>
+  </div>
+
+  <div class="doc-h">成色标签 · solo function</div>
+
+  <div class="doc-lab">单功能</div>
+  <div class="row">
+    <span class="cond-badge solo-fn"><span class="fn">A</span></span>
+    <span class="cond-badge solo-fn"><span class="fn">B</span></span>
+    <span class="cond-badge solo-fn"><span class="fn">C</span></span>
+  </div>
+
+  <div class="doc-lab">单功能 · 带 +</div>
+  <div class="row">
+    <span class="cond-badge solo-fn"><span class="fn">A<span class="plus">+</span></span></span>
+    <span class="cond-badge solo-fn"><span class="fn">S</span></span>
+  </div>
+
+  <div class="doc-h">用法示例 · in context</div>
+
+  <div class="doc-lab">表格行</div>
+  <div class="row" style="font-size: 14px; color: var(--zzt-fg);">
+    <span class="cond-badge"><span class="ap"><b>99</b><span class="suf">新</span></span><span class="fn">A</span></span>
+    <span>Apple iPhone 14 Pro 256GB 深空黑 国行双卡</span>
+  </div>
+
+</div>
+
+</body></html>

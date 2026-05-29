@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>Iconography</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { margin:0; padding:18px 22px; background:#fff; font-family:var(--zzt-font-sans);}
+  .grid { display:grid; grid-template-columns: repeat(10, 1fr); gap:14px 8px; }
+  .ic { display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .ic i { width:18px; height:18px; color: var(--zzt-fg); }
+  .ic span { font-size:9.5px; color: var(--zzt-fg-muted); font-family:var(--zzt-font-mono); }
+  .row-lab { font-size:11px; color:var(--zzt-fg-muted); text-transform:uppercase; letter-spacing:.06em; margin: 0 0 8px; font-weight:500; }
+  .sizes { display:flex; align-items:center; gap:18px; margin-top:14px; }
+  .sizes .ic i { color: var(--zzt-accent-500); }
+</style></head><body>
+<div class="row-lab">Lucide line · 1.5px stroke · used at 16/20/24 px</div>
+<div class="grid">
+  <div class="ic"><i data-lucide="layout-dashboard"></i><span>dashboard</span></div>
+  <div class="ic"><i data-lucide="package"></i><span>products</span></div>
+  <div class="ic"><i data-lucide="warehouse"></i><span>supply</span></div>
+  <div class="ic"><i data-lucide="shield-check"></i><span>qc</span></div>
+  <div class="ic"><i data-lucide="megaphone"></i><span>promotion</span></div>
+  <div class="ic"><i data-lucide="receipt"></i><span>orders</span></div>
+  <div class="ic"><i data-lucide="wallet"></i><span>cost</span></div>
+  <div class="ic"><i data-lucide="bar-chart-3"></i><span>data</span></div>
+  <div class="ic"><i data-lucide="headphones"></i><span>cs</span></div>
+  <div class="ic"><i data-lucide="settings"></i><span>settings</span></div>
+
+  <div class="ic"><i data-lucide="search"></i><span>search</span></div>
+  <div class="ic"><i data-lucide="filter"></i><span>filter</span></div>
+  <div class="ic"><i data-lucide="download"></i><span>export</span></div>
+  <div class="ic"><i data-lucide="upload"></i><span>import</span></div>
+  <div class="ic"><i data-lucide="plus"></i><span>add</span></div>
+  <div class="ic"><i data-lucide="trash-2"></i><span>delete</span></div>
+  <div class="ic"><i data-lucide="pencil"></i><span>edit</span></div>
+  <div class="ic"><i data-lucide="check"></i><span>check</span></div>
+  <div class="ic"><i data-lucide="bell"></i><span>bell</span></div>
+  <div class="ic"><i data-lucide="more-horizontal"></i><span>more</span></div>
+</div>
+<div class="sizes">
+  <div class="ic"><i data-lucide="package" style="width:16px;height:16px"></i><span>16 · row</span></div>
+  <div class="ic"><i data-lucide="package" style="width:20px;height:20px"></i><span>20 · nav</span></div>
+  <div class="ic"><i data-lucide="package" style="width:24px;height:24px"></i><span>24 · header</span></div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--zzt-zinc-75); padding: 20px; }
+  .sk-card { width: 280px; background: #fff; border-radius: 12px; padding: 14px; border: 1px solid rgba(0,0,0,.04); }
+  .sk { background: linear-gradient(90deg, var(--zzt-zinc-150) 0%, var(--zzt-zinc-100) 50%, var(--zzt-zinc-150) 100%);
+        background-size: 200% 100%; border-radius: 6px; animation: shimmer 1.4s ease-in-out infinite; }
+  @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+  .sk-thumb { width: 100%; height: 130px; border-radius: 10px; }
+  .sk-text { height: 12px; border-radius: 4px; margin-top: 10px; }
+  .sk-text.s { width: 60%; height: 10px; }
+  .sk-row { display:flex; gap: 10px; margin-top: 10px; align-items: center; }
+  .sk-circle { width: 32px; height: 32px; border-radius: 999px; flex-shrink: 0; }
+  .sk-line { flex: 1; }
+  .sk-list-item { display:flex; gap: 10px; padding: 10px 0; align-items: center; border-bottom: 1px solid var(--zzt-border-subtle); }
+  .sk-list-item:last-child { border-bottom: 0; }
+  .sk-thumb-sm { width: 36px; height: 36px; border-radius: 6px; }
+</style></head><body>
+<div class="row" style="gap: 14px; align-items: flex-start;">
+  <div class="sk-card">
+    <div class="sk sk-thumb"></div>
+    <div class="sk sk-text"></div>
+    <div class="sk sk-text s"></div>
+    <div class="sk-row">
+      <div class="sk sk-circle"></div>
+      <div style="flex:1;"><div class="sk sk-text" style="margin:0;"></div><div class="sk sk-text s" style="margin-top:6px;"></div></div>
+    </div>
+  </div>
+  <div class="sk-card" style="width: 320px;">
+    <div class="sk-list-item">
+      <div class="sk sk-thumb-sm"></div>
+      <div class="sk-line"><div class="sk sk-text" style="margin:0; width:80%;"></div><div class="sk sk-text s" style="margin-top:6px;"></div></div>
+    </div>
+    <div class="sk-list-item">
+      <div class="sk sk-thumb-sm"></div>
+      <div class="sk-line"><div class="sk sk-text" style="margin:0; width:60%;"></div><div class="sk sk-text s" style="margin-top:6px;"></div></div>
+    </div>
+    <div class="sk-list-item">
+      <div class="sk sk-thumb-sm"></div>
+      <div class="sk-line"><div class="sk sk-text" style="margin:0; width:70%;"></div><div class="sk sk-text s" style="margin-top:6px;"></div></div>
+    </div>
+  </div>
+  <div class="sk-card" style="width: 220px;">
+    <div class="sk-row" style="margin: 0;">
+      <div class="sk sk-circle" style="width: 44px; height: 44px;"></div>
+      <div class="sk-line">
+        <div class="sk sk-text" style="margin:0; width: 70%;"></div>
+        <div class="sk sk-text s" style="margin-top: 6px;"></div>
+      </div>
+    </div>
+    <div class="sk sk-text" style="height: 36px; margin-top: 16px;"></div>
+  </div>
+</div>
+</body></html>

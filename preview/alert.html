@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .alert { display:grid; grid-template-columns: 20px 1fr auto; gap:12px; align-items:center;
+           background:#fff; border-radius:24px; padding: 14px 16px;
+           border: 1px solid var(--zzt-border-subtle); }
+  .alert.info    { background: rgba(255,15,39,.06);   border-color: rgba(255,15,39,.20); }
+  .alert.success { background: rgba(23,201,100,.08);  border-color: rgba(23,201,100,.24); }
+  .alert.warning { background: rgba(245,165,36,.10);  border-color: rgba(245,165,36,.28); }
+  .alert.danger  { background: rgba(255,15,39,.07);   border-color: rgba(255,15,39,.22); }
+  .alert i.lead { width:20px; height:20px; }
+  .alert .title { font-size:14px; font-weight:500; }
+  .alert .desc  { font-size:13px; color:var(--zzt-fg-muted); margin-top:1px; line-height:1.4; }
+  .alert.info    i.lead { color: var(--zzt-accent-500); }
+  .alert.success i.lead { color: var(--zzt-success-500); }
+  .alert.warning i.lead { color: var(--zzt-warning-500); }
+  .alert.danger  i.lead { color: var(--zzt-danger-500); }
+</style></head><body>
+<div class="col">
+  <div class="alert info">
+    <i data-lucide="info" class="lead"></i>
+    <div><div class="title">本次入仓已自动安排上架</div><div class="desc">预计 10 分钟内同步到商详，可前往 商品管理 查看进度。</div></div>
+    <button class="btn tertiary sm">查看</button>
+  </div>
+  <div class="alert success">
+    <i data-lucide="circle-check" class="lead"></i>
+    <div><div class="title">活动审核已通过</div><div class="desc">「618 第二波 · 笔记本专场」可在 06-23 00:00 起生效。</div></div>
+    <button class="btn tertiary sm">去查看</button>
+  </div>
+  <div class="alert warning">
+    <i data-lucide="alert-triangle" class="lead"></i>
+    <div><div class="title">3 件商品价格异常</div><div class="desc">售价低于建议价 12% 以上，请确认是否为有意调价。</div></div>
+    <button class="btn tertiary sm">立即处理</button>
+  </div>
+  <div class="alert danger">
+    <i data-lucide="circle-x" class="lead"></i>
+    <div><div class="title">本批次质检不通过</div><div class="desc">主要原因：电池为副厂件 (3 项)、屏幕轻微漏液 (1 项)。</div></div>
+    <button class="btn tertiary sm" style="color:var(--zzt-danger-500)">查看详情</button>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

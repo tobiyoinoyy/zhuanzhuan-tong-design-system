@@ -1,0 +1,82 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .sel { display:inline-flex; align-items:center; gap:8px; height: 36px; padding: 0 12px; background:#fff;
+         border: 1px solid var(--zzt-border); border-radius: 8px; min-width: 220px; cursor: pointer; font-size: 14px; }
+  .sel .placeholder { color: var(--zzt-fg-subtle); }
+  .sel.open { border-color: var(--zzt-accent-500); box-shadow: 0 0 0 3px rgba(255,15,39,.16); }
+  .sel .caret { margin-left: auto; width: 14px; height: 14px; color: var(--zzt-fg-muted); }
+  .sel .chip { background: var(--zzt-zinc-150); padding: 2px 8px; border-radius: 6px; font-size: 12px; }
+  .sel-multi { gap: 4px; flex-wrap: wrap; height: auto; min-height: 36px; padding: 4px 8px; }
+  .sel-multi .chip { display:inline-flex; align-items:center; gap:4px; }
+  .sel-multi .chip i { width: 10px; height: 10px; color: var(--zzt-fg-muted); cursor: pointer; }
+  .menu { position: relative; background:#fff; border: 1px solid rgba(0,0,0,.06); border-radius: 12px;
+          box-shadow: var(--zzt-shadow-md); padding: 6px; width: 240px; }
+  .menu-item { display:flex; align-items:center; gap: 8px; padding: 8px 10px; border-radius: 8px; font-size: 13.5px; cursor: pointer; }
+  .menu-item:hover { background: var(--zzt-zinc-100); }
+  .menu-item.selected { background: rgba(255,15,39,.08); color: var(--zzt-accent-700); font-weight: 500; }
+  .menu-item .ck { width: 14px; height: 14px; border: 1.5px solid var(--zzt-border-strong); border-radius:3px; flex-shrink: 0; position:relative; }
+  .menu-item .ck.on { background: var(--zzt-accent-500); border-color: var(--zzt-accent-500); }
+  .menu-item .ck.on::after { content:""; position:absolute; left: 3px; top: 0; width: 4px; height: 8px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); }
+  .menu-search { padding: 6px 10px 8px; }
+  .menu-search input { width: 100%; height: 28px; padding: 0 8px; border: 1px solid var(--zzt-border); border-radius: 6px; outline: 0; font-size: 13px; }
+  .menu-sep { height: 1px; background: var(--zzt-border-subtle); margin: 4px 0; }
+  .menu .desc { font-size: 11.5px; color: var(--zzt-fg-muted); }
+  .menu-tag { background: var(--zzt-accent-soft); color: var(--zzt-accent-700); padding: 0 6px; border-radius: 4px; font-size: 10.5px; margin-left:auto; }
+  .lab-row { margin-bottom: 6px; }
+</style></head><body>
+<div class="col" style="gap: 24px;">
+  <div class="row" style="gap: 28px; align-items: flex-start;">
+    <div>
+      <div class="lab lab-row">single select · placeholder</div>
+      <div class="sel"><span class="placeholder">请选择品类</span><i data-lucide="chevron-down" class="caret"></i></div>
+    </div>
+    <div>
+      <div class="lab lab-row">single select · filled</div>
+      <div class="sel"><span>手机 · iPhone</span><i data-lucide="chevron-down" class="caret"></i></div>
+    </div>
+    <div>
+      <div class="lab lab-row">multi select</div>
+      <div class="sel sel-multi" style="min-width:260px;">
+        <span class="chip">手机<i data-lucide="x"></i></span>
+        <span class="chip">平板<i data-lucide="x"></i></span>
+        <span class="chip">耳机<i data-lucide="x"></i></span>
+        <span class="placeholder">+ 更多</span>
+        <i data-lucide="chevron-down" class="caret" style="margin-left:auto"></i>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="gap: 28px; align-items: flex-start;">
+    <div class="menu">
+      <div class="menu-item selected"><span>所有品类</span><span class="menu-tag">12</span></div>
+      <div class="menu-item">手机</div>
+      <div class="menu-item">平板</div>
+      <div class="menu-item">笔记本</div>
+      <div class="menu-item">耳机</div>
+      <div class="menu-sep"></div>
+      <div class="menu-item">摄影摄像</div>
+      <div class="menu-item">手表 / 配件</div>
+    </div>
+    <div class="menu">
+      <div class="menu-search"><input placeholder="搜索品类"></div>
+      <div class="menu-item"><span class="ck on"></span>手机</div>
+      <div class="menu-item"><span class="ck on"></span>平板</div>
+      <div class="menu-item"><span class="ck"></span>笔记本</div>
+      <div class="menu-item"><span class="ck on"></span>耳机</div>
+      <div class="menu-item"><span class="ck"></span>手表</div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" style="color: var(--zzt-accent-500); font-weight: 500;">应用 (3)</div>
+    </div>
+    <div class="menu" style="width: 320px;">
+      <div class="menu-search"><input placeholder="输入或粘贴 SKU" value="58"></div>
+      <div class="menu-item"><div><div>SKU-58219</div><div class="desc">iPhone 14 Pro 256GB 深空黑</div></div></div>
+      <div class="menu-item selected"><div><div>SKU-58218</div><div class="desc">iPhone 13 128GB 蓝色</div></div><i data-lucide="check" style="width:14px;height:14px;margin-left:auto;color:var(--zzt-accent-500)"></i></div>
+      <div class="menu-item"><div><div>SKU-58217</div><div class="desc">iPad Air 5 64GB 紫色</div></div></div>
+      <div class="menu-item"><div><div>SKU-58216</div><div class="desc">MacBook Air M2 8+256</div></div></div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

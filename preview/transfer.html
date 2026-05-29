@@ -1,0 +1,65 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { background: var(--zzt-zinc-75); padding: 16px; }
+  .tr { display:flex; gap: 12px; align-items: stretch; }
+  .pane { flex: 1; background:#fff; border: 1px solid rgba(0,0,0,.06); border-radius: 12px;
+          display: flex; flex-direction: column; min-width: 240px; max-width: 280px; }
+  .pane-head { display:flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--zzt-border-subtle); }
+  .pane-head h4 { margin:0; font-size: 13px; font-weight: 600; }
+  .pane-head .cnt { font-size: 11.5px; color: var(--zzt-fg-muted); }
+  .pane-search { padding: 8px 10px; border-bottom: 1px solid var(--zzt-border-subtle); }
+  .pane-search input { width:100%; height: 28px; padding: 0 8px; border: 1px solid var(--zzt-border); border-radius: 6px; outline:0; font-size: 13px; }
+  .pane-body { flex: 1; padding: 4px; overflow-y: auto; max-height: 220px; }
+  .item { display:flex; align-items:center; gap: 8px; padding: 6px 8px; border-radius: 6px; font-size: 13px; cursor:pointer; }
+  .item:hover { background: var(--zzt-zinc-100); }
+  .item .ck { width: 14px; height: 14px; border: 1.5px solid var(--zzt-border-strong); border-radius: 3px; flex-shrink:0; position:relative; }
+  .item .ck.on { background: var(--zzt-accent-500); border-color: var(--zzt-accent-500); }
+  .item .ck.on::after { content:""; position:absolute; left:3px; top:0; width:4px; height:8px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform: rotate(45deg); }
+  .item.sel { background: rgba(255,15,39,.06); }
+  .item .thumb { width: 24px; height: 24px; border-radius: 4px; background-image: linear-gradient(135deg, #EBEBEC 25%, #F5F5F5 25%, #F5F5F5 50%, #EBEBEC 50%, #EBEBEC 75%, #F5F5F5 75%, #F5F5F5); background-size: 6px 6px; flex-shrink: 0; }
+  .item .name { flex: 1; }
+  .item .meta { font-size: 11px; color: var(--zzt-fg-muted); }
+
+  .ctrl { display:flex; flex-direction: column; gap: 6px; justify-content: center; }
+  .ctrl button { width: 36px; height: 32px; border-radius: 8px; background:#fff; border: 1px solid var(--zzt-border-strong); cursor: pointer; display:inline-flex; align-items:center; justify-content:center; }
+  .ctrl button:hover { background: var(--zzt-zinc-100); }
+  .ctrl button.primary { background: var(--zzt-accent-500); border-color: var(--zzt-accent-500); color:#fff; }
+  .ctrl button i { width: 14px; height: 14px; }
+</style></head><body>
+<div class="tr">
+  <div class="pane">
+    <div class="pane-head"><h4>未参与活动</h4><span class="cnt">已选 2 / 6</span></div>
+    <div class="pane-search"><input placeholder="搜索 SKU"></div>
+    <div class="pane-body">
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">iPad Air 5 64GB 紫色</span></div>
+      <div class="item sel"><span class="ck on"></span><span class="thumb"></span><span class="name">Apple Watch S9 41mm</span></div>
+      <div class="item sel"><span class="ck on"></span><span class="thumb"></span><span class="name">AirPods 4</span></div>
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">Sony WH-1000XM5</span></div>
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">MagSafe 充电器</span></div>
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">小米 13 Ultra</span></div>
+    </div>
+  </div>
+
+  <div class="ctrl">
+    <button class="primary" title="加入活动"><i data-lucide="chevron-right"></i></button>
+    <button title="移出活动"><i data-lucide="chevron-left"></i></button>
+  </div>
+
+  <div class="pane">
+    <div class="pane-head"><h4>618 大促参与 SKU</h4><span class="cnt">已选 3 · 共 64</span></div>
+    <div class="pane-search"><input placeholder="搜索 SKU"></div>
+    <div class="pane-body">
+      <div class="item sel"><span class="ck on"></span><span class="thumb"></span><span class="name">iPhone 14 Pro 256GB</span></div>
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">iPhone 13 128GB</span></div>
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">MacBook Air M2</span></div>
+      <div class="item sel"><span class="ck on"></span><span class="thumb"></span><span class="name">Galaxy S23 Ultra</span></div>
+      <div class="item"><span class="ck"></span><span class="thumb"></span><span class="name">AirPods Pro 2</span></div>
+      <div class="item sel"><span class="ck on"></span><span class="thumb"></span><span class="name">小米 13 Pro</span></div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

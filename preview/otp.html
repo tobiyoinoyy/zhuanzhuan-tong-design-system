@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .otp { display:inline-flex; gap: 8px; }
+  .otp .cell { width: 40px; height: 48px; border-radius: 12px; background:#fff;
+               border: 1.5px solid var(--zzt-border); display:inline-flex; align-items:center; justify-content:center;
+               font-family: var(--zzt-font-num); font-weight: 700; font-size: 22px; }
+  .otp .cell.filled { background: var(--zzt-zinc-75); }
+  .otp .cell.focus { border-color: var(--zzt-accent-500); box-shadow: 0 0 0 3px rgba(255,15,39,.20); }
+  .otp .cell.error { border-color: var(--zzt-danger-500); }
+  .otp .cell .caret { width: 1.5px; height: 60%; background: var(--zzt-fg); animation: blink 1.1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .otp .sep { display:flex; align-items:center; color: var(--zzt-fg-subtle); }
+  .row + .row { margin-top: 22px; }
+  .lbl { font-size: 12px; color: var(--zzt-fg-muted); margin-bottom: 6px; }
+</style></head><body>
+<div>
+  <div class="lbl">6 位数字验证码 · 默认 + 输入中</div>
+  <div class="otp">
+    <div class="cell filled">5</div>
+    <div class="cell filled">8</div>
+    <div class="cell filled">2</div>
+    <div class="cell focus"><span class="caret"></span></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+</div>
+<div class="row" style="margin-top:22px;">
+  <div>
+    <div class="lbl">已完成</div>
+    <div class="otp">
+      <div class="cell filled">5</div><div class="cell filled">8</div><div class="cell filled">2</div>
+      <div class="cell filled">1</div><div class="cell filled">9</div><div class="cell filled">6</div>
+    </div>
+  </div>
+  <div style="margin-left:32px;">
+    <div class="lbl">错误</div>
+    <div class="otp">
+      <div class="cell filled error">5</div><div class="cell filled error">8</div><div class="cell filled error">2</div>
+      <div class="cell filled error">1</div><div class="cell filled error">9</div><div class="cell filled error">0</div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 22px;">
+  <div class="lbl">分组样式 · 3 + 3</div>
+  <div class="otp">
+    <div class="cell filled">5</div><div class="cell filled">8</div><div class="cell filled">2</div>
+    <span class="sep">—</span>
+    <div class="cell filled">1</div><div class="cell focus"><span class="caret"></span></div><div class="cell"></div>
+  </div>
+</div>
+</body></html>

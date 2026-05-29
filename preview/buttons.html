@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { margin:0; padding:22px; background:#fff; font-family: var(--zzt-font-sans); }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+  .lab { font-size:11px; color:var(--zzt-fg-muted); width:70px; }
+  .btn { display:inline-flex; align-items:center; gap:6px; font-family: var(--zzt-font-sans); font-weight:500; letter-spacing:-.005em;
+         padding: 8px 16px; border-radius: 999px; font-size:14px; line-height:20px; border:1px solid transparent; cursor:pointer; }
+  .btn.sm { padding:6px 12px; font-size:13px; }
+  .btn.lg { padding:10px 20px; font-size:14px; }
+  .btn.primary  { background: var(--zzt-accent-500); color:#fff; }
+  .btn.primary:hover  { background: var(--zzt-accent-400); }
+  .btn.secondary{ background: var(--zzt-zinc-150); color: var(--zzt-fg); }
+  .btn.secondary:hover { background: var(--zzt-zinc-200); }
+  .btn.outline  { background:#fff; color: var(--zzt-fg); border-color: var(--zzt-border-strong);}
+  .btn.outline:hover { background: var(--zzt-zinc-75); }
+  .btn.ghost    { background: transparent; color: var(--zzt-fg); }
+  .btn.ghost:hover { background: var(--zzt-zinc-100); }
+  .btn.danger   { background: var(--zzt-danger-500); color:#fff; }
+  .btn.danger:hover  { background: var(--zzt-danger-400); }
+  .btn.danger-soft { background: var(--zzt-danger-soft); color: #A20017; }
+  .btn[disabled], .btn.disabled { opacity:.4; pointer-events:none; }
+  .btn i { width:14px; height:14px; }
+</style></head><body>
+<div class="row"><span class="lab">primary</span>
+  <button class="btn primary"><i data-lucide="plus"></i>新建商品</button>
+  <button class="btn primary">保存</button>
+  <button class="btn primary sm">提交</button>
+  <button class="btn primary disabled">禁用</button>
+</div>
+<div class="row"><span class="lab">secondary</span>
+  <button class="btn secondary">取消</button>
+  <button class="btn secondary"><i data-lucide="download"></i>导出</button>
+  <button class="btn secondary sm">筛选</button>
+</div>
+<div class="row"><span class="lab">outline</span>
+  <button class="btn outline">查看详情</button>
+  <button class="btn outline"><i data-lucide="upload"></i>上传</button>
+  <button class="btn outline sm">编辑</button>
+</div>
+<div class="row"><span class="lab">ghost</span>
+  <button class="btn ghost">了解更多</button>
+  <button class="btn ghost"><i data-lucide="ellipsis"></i></button>
+</div>
+<div class="row"><span class="lab">danger</span>
+  <button class="btn danger">删除 SKU</button>
+  <button class="btn danger-soft">退回</button>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<title>Topbar 顶栏</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { padding: 0; background: var(--zzt-zinc-100); }
+  .demo { padding: 24px; }
+  .top {
+    height: 64px; background: var(--zzt-zinc-75);
+    display: flex; align-items: center; padding: 12px 24px 0; gap: 8px;
+    border-radius: 12px;
+  }
+  .top .links { margin-left: auto; display: flex; align-items: center; gap: 18px; }
+  .top-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--zzt-fg); cursor: pointer; }
+  .top-link:hover { color: var(--zzt-accent-500); }
+  .top-link .ic {
+    width: 16px; height: 16px;
+    background: currentColor;
+    -webkit-mask: var(--src) center / contain no-repeat;
+            mask: var(--src) center / contain no-repeat;
+  }
+  .top-link .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 16px; height: 16px; padding: 0 4px;
+    border-radius: 999px; background: var(--zzt-danger-500); color: #fff;
+    font-size: 10px; font-weight: 600; font-family: var(--zzt-font-num);
+    margin-left: -2px;
+  }
+  .top .sep-v { width: 1px; height: 18px; background: var(--zzt-border-strong); }
+  .top .me { display: inline-flex; align-items: center; gap: 8px; }
+  .top .me .av {
+    width: 28px; height: 28px; border-radius: 999px;
+    background-image: url(../assets/icons/person.svg);
+    background-color: var(--zzt-accent-500);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .top .me .name { font-size: 12.5px; }
+  .top .me .name b { font-weight: 600; }
+  .meta { padding: 16px 0 0; font-family: var(--zzt-font-sans); color: var(--zzt-fg-muted); font-size: 12px; line-height: 1.6; }
+</style></head><body>
+<div class="demo">
+  <header class="top">
+    <div class="links">
+      <span class="top-link"><span class="ic" style="--src: url(../assets/icons/star.svg)"></span>快捷入口</span>
+      <span class="top-link"><span class="ic" style="--src: url(../assets/icons/medal.svg)"></span>转转学堂</span>
+      <span class="top-link"><span class="ic" style="--src: url(../assets/icons/comment.svg)"></span>我要反馈</span>
+      <span class="top-link"><span class="ic" style="--src: url(../assets/icons/megaphone.svg)"></span>公告<span class="badge">2</span></span>
+      <span class="top-link"><span class="ic" style="--src: url(../assets/icons/bell.svg)"></span>通知<span class="badge">5</span></span>
+      <span class="sep-v"></span>
+      <span class="me">
+        <span class="av"></span>
+        <span class="name"><b>张超</b>（管理员）</span>
+      </span>
+      <span class="top-link" style="margin-left: 6px;"><span class="ic" style="--src: url(../assets/icons/external.svg)"></span>退出</span>
+    </div>
+  </header>
+  <div class="meta">右对齐快捷入口 · 学堂 · 反馈 · 公告 · 通知 · 商户 · 退出。badge 用 danger-500，与侧边栏共用 zinc-75 背景。</div>
+</div>
+</body></html>

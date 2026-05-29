@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<title>Sidebar 侧边导航</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { padding: 0; background: var(--zzt-zinc-100); display: flex; min-height: 100vh; }
+  .demo-stage { display: flex; gap: 24px; padding: 24px; }
+  .side {
+    width: 125px; flex-shrink: 0;
+    background: var(--zzt-zinc-75);
+    display: flex; flex-direction: column;
+    height: 720px; border-radius: 12px; overflow: hidden;
+  }
+  .side .brand {
+    display: flex; align-items: center;
+    height: 64px; padding: 12px 24px 0;
+    flex-shrink: 0;
+  }
+  .side .brand img.lockup { height: 28px; width: auto; display: block; }
+  .side .nav {
+    display: flex; flex-direction: column; gap: 20px;
+    padding: 80px 0 24px;
+    flex: 1; overflow-y: auto;
+  }
+  .side-link {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%;
+    height: 44px; padding: 0;
+    border: 0; background: transparent;
+    font-family: inherit;
+    font-size: 14px; color: var(--zzt-fg); font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer; position: relative;
+    border-radius: 10px; text-align: center;
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+  .side-link span:not(.ic) { min-width: 56px; text-align: left; }
+  .side-link .ic {
+    width: 20px; height: 20px; flex-shrink: 0;
+    background: currentColor;
+    color: var(--zzt-zinc-700);
+    -webkit-mask: var(--src) center / contain no-repeat;
+            mask: var(--src) center / contain no-repeat;
+    transition: color 120ms ease;
+  }
+  .side-link:hover { background: rgba(0,0,0,0.04); }
+  .side-link.active { background: #fff; color: var(--zzt-accent-500); font-weight: 600; }
+  .side-link.active .ic { color: var(--zzt-accent-500); }
+  .meta {
+    padding: 28px 16px; max-width: 260px;
+    font-family: var(--zzt-font-sans); color: var(--zzt-fg);
+  }
+  .meta h4 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+  .meta p { margin: 0 0 14px; font-size: 12px; line-height: 1.6; color: var(--zzt-fg-muted); }
+  .meta dl { margin: 0; display: grid; grid-template-columns: 80px 1fr; gap: 6px 12px; font-size: 12px; }
+  .meta dt { color: var(--zzt-fg-muted); }
+  .meta dd { margin: 0; font-family: var(--zzt-font-mono); }
+</style></head><body>
+<div class="demo-stage">
+  <aside class="side">
+    <div class="brand"><img class="lockup" src="../assets/logo-zhuanzhuan.svg" alt="转转通"></div>
+    <nav class="nav">
+      <button class="side-link active"><span class="ic" style="--src: url(../assets/icons/home.svg)"></span>首页</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/star.svg)"></span>常用</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/building.svg)"></span>店铺</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/receipt.svg)"></span>对账</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/tags.svg)"></span>挂售</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/box.svg)"></span>商品</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/shopping-bag.svg)"></span>订单</button>
+      <button class="side-link"><span class="ic" style="--src: url(../assets/icons/megaphone.svg)"></span>营销</button>
+    </nav>
+  </aside>
+
+  <div class="meta">
+    <h4>Sidebar 侧边导航</h4>
+    <p>brand lockup 顶部对齐顶栏；导航 tab 距顶 80px，对齐右侧主面板首屏内容。Active = 白底 + accent 文字与图标。</p>
+    <dl>
+      <dt>宽度</dt><dd>125 px</dd>
+      <dt>背景</dt><dd>zinc-75</dd>
+      <dt>tab 高</dt><dd>44 px</dd>
+      <dt>tab 间距</dt><dd>20 px</dd>
+      <dt>nav padding-top</dt><dd>80 px</dd>
+      <dt>brand padding</dt><dd>12 24 0</dd>
+    </dl>
+  </div>
+</div>
+</body></html>

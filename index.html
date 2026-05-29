@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>转转通 Design System · 工程预览</title>
+  <meta name="viewport" content="width=1440">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--zzt-zinc-50, #FAFAFA);
+      color: var(--zzt-zinc-900, #18181B);
+      font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 56px 40px 80px; }
+
+    .hero {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--zzt-zinc-150, #E4E4E7);
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-family: "Inter", "PingFang SC", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+      color: var(--zzt-zinc-900, #18181B);
+    }
+    .hero .sub {
+      font-size: 15px;
+      color: var(--zzt-zinc-500, #71717A);
+      max-width: 640px;
+    }
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--zzt-accent-50, #FFEDEF);
+      color: var(--zzt-accent-500, #FF0F27);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .hero .badge::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 999px;
+      background: var(--zzt-accent-500, #FF0F27);
+    }
+    .hero .meta {
+      text-align: right;
+      font-size: 13px;
+      color: var(--zzt-zinc-500, #71717A);
+      font-variant-numeric: tabular-nums;
+    }
+    .hero .meta b { color: var(--zzt-zinc-900, #18181B); font-weight: 600; }
+
+    .section { margin-bottom: 56px; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .section-head h2 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--zzt-zinc-500, #71717A);
+      margin: 0;
+    }
+    .section-head .count {
+      font-size: 12px;
+      color: var(--zzt-zinc-400, #A1A1AA);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Featured (UI Kits) — large cards */
+    .kits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .kits:has(> .kit:only-child) {
+      grid-template-columns: minmax(0, 560px);
+    }
+    .kit {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      border-radius: 16px;
+      background: #fff;
+      color: inherit;
+      transition: transform .15s ease, box-shadow .15s ease;
+      min-height: 200px;
+      position: relative;
+    }
+    .kit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -8px rgba(255,15,39,0.18);
+    }
+    .kit h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .kit h3 a:hover {
+      color: var(--zzt-accent-500, #FF0F27);
+    }
+    .kit .kit-tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .kit.dashboard .kit-tag { background: var(--zzt-accent-50, #FFEDEF); color: var(--zzt-accent-500, #FF0F27); }
+    .kit.supply    .kit-tag { background: var(--zzt-info-50, #EEF3FF); color: var(--zzt-info-700, #2D63E5); }
+    .kit.analytics .kit-tag { background: rgba(23,201,100,0.10); color: #0A8A3F; }
+    .kit.console   .kit-tag { background: #EEF6FF; color: #2563EB; }
+    .kit.mobile    .kit-tag { background: #FFF4EB; color: #B57856; }
+    .kit .new-pill {
+      position: absolute;
+      top: 16px; right: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--zzt-accent-500, #FF0F27);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-family: "Inter", sans-serif;
+    }
+    .kit .new-pill::before {
+      content: "";
+      width: 5px; height: 5px;
+      border-radius: 999px;
+      background: #fff;
+    }
+    .kit h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      letter-spacing: -0.005em;
+    }
+    .kit p {
+      font-size: 13.5px;
+      color: var(--zzt-zinc-500, #71717A);
+      margin: 0 0 auto;
+      line-height: 1.55;
+    }
+    .kit .links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .kit .link {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: var(--zzt-zinc-50, #FAFAFA);
+      color: var(--zzt-zinc-700, #3F3F46);
+      font-size: 12.5px;
+      text-decoration: none;
+      transition: background .12s, color .12s;
+    }
+    .kit .link:hover {
+      background: var(--zzt-accent-500, #FF0F27);
+      color: #fff;
+    }
+    .kit .kit-cta {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      height: 36px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--zzt-accent-500, #FF0F27);
+      border: 1px solid var(--zzt-accent-500, #FF0F27);
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: -0.002em;
+      transition: background .12s ease, color .12s ease, transform .12s ease;
+    }
+    .kit .kit-cta svg {
+      width: 14px; height: 14px;
+      transition: transform .15s ease;
+    }
+    .kit .kit-cta:hover {
+      background: var(--zzt-accent-500, #FF0F27);
+      color: #fff;
+    }
+    .kit .kit-cta:hover svg {
+      transform: translateX(2px);
+    }
+    .kit .kit-cta:active {
+      background: var(--zzt-accent-600, #D8001A);
+      border-color: var(--zzt-accent-600, #D8001A);
+    }
+
+    /* Preview grid — small tiles */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+    }
+    .tile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--zzt-zinc-800, #27272A);
+      font-size: 13.5px;
+      transition: background .12s, color .12s, transform .12s;
+    }
+    .tile:hover {
+      background: var(--zzt-accent-500, #FF0F27);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .tile::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 999px;
+      background: var(--zzt-zinc-300, #D4D4D8);
+      flex-shrink: 0;
+      transition: background .12s;
+    }
+    .tile:hover::before { background: #fff; }
+    .tile .name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .tile .arrow {
+      font-size: 12px;
+      color: var(--zzt-zinc-300, #D4D4D8);
+      transition: color .12s, transform .12s;
+    }
+    .tile:hover .arrow { color: #fff; transform: translateX(2px); }
+
+    /* Search */
+    .search-wrap {
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .search {
+      width: 100%;
+      height: 44px;
+      padding: 0 16px 0 44px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .search:focus {
+      border-color: var(--zzt-accent-300, #FF8092);
+      box-shadow: 0 0 0 3px var(--zzt-accent-50, #FFEDEF);
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--zzt-zinc-400, #A1A1AA);
+      pointer-events: none;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px;
+      color: var(--zzt-zinc-400, #A1A1AA);
+      font-size: 13px;
+      display: none;
+    }
+    .empty.show { display: block; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <span class="badge">ZZ RED · Pantone 185 C</span>
+        <h1 style="margin-top:14px;">转转通 Design System</h1>
+        <p class="sub">面向商户的二手 3C 数码经营管理 SaaS 平台 — 设计系统与 UI Kit。包含工作台、商品管理、订单售后等模块的完整组件库。</p>
+      </div>
+      <div class="meta">
+        <div><b>0526</b> 更新</div>
+        <div style="margin-top:4px;">Dashboard · <span id="comp-count">70</span> 个组件</div>
+      </div>
+    </header>
+
+    <div class="search-wrap">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input class="search" id="q" placeholder="搜索组件 / 页面…" autocomplete="off">
+    </div>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>UI Kits · 完整页面</h2>
+      </div>
+      <div class="kits">
+        <div class="kit dashboard">
+          <span class="kit-tag">已完成 · 主交付</span>
+          <h3><a href="ui_kits/dashboard/index.html">Dashboard 工作台</a></h3>
+          <p>商户工作台首页，含 KPI 卡、待办、营收趋势、公告轮播、快捷操作等成型版块。</p>
+          <a class="kit-cta" href="ui_kits/dashboard/index.html">
+            打开
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+        <div class="kit dashboard">
+          <span class="kit-tag">已完成 · 商品管理</span>
+          <h3><a href="ui_kits/dashboard/products.html">商品管理</a></h3>
+          <p>商品列表页，含成色双标签、SKU 缩略图、批量工具栏、筛选 / 分页等业务专属规则。</p>
+          <a class="kit-cta" href="ui_kits/dashboard/products.html">
+            打开
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+        <div class="kit supply">
+          <span class="kit-tag">新增 · 商品管理</span>
+          <span class="new-pill">NEW</span>
+          <h3><a href="ui_kits/dashboard/supply.html">供货模式选择</a></h3>
+          <p>商户发布前的模式选择页，三种模式（平台寄卖 / 自质检 / 拍图挂售），自质检含 3C / 笔记本 / 多品类子档。</p>
+          <a class="kit-cta" href="ui_kits/dashboard/supply.html">
+            打开
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+        <div class="kit analytics">
+          <span class="kit-tag">新增 · 数据看板</span>
+          <span class="new-pill">NEW</span>
+          <h3><a href="ui_kits/dashboard/analytics.html">数据看板</a></h3>
+          <p>商户经营数据可视化页：流量数据 / 商品 / 交易 / 在售 / 销售走势 / 商品销售排行，含 segmented 切换、双轴趋势图、排序表头等业务可视化规则。</p>
+          <a class="kit-cta" href="ui_kits/dashboard/analytics.html">
+            打开
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>基础规范 · Foundations</h2>
+        <span class="count" id="c-foundations"></span>
+      </div>
+      <div class="grid" data-group="foundations"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>表单与输入 · Forms &amp; Inputs</h2>
+        <span class="count" id="c-forms"></span>
+      </div>
+      <div class="grid" data-group="forms"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>数据展示 · Data Display</h2>
+        <span class="count" id="c-data"></span>
+      </div>
+      <div class="grid" data-group="data"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>导航 · Navigation</h2>
+        <span class="count" id="c-nav"></span>
+      </div>
+      <div class="grid" data-group="nav"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>反馈与覆盖层 · Feedback &amp; Overlay</h2>
+        <span class="count" id="c-feedback"></span>
+      </div>
+      <div class="grid" data-group="feedback"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>业务专属 · Domain</h2>
+        <span class="count" id="c-domain"></span>
+      </div>
+      <div class="grid" data-group="domain"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>其他 · Misc</h2>
+        <span class="count" id="c-misc"></span>
+      </div>
+      <div class="grid" data-group="misc"></div>
+    </section>
+
+    <div class="empty" id="empty">没有匹配的组件</div>
+
+  </div>
+
+  <script>
+    const COMPONENTS = [
+      // foundations
+      { f: "colors-brand.html",        n: "品牌色 Brand",          g: "foundations" },
+      { f: "colors-neutrals.html",     n: "中性色 Neutrals",        g: "foundations" },
+      { f: "colors-semantic.html",     n: "语义色 Semantic",        g: "foundations" },
+      { f: "type-scale.html",          n: "字号阶梯 Type Scale",    g: "foundations" },
+      { f: "type-specimen.html",       n: "字体样张 Type Specimen", g: "foundations" },
+      { f: "spacing.html",             n: "间距 Spacing",           g: "foundations" },
+      { f: "radii.html",               n: "圆角 Radii",             g: "foundations" },
+      { f: "shadows.html",             n: "阴影 Shadows",           g: "foundations" },
+      { f: "iconography.html",         n: "图标体系 Iconography",   g: "foundations" },
+      { f: "icons-catalog.html",       n: "图标目录 Catalog",       g: "foundations" },
+      { f: "icons-real.html",          n: "真实图标 Real Icons",    g: "foundations" },
+      { f: "icons-usage.html",         n: "图标用法 Icon Usage",    g: "foundations" },
+      { f: "brand-logo.html",          n: "品牌 Logo",              g: "foundations" },
+      { f: "brand-graphic.html",       n: "品牌图形 Brand Graphic", g: "foundations" },
+
+      // forms
+      { f: "buttons.html",             n: "按钮 Buttons",           g: "forms" },
+      { f: "button-group-toolbar.html",n: "按钮组工具栏",            g: "forms" },
+      { f: "close-button.html",        n: "关闭按钮 Close",          g: "forms" },
+      { f: "form-fields.html",         n: "表单字段 Form Fields",    g: "forms" },
+      { f: "field-helper.html",        n: "字段帮助文本",            g: "forms" },
+      { f: "checkbox.html",            n: "复选框 Checkbox",         g: "forms" },
+      { f: "radio.html",               n: "单选 Radio",              g: "forms" },
+      { f: "switch.html",              n: "开关 Switch",             g: "forms" },
+      { f: "select-menu.html",         n: "下拉选择 Select",         g: "forms" },
+      { f: "search-autocomplete.html", n: "搜索自动补全",            g: "forms" },
+      { f: "number-input.html",        n: "数字输入 Number",         g: "forms" },
+      { f: "date-time-input.html",     n: "日期时间输入",            g: "forms" },
+      { f: "datepicker.html",          n: "日期选择器 Datepicker",   g: "forms" },
+      { f: "time-date-input.html",     n: "时间日期输入",            g: "forms" },
+      { f: "otp.html",                 n: "OTP 验证码",              g: "forms" },
+      { f: "slider.html",              n: "滑块 Slider",             g: "forms" },
+      { f: "color-picker.html",        n: "颜色选择 Color Picker",   g: "forms" },
+      { f: "transfer.html",            n: "穿梭框 Transfer",         g: "forms" },
+      { f: "tree-cascader.html",       n: "树/级联 Cascader",        g: "forms" },
+      { f: "upload.html",              n: "上传 Upload",             g: "forms" },
+
+      // data display
+      { f: "data-table.html",          n: "数据表格 Data Table",     g: "data" },
+      { f: "kpi-cards.html",           n: "KPI 卡片",                g: "data" },
+      { f: "cards.html",               n: "通用卡片 Cards",          g: "data" },
+      { f: "tags.html",                n: "标签 Tags",               g: "data" },
+      { f: "badge.html",               n: "徽标 Badge",              g: "data" },
+      { f: "avatar.html",              n: "头像 Avatar",             g: "data" },
+      { f: "image-gallery.html",       n: "图片画廊 Gallery",        g: "data" },
+      { f: "carousel.html",            n: "轮播 Carousel",           g: "data" },
+      { f: "rate-grade.html",          n: "评分等级 Rate",           g: "data" },
+      { f: "progress.html",            n: "进度 Progress",           g: "data" },
+      { f: "skeleton.html",            n: "骨架屏 Skeleton",         g: "data" },
+      { f: "kbd.html",                 n: "键盘按键 Kbd",            g: "data" },
+
+      // nav
+      { f: "sidebar.html",             n: "侧边栏 Sidebar",          g: "nav" },
+      { f: "topbar.html",              n: "顶部栏 Topbar",           g: "nav" },
+      { f: "breadcrumb.html",          n: "面包屑 Breadcrumb",       g: "nav" },
+      { f: "tabs.html",                n: "标签页 Tabs",             g: "nav" },
+      { f: "tab-badge-variants.html",  n: "Tab 徽标变体",            g: "nav" },
+      { f: "pagination.html",          n: "分页 Pagination",         g: "nav" },
+      { f: "stepper.html",             n: "步骤条 Stepper",          g: "nav" },
+      { f: "accordion.html",           n: "手风琴 Accordion",        g: "nav" },
+      { f: "link.html",                n: "链接 Link",               g: "nav" },
+
+      // feedback
+      { f: "alert.html",               n: "警告提示 Alert",          g: "feedback" },
+      { f: "toast.html",               n: "Toast",                   g: "feedback" },
+      { f: "modal.html",               n: "对话框 Modal",            g: "feedback" },
+      { f: "drawer.html",              n: "抽屉 Drawer",             g: "feedback" },
+      { f: "popover-menu.html",        n: "气泡菜单 Popover",        g: "feedback" },
+      { f: "tooltip.html",             n: "工具提示 Tooltip",        g: "feedback" },
+      { f: "loaders.html",             n: "加载 Loaders",            g: "feedback" },
+      { f: "empty-states.html",        n: "空状态 Empty",            g: "feedback" },
+      { f: "result-pages.html",        n: "结果页 Result",           g: "feedback" },
+      { f: "overlay-scrim.html",       n: "遮罩 Overlay",            g: "feedback" },
+      { f: "scroll-shadow.html",       n: "滚动阴影",                g: "feedback" },
+      { f: "scroll-shadow-backdrop.html", n: "滚动阴影背板",         g: "feedback" },
+      { f: "separator.html",           n: "分割线 Separator",        g: "feedback" },
+
+      // domain
+      { f: "batch-toolbar.html",       n: "批量工具栏",              g: "domain" },
+      { f: "condition-badge.html",     n: "成色徽章 Condition",      g: "domain" },
+    ];
+
+    document.getElementById("comp-count").textContent = COMPONENTS.length;
+
+    function render(filter = "") {
+      const f = filter.trim().toLowerCase();
+      const groups = { foundations: 0, forms: 0, data: 0, nav: 0, feedback: 0, domain: 0, misc: 0 };
+      document.querySelectorAll(".grid[data-group]").forEach(el => el.innerHTML = "");
+      let total = 0;
+      COMPONENTS.forEach(c => {
+        if (f && !c.n.toLowerCase().includes(f) && !c.f.toLowerCase().includes(f)) return;
+        const grid = document.querySelector(`.grid[data-group="${c.g}"]`);
+        if (!grid) return;
+        const a = document.createElement("a");
+        a.className = "tile";
+        a.href = "preview/" + c.f;
+        a.innerHTML = `<span class="name">${c.n}</span><span class="arrow">→</span>`;
+        grid.appendChild(a);
+        groups[c.g]++;
+        total++;
+      });
+      Object.entries(groups).forEach(([k, v]) => {
+        const el = document.getElementById("c-" + k);
+        if (el) el.textContent = v ? v + " 项" : "";
+        const sect = document.querySelector(`.grid[data-group="${k}"]`)?.closest(".section");
+        if (sect) sect.style.display = v === 0 && f ? "none" : "";
+      });
+      document.getElementById("empty").classList.toggle("show", total === 0);
+    }
+
+    render();
+    document.getElementById("q").addEventListener("input", e => render(e.target.value));
+  </script>
+</body>
+</html>

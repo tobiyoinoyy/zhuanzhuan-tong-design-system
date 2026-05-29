@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .acc { width: 380px; background: #fff; border-radius: 12px; border: 1px solid rgba(0,0,0,.06); overflow: hidden; }
+  .acc-item { padding: 14px 16px; border-bottom: 1px solid var(--zzt-border-subtle); cursor: pointer; }
+  .acc-item:last-child { border-bottom: 0; }
+  .acc-row { display:flex; align-items: center; gap: 10px; }
+  .acc-row .ico { width: 16px; height: 16px; color: var(--zzt-fg-muted); flex-shrink:0; }
+  .acc-row .ttl { flex: 1; font-size: 14px; font-weight: 500; }
+  .acc-row .cnt { font-size: 12px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-num); }
+  .acc-row .chev { width: 14px; height: 14px; color: var(--zzt-fg-muted); transition: transform .15s ease; }
+  .acc-item.open .chev { transform: rotate(180deg); }
+  .acc-body { font-size: 12.5px; color: var(--zzt-fg-muted); padding: 10px 0 0 26px; line-height: 1.6; }
+
+  .acc.bare { background: transparent; border: 0; border-radius: 0; }
+  .acc.bare .acc-item { border-bottom: 1px solid var(--zzt-border-subtle); padding: 12px 0; }
+</style></head><body>
+<div class="row" style="gap: 22px; align-items: flex-start;">
+  <div class="acc">
+    <div class="acc-item open">
+      <div class="acc-row">
+        <i data-lucide="info" class="ico"></i>
+        <span class="ttl">入仓与质检规则</span>
+        <span class="cnt">5 条</span>
+        <i data-lucide="chevron-down" class="chev"></i>
+      </div>
+      <div class="acc-body">
+        入仓后 48 小时内完成质检；A 级 SKU 直接上架，B 级建议下调建议价 10%，C 级转入翻新流程，副厂件 / 屏幕漏液一律退回商户。
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-row"><i data-lucide="megaphone" class="ico"></i><span class="ttl">活动归属规则</span><span class="cnt">3 条</span><i data-lucide="chevron-down" class="chev"></i></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-row"><i data-lucide="receipt" class="ico"></i><span class="ttl">售后退货规则</span><span class="cnt">7 条</span><i data-lucide="chevron-down" class="chev"></i></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-row"><i data-lucide="wallet" class="ico"></i><span class="ttl">回款与结算周期</span><span class="cnt">4 条</span><i data-lucide="chevron-down" class="chev"></i></div>
+    </div>
+  </div>
+
+  <div class="acc bare" style="width: 380px;">
+    <div class="acc-item open">
+      <div class="acc-row"><span class="ttl">本批次质检异常项</span><span class="cnt">3 项</span><i data-lucide="chevron-down" class="chev"></i></div>
+      <div class="acc-body">屏幕轻微漏液 (1) · 副厂电池 (1) · 后盖划痕 (1) · 建议综合 C 级，建议价 ¥ 2,499</div>
+    </div>
+    <div class="acc-item open">
+      <div class="acc-row"><span class="ttl">功能性测试</span><span class="cnt">通过</span><i data-lucide="chevron-down" class="chev"></i></div>
+      <div class="acc-body">通话 / 听筒 / 扬声器 / 触控 / WiFi / 蓝牙均通过 · 电池效率 92%</div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-row"><span class="ttl">附件清单</span><span class="cnt">2 项</span><i data-lucide="chevron-down" class="chev"></i></div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

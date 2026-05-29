@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<style>
+  .row { gap: 32px; align-items: center; }
+  .spin { animation: spin 1.0s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner-bar { animation: spinbars 1.2s linear infinite; }
+  @keyframes spinbars { to { transform: rotate(360deg); } }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .col .l { font-size: 11px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); }
+  .dots { display: inline-flex; gap: 4px; align-items: center; }
+  .dots span { width: 6px; height: 6px; border-radius: 999px; background: var(--zzt-accent-500); animation: bounce 1.2s ease-in-out infinite; }
+  .dots span:nth-child(2) { animation-delay: 0.15s; }
+  .dots span:nth-child(3) { animation-delay: 0.30s; }
+  @keyframes bounce { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+  .pulse { width: 14px; height: 14px; border-radius: 999px; background: var(--zzt-accent-500); animation: pulse 1.4s ease-in-out infinite; box-shadow: 0 0 0 0 var(--zzt-accent-500); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,15,39,0.5); } 70% { box-shadow: 0 0 0 12px rgba(4,133,247,0); } 100% { box-shadow: 0 0 0 0 rgba(4,133,247,0); } }
+</style></head><body>
+<div class="row">
+  <div class="col">
+    <svg width="24" height="24" viewBox="0 0 24 24" class="spin"><circle cx="12" cy="12" r="9" stroke="var(--zzt-zinc-200)" stroke-width="2.5" fill="none"/><circle cx="12" cy="12" r="9" stroke="var(--zzt-accent-500)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="14 56"/></svg>
+    <span class="l">circle</span>
+  </div>
+  <div class="col">
+    <svg width="32" height="32" viewBox="0 0 24 24" class="spin"><circle cx="12" cy="12" r="9" stroke="var(--zzt-zinc-200)" stroke-width="2.5" fill="none"/><circle cx="12" cy="12" r="9" stroke="var(--zzt-accent-500)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="14 56"/></svg>
+    <span class="l">circle · md</span>
+  </div>
+  <div class="col">
+    <svg width="48" height="48" viewBox="0 0 24 24" class="spin"><circle cx="12" cy="12" r="9" stroke="var(--zzt-zinc-200)" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="9" stroke="var(--zzt-accent-500)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="14 56"/></svg>
+    <span class="l">circle · lg</span>
+  </div>
+  <div class="col">
+    <svg width="32" height="32" viewBox="0 0 16 16" class="spinner-bar">
+      <g fill="var(--zzt-fg)">
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="1"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.85" transform="rotate(45 8 8)"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.70" transform="rotate(90 8 8)"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.55" transform="rotate(135 8 8)"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.40" transform="rotate(180 8 8)"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.30" transform="rotate(225 8 8)"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.20" transform="rotate(270 8 8)"/>
+        <rect x="7" y="1" width="2" height="3.5" rx="1" opacity="0.10" transform="rotate(315 8 8)"/>
+      </g>
+    </svg>
+    <span class="l">spinner</span>
+  </div>
+  <div class="col">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span class="l">dots</span>
+  </div>
+  <div class="col">
+    <div class="pulse"></div>
+    <span class="l">pulse</span>
+  </div>
+</div>
+<div style="margin-top: 24px; font-size: 12.5px; color: var(--zzt-fg-muted);">
+  Use <b style="color: var(--zzt-fg)">circle</b> for in-button & page-level loading. Use <b style="color: var(--zzt-fg)">spinner</b> for action confirmations. <b style="color: var(--zzt-fg)">dots</b> for typing / inline progress. <b style="color: var(--zzt-fg)">pulse</b> for live data indicators.
+</div>
+</body></html>

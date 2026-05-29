@@ -1,0 +1,904 @@
+/* ================================================================
+   dashboard/products.css
+   商品管理 — list page. Reuses the dashboard shell (side nav + top
+   bar + .card primitive + .link). Page-specific layout & components
+   live here. Builds on colors_and_type.css and dashboard.css.
+   ================================================================ */
+
+/* ---------- Page body (single column override) ---------- */
+.main > .page {
+  display: flex; flex-direction: column;
+  gap: 16px;
+  padding: 0 20px 36px 0;
+}
+
+/* ===== Header card: L1 tabs + L2 status tabs ===== */
+.page-head {
+  padding: 0;
+  overflow: hidden;
+}
+.tabs-l1 {
+  display: flex; align-items: flex-end; gap: 28px;
+  padding: 14px 24px 0;
+  border-bottom: 1px solid var(--zzt-border-subtle);
+}
+.tabs-l1 .tab {
+  position: relative;
+  padding: 6px 0 14px;
+  font-size: 18px; font-weight: 600; letter-spacing: -0.005em;
+  color: var(--zzt-fg-muted);
+  cursor: pointer;
+}
+.tabs-l1 .tab.active { color: var(--zzt-accent-500); }
+.tabs-l1 .tab.active::after {
+  content: ""; position: absolute; left: 50%; bottom: -1px;
+  width: 28px; height: 3px; transform: translateX(-50%);
+  background: var(--zzt-accent-500); border-radius: 2px;
+}
+
+.tabs-l2-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  gap: 16px;
+}
+.tabs-l2 {
+  display: flex; align-items: center; gap: 4px;
+  flex: 1; min-width: 0;
+}
+.tabs-l2 .tab {
+  position: relative;
+  padding: 14px 14px 14px;
+  font-size: 13.5px; font-weight: 500;
+  color: var(--zzt-fg-muted);
+  cursor: pointer; white-space: nowrap;
+}
+.tabs-l2 .tab:hover { color: var(--zzt-fg); }
+.tabs-l2 .tab.active { color: var(--zzt-accent-500); font-weight: 600; }
+.tabs-l2 .tab.active::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: -1px;
+  height: 2px; background: var(--zzt-accent-500); border-radius: 1px;
+}
+.tabs-l2 .tab .count {
+  background: var(--zzt-zinc-150); color: var(--zzt-zinc-600);
+  border-radius: 999px; padding: 0 8px;
+  margin-left: 6px;
+  font-size: 10.5px; line-height: 18px;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: 1px;
+}
+.tabs-l2 .tab.active .count {
+  background: var(--zzt-accent-soft); color: var(--zzt-accent-700);
+}
+/* Bubble badge on a tab (e.g. "可送检:5") */
+.tab-bubble {
+  position: absolute;
+  top: 2px; right: -8px;
+  background: var(--zzt-warning-500);
+  color: #fff;
+  font-size: 10.5px; line-height: 16px; font-weight: 600;
+  padding: 0 6px; border-radius: 999px 999px 999px 4px;
+  white-space: nowrap;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.tab-bubble::after { display: none; }
+.l2-meta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; color: var(--zzt-fg-muted);
+  flex-shrink: 0;
+}
+.l2-meta .n {
+  color: var(--zzt-accent-500); font-weight: 600;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.l2-meta .meta-sep {
+  width: 1px; height: 12px;
+  background: var(--zzt-border, var(--zzt-zinc-200));
+  margin: 0 2px;
+}
+.l2-meta .ic-info {
+  width: 12px; height: 12px;
+  background: var(--zzt-fg-subtle);
+  -webkit-mask: url(../../assets/icons/info.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/info.svg) center / contain no-repeat;
+}
+
+/* ===== Filter card ===== */
+.filter-card { padding: 20px 24px 16px; }
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px 28px;
+}
+.field-inline {
+  display: flex; align-items: center; gap: 10px;
+  min-width: 0;
+}
+.field-inline .label {
+  flex-shrink: 0;
+  font-size: 13px; color: var(--zzt-fg);
+  min-width: 80px; text-align: right;
+  white-space: nowrap;
+}
+.field-inline .ctl { flex: 1; min-width: 0; }
+
+/* Picker-as-label — a dropdown chip that occupies the same column as the
+   text labels (right-aligned, min-width 80px), but is interactive. Used
+   when the field's *type* is itself the choice (e.g. 质检码 / IMEI / 商品ID).
+   This keeps the trailing input the same width as sibling cells'. */
+.field-inline .label-picker {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: flex-end;
+  gap: 4px;
+  height: 24px;
+  min-width: 80px;
+  padding: 0 4px 0 8px;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px; color: var(--zzt-fg); font-weight: 400;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-align: right;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.field-inline .label-picker:hover { background: var(--zzt-zinc-100); color: var(--zzt-accent-500); }
+.field-inline .label-picker:hover .caret { background: var(--zzt-accent-500); }
+.field-inline .label-picker .caret {
+  width: 10px; height: 10px;
+  background: var(--zzt-fg-muted);
+  -webkit-mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+  transition: background-color 120ms ease;
+}
+
+/* Split ctl — a standalone picker chip + a sibling input, joined by a small gap.
+   Used when the "type of identifier" is a first-class choice rather than a
+   sub-control hidden inside the input (e.g. 质检码 / IMEI / 商品ID). */
+.ctl-split { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.ctl-split .inp { flex: 1; min-width: 0; }
+.ctl-split .picker {
+  display: inline-flex; align-items: center; gap: 4px;
+  height: 36px;
+  padding: 0 10px 0 12px;
+  border: 1px solid var(--zzt-border-strong);
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px; color: var(--zzt-fg); font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap; flex-shrink: 0;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.ctl-split .picker:hover { border-color: var(--zzt-accent-300); }
+.ctl-split .picker .caret {
+  width: 10px; height: 10px;
+  background: var(--zzt-fg-muted);
+  -webkit-mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+}
+
+/* No-label variant — uses a visibility:hidden phantom label to preserve
+   the exact same layout as labelled siblings. The input box's left edge
+   ends up at the identical X regardless of which label widths are around. */
+.field-inline.no-label .label { pointer-events: none; }
+
+/* Input shells reused by select / text / date / combo */
+.inp {
+  display: flex; align-items: center; gap: 8px;
+  height: 36px; padding: 0 12px;
+  background: #fff;
+  border: 1px solid var(--zzt-border-strong);
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.inp.text { cursor: text; }
+.inp:hover { border-color: var(--zzt-accent-300); }
+.inp .placeholder { color: var(--zzt-fg-subtle); }
+.inp .v { font-size: 13px; color: var(--zzt-fg); }
+.inp .caret {
+  margin-left: auto;
+  width: 12px; height: 12px;
+  background: var(--zzt-fg-muted);
+  -webkit-mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+  flex-shrink: 0;
+}
+.inp .ic-cal {
+  width: 14px; height: 14px;
+  background: var(--zzt-fg-muted);
+  -webkit-mask: url(../../assets/icons/calendar.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/calendar.svg) center / contain no-repeat;
+  flex-shrink: 0;
+}
+.inp input {
+  border: 0; outline: 0; background: transparent;
+  font-family: inherit; font-size: 13px;
+  width: 100%; min-width: 0;
+  padding: 0;
+  color: var(--zzt-fg);
+}
+.inp input::placeholder { color: var(--zzt-fg-subtle); }
+
+/* Date range — two date slots + arrow + cal icon */
+.inp.range {
+  gap: 6px;
+  overflow: hidden;        /* belt-and-braces: never let trailing icon escape */
+  min-width: 0;
+}
+.inp.range .slot {
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.inp.range .slot.empty { color: var(--zzt-fg-subtle); font-family: inherit; }
+.inp.range .arrow { color: var(--zzt-fg-subtle); flex-shrink: 0; }
+
+/* Combo: leading inline select inside the input */
+.inp.combo { padding: 0 12px 0 0; }
+.inp.combo .lead {
+  display: inline-flex; align-items: center; gap: 4px;
+  height: 100%; padding: 0 12px;
+  font-size: 13px;
+  color: var(--zzt-fg);
+  border-right: 1px solid var(--zzt-border-subtle);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.inp.combo .lead .caret { margin-left: 0; }
+
+/* Filter action row: query/reset on the right, expand at the far right */
+.filter-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 16px;
+  gap: 12px;
+}
+.filter-foot .acts {
+  display: flex; align-items: center; gap: 10px;
+}
+.filter-foot .acts-r {
+  display: flex; align-items: center; gap: 12px;
+}
+.expand-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--zzt-accent-500);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer;
+}
+.expand-link:hover { text-decoration: underline; }
+.expand-link .caret {
+  width: 12px; height: 12px;
+  background: currentColor;
+  -webkit-mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+}
+
+/* Buttons (page-local — primary, outline, ghost) */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 36px; padding: 0 16px;
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  letter-spacing: -0.005em;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn .ic {
+  width: 14px; height: 14px;
+  background: currentColor;
+  -webkit-mask: var(--src) center / contain no-repeat;
+          mask: var(--src) center / contain no-repeat;
+}
+.btn-primary {
+  background: var(--zzt-accent-500); color: #fff;
+}
+.btn-primary:hover { background: var(--zzt-accent-400); }
+.btn-outline {
+  background: #fff; color: var(--zzt-fg);
+  border-color: var(--zzt-border-strong);
+}
+.btn-outline:hover { border-color: var(--zzt-accent-400); color: var(--zzt-accent-500); }
+.btn-ghost {
+  background: transparent; color: var(--zzt-fg);
+}
+.btn-ghost:hover { background: var(--zzt-zinc-100); color: var(--zzt-accent-500); }
+
+/* Batch operations dropdown trigger (acts as outline button with chevron) */
+.btn-batch { gap: 4px; }
+.btn-batch .caret-dn {
+  width: 12px; height: 12px;
+  background: currentColor;
+  -webkit-mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+  margin-left: 2px;
+}
+
+/* ===== Table card =====
+   Aligned to fig /page51/components/VariantPrimary:
+   gray frame (zinc-150, radius 20, padding 4) wrapping
+   a header strip + white body (radius 16) + pagination strip. */
+.table-card {
+  background: var(--zzt-zinc-150);
+  border: 0;
+  border-radius: 20px;
+  padding: 4px;
+  overflow: hidden;
+}
+.table-wrap {
+  width: 100%;
+  background: transparent;
+}
+table.products {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  background: transparent;
+}
+/* Header strip — sits directly on the gray outer (transparent) */
+table.products thead th {
+  text-align: left;
+  font-family: var(--zzt-font-sans);
+  font-size: 12px; font-weight: 500;
+  color: var(--zzt-zinc-500);
+  background: transparent;
+  padding: 10px 16px;
+  border-bottom: 0;
+  white-space: nowrap;
+}
+/* Row cells — white body */
+table.products tbody td {
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid rgba(205,205,206,0.5);
+  vertical-align: top;
+}
+table.products tbody tr:hover td { background: var(--zzt-zinc-75); }
+table.products tbody tr:last-child td { border-bottom: 0; }
+
+/* Round the corners of the white body block (first/last row, first/last cell) */
+table.products tbody tr:first-child td:first-child { border-top-left-radius: 16px; }
+table.products tbody tr:first-child td:last-child  { border-top-right-radius: 16px; }
+table.products tbody tr:last-child  td:first-child { border-bottom-left-radius: 16px; }
+table.products tbody tr:last-child  td:last-child  { border-bottom-right-radius: 16px; }
+
+/* Cell-specific */
+.col-ck { width: 36px; }
+.col-info { min-width: 420px; }
+.col-price { width: 180px; }
+.col-state { width: 90px; }
+.col-time { width: 130px; }
+.col-ops { width: 130px; }
+
+/* Checkbox */
+.ck {
+  width: 16px; height: 16px;
+  border: 1.5px solid var(--zzt-border-strong);
+  border-radius: 4px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.ck.on { background: var(--zzt-accent-500); border-color: var(--zzt-accent-500); }
+.ck.on::after {
+  content: ""; position: absolute; left: 4px; top: 1px;
+  width: 5px; height: 9px;
+  border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+.ck.indeterminate { background: var(--zzt-accent-500); border-color: var(--zzt-accent-500); }
+.ck.indeterminate::after {
+  content: ""; position: absolute; left: 3px; top: 6.5px;
+  width: 8px; height: 2px; background: #fff; border-radius: 1px;
+}
+
+/* Product info cell */
+.sku-cell { display: flex; gap: 12px; }
+.sku-thumb {
+  width: 72px; height: 72px; flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--zzt-zinc-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--zzt-fg-subtle);
+  overflow: hidden;
+  position: relative;
+}
+.sku-thumb.placeholder::before {
+  content: "";
+  width: 28px; height: 28px;
+  background: var(--zzt-zinc-300);
+  -webkit-mask: url(../../assets/icons/camera.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/camera.svg) center / contain no-repeat;
+}
+/* Real product image — set via inline style: --img: url(...) */
+.sku-thumb.has-img {
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--zzt-zinc-100);
+}
+.sku-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.sku-title-row {
+  display: flex; align-items: center; gap: 8px;
+  min-width: 0;
+}
+.sku-title {
+  font-size: 14px; font-weight: 600; color: var(--zzt-fg);
+  line-height: 1.4;
+  overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+}
+.sku-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+/* ===== Condition Badge (成色标签) — fig /page6 ===== */
+.cond-badge {
+  display: inline-flex; align-items: stretch;
+  height: 16px;
+  font-family: var(--zzt-font-num);
+  vertical-align: middle;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.cond-badge .ap,
+.cond-badge .fn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 5px;
+  color: #fff;
+  font-weight: 700;
+}
+.cond-badge .ap {
+  background: #2E6E89;
+  border-radius: 3px 0 0 3px;
+  gap: 1px;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+.cond-badge .ap.zh {
+  align-items: center;
+  padding-top: 0;
+}
+.cond-badge .fn {
+  background: #EE8B57;
+  border-radius: 0 3px 3px 0;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.cond-badge .ap b {
+  font-size: 12px; line-height: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.cond-badge .ap b + .suf {
+  font-size: 7px;
+  line-height: 7px;        /* = font-size: no leading → top of box = top of glyph */
+  font-family: "PingFang SC", var(--zzt-font-sans);
+  font-weight: 500;
+  margin-left: 1px;
+  align-self: flex-start;
+}
+.cond-badge .ap.zh {
+  font-family: "PingFang SC", var(--zzt-font-sans);
+  font-size: 9px; font-weight: 500;
+  padding: 0 4px;
+  letter-spacing: 0;
+}
+.cond-badge.solo-ap .ap { border-radius: 3px; }
+.cond-badge.solo-fn .fn { border-radius: 3px; padding: 0 6px; }
+.cond-badge .fn .plus { font-size: 11px; margin-left: -1px; }
+
+/* DEPRECATED — kept for back-compat. Use .cond-badge instead. */
+/* Condition tag (成色) + Grade tag (A/B/C) — separate, side by side */
+.cond-tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; font-weight: 500;
+  background: rgba(23,201,100,.14); color: #0a8a44;
+  border-radius: 4px;
+  padding: 0 6px;
+  line-height: 18px;
+  flex-shrink: 0;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.cond-tag.new95 { background: rgba(245,165,36,.18); color: #9a6608; }
+.cond-tag.new90 { background: rgba(255,15,39,.14); color: #A20017; }
+.grade-tag {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0 6px;
+  line-height: 18px;
+  flex-shrink: 0;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.grade-tag.A { background: #17C964; }
+.grade-tag.B { background: #F5A524; }
+.grade-tag.C { background: #FF0F27; }
+
+/* Simple outline tag (质检模式) */
+.tag-out {
+  display: inline-flex; align-items: center;
+  font-size: 11px; line-height: 18px;
+  color: var(--zzt-fg-muted);
+  border: 1px solid var(--zzt-border-strong);
+  border-radius: 4px;
+  padding: 0 6px;
+}
+.tag-out.accent {
+  color: var(--zzt-accent-700);
+  border-color: var(--zzt-accent-300);
+  background: var(--zzt-accent-50);
+}
+
+/* Spec attributes (| separated) */
+.sku-spec {
+  font-size: 12px; color: var(--zzt-fg-muted);
+  line-height: 1.5;
+  display: flex; flex-wrap: wrap; gap: 4px 6px;
+}
+.sku-spec .sep { color: var(--zzt-zinc-300); }
+
+/* IDs row (质检码 + IMEI) — compact */
+.sku-ids {
+  display: flex; gap: 18px;
+  font-size: 11.5px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+.sku-ids .pair {
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.sku-ids .k { color: var(--zzt-fg-muted); }
+.sku-ids .v {
+  color: var(--zzt-fg);
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.sku-ids .v:hover { text-decoration: underline; }
+.sku-ids .ic-copy {
+  width: 12px; height: 12px;
+  background: var(--zzt-fg-muted);
+  -webkit-mask: url(../../assets/icons/copy.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/copy.svg) center / contain no-repeat;
+  cursor: pointer;
+}
+.sku-ids .ic-copy:hover { background: var(--zzt-accent-500); }
+
+/* Price cell — label:value rows aligned */
+.price-main {
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-size: 20px; font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--zzt-fg);
+  line-height: 1.2;
+}
+.price-main.muted { color: var(--zzt-fg-subtle); font-weight: 500; }
+.price-aux {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+.price-aux > * {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.price-aux .k { color: var(--zzt-fg-muted); white-space: nowrap; }
+.price-aux .v {
+  color: var(--zzt-fg); font-weight: 500;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.price-aux .v.muted { color: var(--zzt-fg-subtle); font-weight: 400; }
+
+/* Status tag */
+.status {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 500;
+  padding: 2px 8px; border-radius: 999px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.status .dot { width: 5px; height: 5px; border-radius: 999px; }
+.status.qc       { background: rgba(255,15,39,.10);  color: var(--zzt-accent-700); }
+.status.qc .dot  { background: var(--zzt-accent-500); }
+.status.off      { background: var(--zzt-zinc-150);  color: var(--zzt-zinc-600); }
+.status.off .dot { background: var(--zzt-zinc-400); }
+.status.on       { background: rgba(23,201,100,.14); color: #0a8a44; }
+.status.on .dot  { background: var(--zzt-success-500); }
+.status.sold     { background: rgba(181,120,86,.12); color: var(--zzt-purple-600); }
+.status.sold .dot{ background: var(--zzt-purple-500); }
+.status.aftersale{ background: rgba(245,165,36,.18); color: #9a6608; }
+.status.aftersale .dot { background: var(--zzt-warning-500); }
+.status.returned { background: rgba(255,15,39,.12); color: #A20017; }
+.status.returned .dot  { background: var(--zzt-danger-500); }
+
+/* Time cell — date + time + relative */
+.time-cell {
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-size: 12.5px; color: var(--zzt-fg);
+  line-height: 1.6;
+}
+.time-cell .t { color: var(--zzt-fg-muted); font-size: 12px; }
+.time-cell .rel {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: var(--zzt-font-sans);
+  font-size: 11px; color: var(--zzt-fg-subtle);
+  padding: 0 6px; line-height: 16px;
+  background: var(--zzt-zinc-100);
+  border-radius: 4px;
+}
+
+/* Operation links — first action primary (bold accent), rest muted, danger red */
+.ops {
+  display: flex; flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  align-items: flex-start;
+}
+.ops a {
+  cursor: pointer;
+  color: var(--zzt-fg-muted);
+  text-decoration: none;
+  font-weight: 400;
+}
+.ops a.primary {
+  color: var(--zzt-accent-500);
+  font-weight: 500;
+}
+.ops a:hover { color: var(--zzt-accent-500); text-decoration: underline; }
+.ops a.danger { color: var(--zzt-danger-500); }
+.ops a.danger:hover { color: var(--zzt-danger-400); }
+
+/* ===== Pagination =====
+   Left: info, Right: controls + page-size + jump. */
+.pager-row {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: transparent;
+  font-size: 12.5px;
+  color: var(--zzt-fg-muted);
+}
+.pager-row .pager-right {
+  display: flex; align-items: center; gap: 8px;
+}
+.pager {
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.pg-btn {
+  min-width: 32px; height: 32px; padding: 0 10px;
+  background: #fff;
+  border: 1px solid var(--zzt-border-strong);
+  border-radius: 6px;
+  font-size: 13px; cursor: pointer;
+  color: var(--zzt-fg);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.pg-btn:hover { border-color: var(--zzt-accent-400); color: var(--zzt-accent-500); }
+.pg-btn.active {
+  background: var(--zzt-accent-500); color: #fff;
+  border-color: var(--zzt-accent-500);
+}
+.pg-btn.active:hover { color: #fff; }
+.pg-btn.disabled { opacity: .4; pointer-events: none; }
+.pg-btn .ic {
+  width: 12px; height: 12px;
+  background: currentColor;
+  -webkit-mask: var(--src) center / contain no-repeat;
+          mask: var(--src) center / contain no-repeat;
+}
+.pg-ell {
+  padding: 0 6px;
+  color: var(--zzt-fg-muted);
+}
+.pg-select {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 10px;
+  border: 1px solid var(--zzt-border-strong);
+  border-radius: 6px;
+  font-size: 13px; color: var(--zzt-fg);
+  cursor: pointer; background: #fff;
+}
+.pg-select .caret {
+  width: 10px; height: 10px;
+  background: var(--zzt-fg-muted);
+  -webkit-mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/chevron-down.svg) center / contain no-repeat;
+}
+.pg-jump input {
+  width: 36px; border: 0; outline: 0;
+  text-align: center;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  background: transparent;
+}
+.pg-info b {
+  color: var(--zzt-fg);
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* ================================================================
+   Notice bar — top-of-page announcement carousel
+   ----------------------------------------------------------------
+   White 16-radius card sitting above .page-head. Single row, fixed
+   height. Type tag (left) → message (middle, ellipsized at ≤60ch)
+   → optional inline text-link → pager + arrows + expand caret.
+   Click expand to drop a panel of up to 3 full notices below.
+   ================================================================ */
+.notice-bar {
+  position: relative;
+  background: var(--zzt-info-50);
+  border: 1px solid var(--zzt-info-200);
+  border-radius: 16px;
+  padding: 0 17px;     /* -1px to compensate for the 1px border */
+  height: 48px;
+  display: flex; align-items: center; gap: 14px;
+  font-size: 13.5px; color: var(--zzt-fg);
+}
+
+/* ---- Left: type tag (3 hard-coded colors per spec) ---- */
+.notice-bar .nt-tag {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center;
+  height: 22px; padding: 0 8px;
+  border-radius: 4px;
+  font-size: 12px; font-weight: 500; line-height: 1;
+  letter-spacing: -0.005em;
+}
+.notice-bar .nt-tag.t-platform { /* 平台信息 */
+  background: var(--zzt-info-soft-strong);
+  color: var(--zzt-info-700);
+}
+.notice-bar .nt-tag.t-shengyi { /* 生意参谋 — brand red */
+  background: var(--zzt-accent-soft);
+  color: var(--zzt-accent-700);
+}
+.notice-bar .nt-tag.t-billion { /* 百亿补贴 — warm orange */
+  background: rgba(245,165,36,0.14);
+  color: #C97A0E;
+}
+
+/* ---- Middle: track of notices ---- */
+.notice-bar .nt-track {
+  flex: 1; min-width: 0;
+  position: relative;
+  height: 22px;
+}
+.notice-bar .nt-item {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; gap: 12px;
+  opacity: 0; pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.notice-bar .nt-item.is-active {
+  opacity: 1; pointer-events: auto;
+  transform: translateY(0);
+}
+.notice-bar .nt-text {
+  flex: 0 1 auto; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: var(--zzt-fg);
+  line-height: 22px;
+}
+/* When an action follows, tighten the gap so the link reads as a tail of the sentence */
+.notice-bar .nt-text + .nt-action { margin-left: -4px; }
+.notice-bar .nt-action {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 2px;
+  color: var(--zzt-fg);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.notice-bar .nt-action:hover { color: var(--zzt-fg-subtle); }
+.notice-bar .nt-action::after {
+  content: "";
+  width: 12px; height: 12px;
+  background: currentColor;
+  -webkit-mask: url(../../assets/icons/chevron-right.svg) center / contain no-repeat;
+          mask:         url(../../assets/icons/chevron-right.svg) center / contain no-repeat;
+}
+
+/* ---- Right: pager + arrows + expand caret ---- */
+.notice-bar .nt-ctrl {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 2px;
+  color: var(--zzt-fg-muted);
+}
+.notice-bar .nt-pager {
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+  padding: 0 6px;
+  color: var(--zzt-fg-muted);
+}
+.notice-bar .nt-pager b {
+  color: var(--zzt-fg);
+  font-weight: 600;
+}
+.notice-bar .nt-btn {
+  width: 24px; height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--zzt-fg-muted);
+  transition: background 120ms ease, color 120ms ease;
+}
+.notice-bar .nt-btn:hover {
+  background: var(--zzt-zinc-100);
+  color: var(--zzt-fg);
+}
+.notice-bar .nt-btn .ic {
+  width: 14px; height: 14px;
+  background: currentColor;
+  -webkit-mask: var(--src) center / contain no-repeat;
+          mask:         var(--src) center / contain no-repeat;
+}
+.notice-bar .nt-expand .ic {
+  transition: transform 200ms ease;
+}
+.notice-bar.is-open .nt-expand .ic {
+  transform: rotate(180deg);
+}
+
+/* Vertical separator between arrows and expand caret */
+.notice-bar .nt-sep {
+  width: 1px; height: 14px;
+  background: var(--zzt-border-subtle);
+  margin: 0 4px;
+}
+
+/* ---- Drop-down panel (expanded view, up to 3 full notices) ---- */
+.notice-bar .nt-panel {
+  position: absolute;
+  top: calc(100% + 6px); left: 0; right: 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 6px 4px;
+  box-shadow: var(--zzt-shadow-lg);
+  z-index: 20;
+  display: none;
+}
+.notice-bar.is-open .nt-panel { display: block; }
+.notice-bar .nt-row {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.notice-bar .nt-row:hover { background: var(--zzt-zinc-75); }
+.notice-bar .nt-row .nt-tag { margin-top: 1px; }
+.notice-bar .nt-row .nt-rowtxt {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; gap: 4px;
+  font-size: 13.5px; line-height: 1.5;
+  color: var(--zzt-fg);
+  white-space: normal;
+}
+.notice-bar .nt-row .nt-rowtxt .nt-time {
+  font-size: 12px;
+  color: var(--zzt-fg-subtle);
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.notice-bar .nt-row .nt-rowact {
+  flex-shrink: 0;
+  color: var(--zzt-accent-500);
+  font-size: 13px; font-weight: 500;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+

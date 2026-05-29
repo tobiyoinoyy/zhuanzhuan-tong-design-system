@@ -1,0 +1,208 @@
+/* ================================================================
+   dashboard/supply.css
+   商品管理 · 供货选择 — page-local. Reuses the dashboard shell
+   (top + side + .card primitive) and the page-head/tabs from
+   products.css. Component-level styles below are scoped to this
+   page and do not pollute dashboard.css.
+   ================================================================ */
+
+/* ---------- Page body (single column override, same as products) ---------- */
+.main > .page {
+  display: flex; flex-direction: column;
+  gap: 16px;
+  padding: 0 20px 36px 0;
+}
+
+/* ============ Publish shell — white outer card wrapping
+   the page header + section header + three mode cards.
+   radius 16 (top-level card), no border / no shadow per system. ============ */
+.publish-shell {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 24px 28px;
+  display: flex; flex-direction: column;
+  gap: 16px;
+}
+
+/* Page-head on this page only renders L1 (no L2 row) — let the
+   bottom border on .tabs-l1 still draw cleanly. */
+.page-head.no-l2 .tabs-l1 { border-bottom: 0; padding-bottom: 4px; }
+
+/* ============ Page header (title + side links) ============ */
+.supply-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px;
+  padding: 0;
+}
+.supply-head .titles h1 {
+  margin: 0;
+  font-size: 22px; font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--zzt-fg);
+}
+.supply-head .titles .sub {
+  margin-top: 6px;
+  font-size: 13px; color: var(--zzt-fg-muted);
+}
+.supply-head .links {
+  display: inline-flex; align-items: center; gap: 22px;
+  color: var(--zzt-info-700);
+  font-size: 13px;
+}
+.supply-head .links .lk {
+  display: inline-flex; align-items: center; gap: 6px;
+  cursor: pointer;
+}
+.supply-head .links .lk:hover { color: var(--zzt-info-500); }
+.supply-head .links .lk .ic {
+  width: 14px; height: 14px;
+  background: currentColor;
+  -webkit-mask: var(--src) center / contain no-repeat;
+          mask: var(--src) center / contain no-repeat;
+}
+
+/* ============ Section: 选择商品发布模式 ============ */
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  padding: 0;
+  margin-top: 4px;
+}
+.section-head h2 {
+  margin: 0;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--zzt-fg);
+}
+.section-head .right {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--zzt-fg-muted);
+}
+
+/* Switch — borrowed verbatim from preview/switch.html (md size). */
+.sw { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.sw .track {
+  display: inline-block; position: relative;
+  width: 36px; height: 20px;
+  background: var(--zzt-zinc-200);
+  border-radius: 999px;
+  transition: background .15s ease;
+}
+.sw .track .thumb {
+  position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px;
+  background: #fff; border-radius: 999px;
+  transition: left .15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.12);
+}
+.sw.on .track { background: var(--zzt-accent-500); }
+.sw.on .track .thumb { left: 18px; }
+
+/* ============ Mode card list ============ */
+.mode-list {
+  display: flex; flex-direction: column;
+  gap: 12px;
+}
+.mode-card {
+  background: var(--zzt-zinc-75);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+/* Mode cards are nested inside .publish-shell — they should not lift on hover
+   like top-level .card primitives do (dashboard.css). Override that here. */
+.mode-card.card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Top row: icon-tile | title block | action */
+.mode-card .row {
+  display: flex; align-items: center;
+  gap: 16px;
+}
+.mode-card .icon-tile {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: var(--zzt-accent-soft);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.mode-card .icon-tile .ic {
+  width: 28px; height: 28px;
+  background: var(--zzt-accent-500);
+  -webkit-mask: var(--src) center / contain no-repeat;
+          mask: var(--src) center / contain no-repeat;
+}
+.mode-card .meta { flex: 1; min-width: 0; }
+.mode-card .meta .name {
+  font-size: 16px; font-weight: 600;
+  color: var(--zzt-fg);
+  letter-spacing: -0.005em;
+}
+.mode-card .meta .desc {
+  margin-top: 4px;
+  font-size: 13px; color: var(--zzt-fg-muted);
+  line-height: 1.5;
+}
+.mode-card .action {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ============ Sub-cards (inside 自质检 mode) ============ */
+.subcat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.subcat {
+  position: relative;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color .12s ease, background .12s ease;
+}
+.subcat:hover {
+  border-color: var(--zzt-accent-300, var(--zzt-accent-400));
+}
+.subcat.on {
+  border-color: var(--zzt-accent-500);
+  background: rgba(255,15,39,.04);
+}
+.subcat .name {
+  font-size: 14.5px; font-weight: 600;
+  color: var(--zzt-fg);
+  letter-spacing: -0.005em;
+}
+.subcat .desc {
+  margin-top: 6px;
+  font-size: 12.5px; color: var(--zzt-fg-muted);
+  line-height: 1.5;
+}
+/* Selected corner-flag — red triangle with white check */
+.subcat .flag {
+  position: absolute; top: 0; right: 0;
+  width: 28px; height: 28px;
+  display: none;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.subcat .flag::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--zzt-accent-500);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+.subcat .flag::after {
+  content: "";
+  position: absolute; top: 4px; right: 4px;
+  width: 12px; height: 12px;
+  background: #fff;
+  -webkit-mask: url(../../assets/icons/check.svg) center / contain no-repeat;
+          mask: url(../../assets/icons/check.svg) center / contain no-repeat;
+}
+.subcat.on .flag { display: block; }

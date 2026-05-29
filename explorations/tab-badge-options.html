@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>可送检角标 · 方案探索</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #f4f4f5; font-family: var(--zzt-font-sans); }
+
+  /* === shared L2 tab styles, lifted from products.css === */
+  .surface {
+    background: #fff;
+    border-radius: 16px;
+    padding: 0 24px;
+    width: 720px;
+    overflow: hidden;
+  }
+  .tabs-l2 {
+    display: flex; align-items: center; gap: 4px;
+    height: 56px;
+  }
+  .tabs-l2 .tab {
+    position: relative;
+    padding: 14px 14px;
+    font-size: 13.5px; font-weight: 500;
+    color: var(--zzt-fg-muted);
+    cursor: pointer; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .tabs-l2 .tab:hover { color: var(--zzt-fg); }
+  .tabs-l2 .tab.active { color: var(--zzt-accent-500); font-weight: 600; }
+  .tabs-l2 .tab.active::after {
+    content: ""; position: absolute; left: 14px; right: 14px; bottom: 0;
+    height: 2px; background: var(--zzt-accent-500); border-radius: 1px;
+  }
+  .tabs-l2 .tab .count {
+    background: var(--zzt-zinc-150); color: var(--zzt-zinc-600);
+    border-radius: 999px; padding: 0 8px;
+    font-size: 10.5px; line-height: 18px;
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+  .tabs-l2 .tab.active .count {
+    background: var(--zzt-accent-soft); color: var(--zzt-accent-700);
+  }
+
+  /* ============================================
+     A. 现状 — current floating bubble
+     ============================================ */
+  .va .tab-bubble {
+    position: absolute; top: 2px; right: -8px;
+    background: var(--zzt-warning-500); color: #fff;
+    font-size: 10.5px; line-height: 16px; font-weight: 600;
+    padding: 0 6px; border-radius: 999px 999px 999px 4px;
+    white-space: nowrap;
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  }
+
+  /* ============================================
+     B. 同行 soft chip — inline after the count
+     ============================================ */
+  .vb .chip-soft {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--zzt-warning-50, #FFF4E5);
+    color: var(--zzt-warning-700, #B95B00);
+    height: 20px; padding: 0 7px;
+    border-radius: 4px;
+    font-size: 11px; font-weight: 500;
+    margin-left: 2px;
+  }
+  .vb .chip-soft .n {
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .vb .chip-soft .dot {
+    width: 5px; height: 5px; border-radius: 999px;
+    background: var(--zzt-warning-500);
+  }
+
+  /* ============================================
+     C. 角标 dot only — minimal, tooltip on hover
+     ============================================ */
+  .vc .tab-dot {
+    position: absolute; top: 10px; right: 6px;
+    width: 6px; height: 6px; border-radius: 999px;
+    background: var(--zzt-warning-500);
+    box-shadow: 0 0 0 2px #fff;
+  }
+  .vc-tip {
+    position: absolute; left: 50%; bottom: -28px;
+    transform: translateX(-50%);
+    background: #1d1d1f; color: #fff;
+    font-size: 11px; line-height: 1;
+    padding: 6px 8px; border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .vc-tip::before {
+    content: ""; position: absolute; top: -3px; left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 6px; height: 6px; background: #1d1d1f;
+  }
+
+  /* ============================================
+     D. 两行 tab — secondary line below main label
+     ============================================ */
+  .vd .tabs-l2 { height: 64px; }
+  .vd .tabs-l2 .tab {
+    padding: 10px 14px 12px;
+    flex-direction: column; align-items: flex-start;
+    gap: 2px;
+  }
+  .vd .tabs-l2 .tab .main {
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .vd .tabs-l2 .tab.active::after { left: 14px; right: 14px; }
+  .vd .tab-sub {
+    font-size: 10.5px; font-weight: 500;
+    color: var(--zzt-warning-600, #D17A00);
+    display: inline-flex; align-items: center; gap: 3px;
+    line-height: 1;
+    font-family: var(--zzt-font-sans);
+  }
+  .vd .tab-sub .n {
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  /* ============================================
+     E. 可点击操作 chip — actionable shortcut
+     ============================================ */
+  .ve .action-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    height: 22px; padding: 0 8px 0 9px;
+    background: var(--zzt-warning-500);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 11px; font-weight: 500;
+    margin-left: 4px;
+    cursor: pointer;
+    transition: background 120ms ease;
+  }
+  .ve .action-chip:hover { background: var(--zzt-warning-600, #D17A00); }
+  .ve .action-chip .n {
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+  .ve .action-chip .arr {
+    font-size: 10px; opacity: 0.85;
+  }
+
+  /* ============================================
+     F. count 染色 — recolor the count itself
+     ============================================ */
+  .vf .tabs-l2 .tab.has-action .count {
+    background: var(--zzt-warning-soft, #FFF1DB);
+    color: var(--zzt-warning-700, #B95B00);
+    position: relative;
+  }
+  .vf .tabs-l2 .tab.has-action .count::after {
+    content: ""; position: absolute; top: -3px; right: -3px;
+    width: 6px; height: 6px; border-radius: 999px;
+    background: var(--zzt-warning-500);
+    box-shadow: 0 0 0 2px #fff;
+  }
+  .vf .action-hint {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-left: 6px;
+    font-size: 11px; font-weight: 500;
+    color: var(--zzt-warning-600, #D17A00);
+  }
+  .vf .action-hint .n {
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+
+  /* ============================================
+     G. notice bar — below tabs row
+     ============================================ */
+  .vg .surface { padding-bottom: 0; }
+  .vg .notice-bar {
+    display: flex; align-items: center; gap: 8px;
+    margin: 0 -24px;
+    padding: 8px 24px;
+    background: var(--zzt-warning-50, #FFF4E5);
+    border-top: 1px solid rgba(255,159,28,0.18);
+    font-size: 12.5px;
+    color: var(--zzt-warning-700, #B95B00);
+  }
+  .vg .notice-bar .dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: var(--zzt-warning-500);
+  }
+  .vg .notice-bar .n {
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+  .vg .notice-bar .gobtn {
+    margin-left: auto;
+    font-size: 12px; font-weight: 500;
+    color: var(--zzt-warning-700, #B95B00);
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 2px;
+  }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="../../design-canvas.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+  const { useState } = React;
+
+  // Just the 7 status tabs; the 已上架 one gets a sub-render injected per variant.
+  const STATUS_TABS = [
+    { label: "全部", count: 3065, active: true },
+    { label: "质检中", count: 42 },
+    { label: "未上架", count: 128 },
+    { label: "已上架", count: 2814, key: "shelved" },
+    { label: "已售出", count: 62 },
+    { label: "售后中", count: 5 },
+    { label: "已退回", count: 14 },
+  ];
+
+  function Tabs({ variant, renderExtra }) {
+    return (
+      <div className={"surface " + variant}>
+        <div className="tabs-l2">
+          {STATUS_TABS.map((t, i) => (
+            <span key={i} className={"tab" + (t.active ? " active" : "") + (t.key === "shelved" ? " has-action" : "")}>
+              <span className="main">
+                {t.label}<span className="count">{t.count.toLocaleString()}</span>
+              </span>
+              {t.key === "shelved" && renderExtra ? renderExtra() : null}
+            </span>
+          ))}
+        </div>
+        {variant === "vg" && (
+          <div className="notice-bar">
+            <span className="dot"></span>
+            有 <span className="n">5</span> 件商品已到达送检节点，可送检
+            <span className="gobtn">立即送检 →</span>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  function App() {
+    return (
+      <DesignCanvas title="可送检角标 · 方案探索">
+        <DCSection id="exploration" title="L2 Tab 上的「可送检 5」指示器">
+
+          <DCArtboard id="a" label="A · 现状（参考）" width={720} height={56}>
+            <Tabs variant="va" renderExtra={() => (
+              <span className="tab-bubble">可送检 5</span>
+            )} />
+          </DCArtboard>
+
+          <DCArtboard id="b" label="B · Inline 软标签" width={720} height={56}>
+            <Tabs variant="vb" renderExtra={() => (
+              <span className="chip-soft">
+                <span className="dot"></span>
+                可送检 <span className="n">5</span>
+              </span>
+            )} />
+          </DCArtboard>
+
+          <DCArtboard id="c" label="C · 极简圆点 + 悬停 tooltip" width={720} height={84}>
+            <Tabs variant="vc" renderExtra={() => (
+              <>
+                <span className="tab-dot"></span>
+                <span className="vc-tip">5 件可送检</span>
+              </>
+            )} />
+          </DCArtboard>
+
+          <DCArtboard id="d" label="D · 双行 tab（主标签 + 次行提示）" width={720} height={64}>
+            <Tabs variant="vd" renderExtra={() => (
+              <span className="tab-sub">· <span className="n">5</span> 件可送检</span>
+            )} />
+          </DCArtboard>
+
+          <DCArtboard id="e" label="E · 可点击操作 chip（实色 + 箭头）" width={720} height={56}>
+            <Tabs variant="ve" renderExtra={() => (
+              <span className="action-chip">
+                可送检 <span className="n">5</span><span className="arr">›</span>
+              </span>
+            )} />
+          </DCArtboard>
+
+          <DCArtboard id="f" label="F · 染色 count + 文字提示" width={720} height={56}>
+            <Tabs variant="vf" renderExtra={() => (
+              <span className="action-hint">
+                <span className="n">5</span> 件可送检
+              </span>
+            )} />
+          </DCArtboard>
+
+          <DCArtboard id="g" label="G · 独立 notice bar（tabs 下方一整条）" width={720} height={104}>
+            <Tabs variant="vg" />
+          </DCArtboard>
+
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

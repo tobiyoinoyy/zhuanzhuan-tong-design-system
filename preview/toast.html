@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { background: var(--zzt-zinc-100); padding: 22px; }
+  .toast { display:grid; grid-template-columns: 22px 1fr auto auto; gap:12px; align-items:center;
+           background:#fff; border-radius: 24px; padding: 14px 18px;
+           box-shadow: 0 0 1px 0 rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.08);
+           max-width: 460px; }
+  .toast .title { font-size:14px; font-weight:500; }
+  .toast .desc { font-size:13px; color: var(--zzt-fg-muted); margin-top:1px; }
+  .toast i.lead { width:22px; height:22px; }
+  .toast.success i.lead { color: var(--zzt-success-500); }
+  .toast.warning i.lead { color: var(--zzt-warning-500); }
+  .toast.danger  i.lead { color: var(--zzt-danger-500); }
+  .toast .close { width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:999px; background: var(--zzt-zinc-150); cursor:pointer; }
+  .toast .close i { width:12px; height:12px; color: var(--zzt-fg-muted); }
+</style></head><body>
+<div class="col">
+  <div class="toast success">
+    <i data-lucide="circle-check" class="lead"></i>
+    <div><div class="title">已上架 12 件商品</div><div class="desc">商品已同步至搜索与活动会场。</div></div>
+    <button class="btn tertiary sm">撤销</button>
+    <span class="close"><i data-lucide="x"></i></span>
+  </div>
+  <div class="toast warning">
+    <i data-lucide="alert-triangle" class="lead"></i>
+    <div><div class="title">部分 SKU 缺少封面图</div><div class="desc">已先上架文字信息，请尽快补图。</div></div>
+    <button class="btn tertiary sm" style="color:var(--zzt-warning-500)">去补图</button>
+    <span class="close"><i data-lucide="x"></i></span>
+  </div>
+  <div class="toast danger">
+    <i data-lucide="circle-x" class="lead"></i>
+    <div><div class="title">网络异常，操作未完成</div><div class="desc">已自动保存草稿，稍后重试。</div></div>
+    <button class="btn tertiary sm" style="color:var(--zzt-danger-500)">重试</button>
+    <span class="close"><i data-lucide="x"></i></span>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

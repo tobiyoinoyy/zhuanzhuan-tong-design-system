@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .tabs-line {
+    display:flex; gap:0;
+    /* Tab baseline paused for review. Restore if the grey guide line is needed again:
+       border-bottom: 1px solid var(--zzt-border-subtle); */
+    border-bottom: 0;
+  }
+  .tabs-line .tab { padding: 10px 14px; font-size:13.5px; font-weight:500; color: var(--zzt-fg-muted);
+                    border-bottom: 2px solid transparent; cursor:pointer; display:flex; gap:6px; align-items:center; }
+  .tabs-line .tab.active { color: var(--zzt-accent-700); border-bottom-color: var(--zzt-accent-500); }
+  .tabs-line .count { background: var(--zzt-zinc-200); color: var(--zzt-zinc-600);
+                      border-radius:999px; padding: 0 6px; font-size: 10.5px; font-family: var(--zzt-font-num); }
+  .tabs-line .tab.active .count { background: var(--zzt-accent-soft); color: var(--zzt-accent-700); }
+  .seg { display:inline-flex; background: var(--zzt-zinc-100); border-radius: 10px; padding: 3px; gap:2px; }
+  .seg .tab { padding: 6px 14px; font-size:13px; font-weight:500; color: var(--zzt-fg-muted);
+              border-radius: 8px; cursor:pointer; display:inline-flex; gap:6px; align-items:center; }
+  .seg .tab.active { background:#fff; color: var(--zzt-fg); box-shadow: 0 0 1px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.06); }
+  .pills { display:inline-flex; gap: 8px; flex-wrap: wrap; }
+  .pills .tab { padding: 6px 14px; font-size:13px; font-weight:500; color: var(--zzt-fg-muted);
+                border-radius: 999px; cursor:pointer; background: transparent; }
+  .pills .tab.active { background: var(--zzt-accent-soft); color: var(--zzt-accent-700); }
+</style></head><body>
+<div class="col" style="gap: 20px;">
+  <div>
+    <div class="lab" style="margin-bottom:6px;">Tabs · underline · for page nav</div>
+    <div class="tabs-line">
+      <div class="tab active">全部 <span class="count">1284</span></div>
+      <div class="tab">已上架 <span class="count">962</span></div>
+      <div class="tab">待入仓 <span class="count">7</span></div>
+      <div class="tab">质检中 <span class="count">12</span></div>
+      <div class="tab">质检退回 <span class="count">3</span></div>
+      <div class="tab">已下架 <span class="count">32</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="lab" style="margin-bottom:6px;">Segmented · for in-card toggle</div>
+    <div class="seg">
+      <div class="tab active">GMV</div>
+      <div class="tab">订单</div>
+      <div class="tab">客单价</div>
+    </div>
+    <div class="seg" style="margin-left:14px;">
+      <div class="tab active">日</div>
+      <div class="tab">周</div>
+      <div class="tab">月</div>
+      <div class="tab">年</div>
+    </div>
+  </div>
+  <div>
+    <div class="lab" style="margin-bottom:6px;">Pills · for filters & quick categories</div>
+    <div class="pills">
+      <div class="tab active">推荐</div>
+      <div class="tab">手机</div>
+      <div class="tab">笔记本</div>
+      <div class="tab">平板</div>
+      <div class="tab">耳机</div>
+      <div class="tab">摄影</div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

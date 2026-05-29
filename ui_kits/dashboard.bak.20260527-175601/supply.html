@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>转转通 · 自主供货</title>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="supply.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-screen-label="03 Supply">
+<div class="shell">
+
+  <!-- ============ Top Bar (full-width) — unchanged ============ -->
+  <header class="top">
+    <div class="brand"><img class="lockup" src="../../assets/logo-zhuanzhuan.svg" alt="转转通"></div>
+    <div class="links">
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>快捷入口</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/medal.svg)"></span>转转学堂</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/comment.svg)"></span>我要反馈</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>公告<span class="badge">2</span></span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/bell.svg)"></span>通知<span class="badge">5</span></span>
+      <span class="sep-v"></span>
+      <span class="me">
+        <span class="av"></span>
+        <span class="name"><b>张超</b>（管理员）</span>
+      </span>
+      <span class="top-link top-logout" style="margin-left: 6px;">退出</span>
+    </div>
+  </header>
+
+  <div class="shell-row">
+
+  <!-- ============ Side Nav — unchanged ============ -->
+  <aside class="side">
+    <nav class="nav">
+
+      <button class="nav-item" onclick="location.href='index.html'">
+        <span class="ic" style="--src: url(../../assets/icons/home.svg)"></span>
+        <span class="lab">工作台</span>
+      </button>
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>
+        <span class="lab">常用</span>
+      </button>
+      <button class="nav-item" onclick="location.href='analytics.html'">
+        <span class="ic" style="--src: url(../../assets/icons/chart-line.svg)"></span>
+        <span class="lab">数据看板</span>
+      </button>
+
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/building.svg)"></span>
+          <span class="lab">商户中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商家认证</button>
+          <button class="nav-sub">对账信息中心</button>
+          <button class="nav-sub">合同管理</button>
+          <button class="nav-sub">银行卡管理<span class="hot">热</span></button>
+          <button class="nav-sub">服务评分</button>
+          <button class="nav-sub">退货地址管理</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shopping-bag.svg)"></span>
+          <span class="lab">店铺管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">店铺信息</button>
+          <button class="nav-sub">店铺装修</button>
+          <button class="nav-sub">店铺评分</button>
+          <button class="nav-sub">客服设置</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/box.svg)"></span>
+          <span class="lab">商品管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub" onclick="location.href='products.html'">商品管理<span class="hot">热</span></button>
+          <button class="nav-sub">高库龄商品</button>
+          <button class="nav-sub">退库商品</button>
+          <button class="nav-sub">商品评价</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/boxes.svg)"></span>
+          <span class="lab">供货管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub active">自主供货</button>
+          <button class="nav-sub">供货单管理</button>
+          <button class="nav-sub">需求大厅</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/trolley.svg)"></span>
+          <span class="lab">订单售后</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">订单列表</button>
+          <button class="nav-sub">售后工单</button>
+          <button class="nav-sub">退货管理</button>
+          <button class="nav-sub">物流跟踪</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>
+          <span class="lab">营销活动</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">活动管理</button>
+          <button class="nav-sub">优惠券</button>
+          <button class="nav-sub">商品推广</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shield-check.svg)"></span>
+          <span class="lab">质检管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商品录入</button>
+          <button class="nav-sub">扫码质检</button>
+          <button class="nav-sub">扫码复检</button>
+          <button class="nav-sub">出库调拨</button>
+          <button class="nav-sub">调拨单</button>
+          <button class="nav-sub">单据中心</button>
+          <button class="nav-sub">分站审核</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/archive.svg)"></span>
+          <span class="lab">仓储管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">入库订单</button>
+          <button class="nav-sub">发货订单</button>
+          <button class="nav-sub">拣货波次</button>
+          <button class="nav-sub">出库复核</button>
+          <button class="nav-sub">出库打单</button>
+          <button class="nav-sub">盘点管理</button>
+          <button class="nav-sub">商品查询</button>
+          <button class="nav-sub">库存流水</button>
+          <button class="nav-sub">耗材申请</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/wallet.svg)"></span>
+          <span class="lab">成本中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">收支明细</button>
+          <button class="nav-sub">保证金</button>
+          <button class="nav-sub">提现记录</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/chart-bar.svg)"></span>
+          <span class="lab">数据中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">经营报表</button>
+          <button class="nav-sub">商品分析</button>
+          <button class="nav-sub">流量分析</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/key.svg)"></span>
+          <span class="lab">商户权限</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">子账号管理</button>
+          <button class="nav-sub">角色权限</button>
+        </div>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/hammer.svg)"></span>
+        <span class="lab">工具</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <!-- ============ Body (single column) ============ -->
+    <div class="page">
+
+     <div class="publish-shell">
+
+      <!-- ===== Page header: title + side links ===== -->
+      <div class="supply-head">
+        <div class="titles">
+          <h1>商户发布</h1>
+          <div class="sub">选择供货模式：不同商品类型的录入、质检方式存在差异，请选择你所需的供货模式</div>
+        </div>
+        <div class="links">
+          <span class="lk">
+            <span class="ic" style="--src: url(../../assets/icons/play.svg)"></span>
+            商品发布教程
+          </span>
+          <span class="lk">
+            <span class="ic" style="--src: url(../../assets/icons/file.svg)"></span>
+            商品发布记录
+          </span>
+        </div>
+      </div>
+
+      <!-- ===== Section: 选择商品发布模式 ===== -->
+      <div class="section-head">
+        <h2>选择商品发布模式</h2>
+        <div class="right">
+          下次自动选择
+          <span class="sw" id="rememberToggle" role="switch" aria-checked="false">
+            <span class="track"><span class="thumb"></span></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="mode-list">
+
+        <!-- ① 平台寄卖（入仓） -->
+        <div class="card mode-card">
+          <div class="row">
+            <div class="icon-tile">
+              <span class="ic" style="--src: url(../../assets/icons/box.svg)"></span>
+            </div>
+            <div class="meta">
+              <div class="name">平台寄卖（入仓）</div>
+              <div class="desc">商品先发质检仓，验后放在平台卖</div>
+            </div>
+            <div class="action">
+              <button class="btn btn-primary">去发布</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ② 自质检（卡中卡：含三张子品类卡） -->
+        <div class="card mode-card">
+          <div class="row">
+            <div class="icon-tile">
+              <span class="ic" style="--src: url(../../assets/icons/shopping-bag.svg)"></span>
+            </div>
+            <div class="meta">
+              <div class="name">自质检</div>
+              <div class="desc">商户自质检售卖，售出后平台 100% 后验</div>
+            </div>
+            <div class="action">
+              <button class="btn btn-primary" id="selfQcGo">去发布</button>
+            </div>
+          </div>
+
+          <div class="subcat-row" data-subcat-group>
+            <div class="subcat on" data-key="phone3c">
+              <div class="name">手机3C</div>
+              <div class="desc">支持品类：手机、平板电脑</div>
+              <span class="flag" aria-hidden="true"></span>
+            </div>
+            <div class="subcat" data-key="laptop">
+              <div class="name">笔记本</div>
+              <div class="desc">支持品类：笔记本</div>
+              <span class="flag" aria-hidden="true"></span>
+            </div>
+            <div class="subcat" data-key="multi">
+              <div class="name">多品类</div>
+              <div class="desc">支持大部分轻质检品类，如摄影摄像、游戏机、鞋服、耳机/耳麦、智能手表等</div>
+              <span class="flag" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ③ 拍图挂售 -->
+        <div class="card mode-card">
+          <div class="row">
+            <div class="icon-tile">
+              <span class="ic" style="--src: url(../../assets/icons/camera.svg)"></span>
+            </div>
+            <div class="meta">
+              <div class="name">拍图挂售</div>
+              <div class="desc">自己拍商品图售卖，没有质检报告</div>
+            </div>
+            <div class="action">
+              <button class="btn btn-primary">去发布</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+     </div><!-- /publish-shell -->
+
+    </div>
+  </div>
+
+  </div><!-- /shell-row -->
+</div>
+
+<script>
+/* ================================================================
+   supply.html — interactions
+   1) 「下次自动选择」 switch toggle
+   2) 自质检 sub-category single-select (radio behavior, default 手机3C)
+   ================================================================ */
+(function () {
+  // Switch
+  const sw = document.getElementById('rememberToggle');
+  if (sw) {
+    sw.addEventListener('click', () => {
+      const next = !sw.classList.contains('on');
+      sw.classList.toggle('on', next);
+      sw.setAttribute('aria-checked', String(next));
+    });
+  }
+
+  // Sub-categories
+  document.querySelectorAll('[data-subcat-group]').forEach(group => {
+    const items = group.querySelectorAll('.subcat');
+    items.forEach(it => {
+      it.addEventListener('click', () => {
+        items.forEach(x => x.classList.remove('on'));
+        it.classList.add('on');
+      });
+    });
+  });
+})();
+</script>
+<script>
+  // Sidebar: group expand/collapse + click-to-activate.
+  // Single items (.nav-item) and leaf sub-items (.nav-sub) share the same active model;
+  // group headers (.nav-grouphead) only toggle expand/collapse — they never carry .active.
+  (function () {
+    var nav = document.querySelector('.side .nav');
+    if (!nav) return;
+    function setActive(el) {
+      nav.querySelectorAll('.nav-item.active, .nav-sub.active').forEach(function (n) { n.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    nav.addEventListener('click', function (e) {
+      var head = e.target.closest('.nav-grouphead');
+      if (head) {
+        var g = head.closest('.nav-group');
+        g.dataset.expanded = g.dataset.expanded === 'true' ? 'false' : 'true';
+        return;
+      }
+      var leaf = e.target.closest('.nav-item, .nav-sub');
+      if (leaf) setActive(leaf);
+    });
+    // Scroll active item into view on load
+    var active = nav.querySelector('.nav-sub.active, .nav-item.active');
+    if (active) nav.scrollTop = Math.max(0, active.offsetTop - 80);
+  })();
+</script>
+</body>
+</html>

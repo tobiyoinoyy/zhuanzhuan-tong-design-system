@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .pg { display:inline-flex; gap: 4px; align-items: center; }
+  .pg-btn { min-width: 32px; height: 32px; padding: 0 10px; background:#fff;
+            border: 1px solid var(--zzt-border-strong); border-radius: 8px;
+            font-size: 13px; cursor: pointer; font-family: inherit; color: var(--zzt-fg);
+            display:inline-flex; align-items:center; justify-content:center;
+            font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums; }
+  .pg-btn.active { background: var(--zzt-accent-500); color:#fff; border-color: var(--zzt-accent-500); }
+  .pg-btn.disabled { opacity: .4; pointer-events: none; }
+  .pg-btn i { width: 14px; height: 14px; }
+  .pg-ell { padding: 0 6px; color: var(--zzt-fg-muted); }
+  .pg-select { display:inline-flex; align-items:center; gap: 6px; height: 32px; padding: 0 10px;
+               border: 1px solid var(--zzt-border-strong); border-radius: 8px; font-size:13px; color: var(--zzt-fg); cursor:pointer; background:#fff; }
+  .pg-select i { width: 12px; height: 12px; color: var(--zzt-fg-muted); }
+  .info { font-size: 12.5px; color: var(--zzt-fg-muted); }
+  .info b { color: var(--zzt-fg); font-family: var(--zzt-font-num); font-weight: 600; }
+</style></head><body>
+<div class="col" style="gap: 18px;">
+  <div class="row" style="justify-content: space-between;">
+    <span class="info">共 <b>1,284</b> 条 · 当前 <b>21 - 40</b> 条</span>
+    <div class="pg">
+      <div class="pg-btn disabled"><i data-lucide="chevron-left"></i></div>
+      <div class="pg-btn">1</div>
+      <div class="pg-btn active">2</div>
+      <div class="pg-btn">3</div>
+      <div class="pg-btn">4</div>
+      <div class="pg-btn">5</div>
+      <span class="pg-ell">…</span>
+      <div class="pg-btn">65</div>
+      <div class="pg-btn"><i data-lucide="chevron-right"></i></div>
+      <div class="pg-select" style="margin-left:8px;">20 条/页 <i data-lucide="chevron-down"></i></div>
+      <div class="pg-select">跳至 <input style="width: 36px; border:0; outline:0; text-align:center; font-family: var(--zzt-font-num);" value="2"> 页</div>
+    </div>
+  </div>
+  <hr style="border:0;border-top:1px dashed var(--zzt-border-subtle);">
+  <div class="row">
+    <span class="lab" style="width: 96px;">simple</span>
+    <div class="pg">
+      <div class="pg-btn"><i data-lucide="chevron-left"></i></div>
+      <span class="info" style="padding: 0 10px;"><b>2</b> / 65</span>
+      <div class="pg-btn"><i data-lucide="chevron-right"></i></div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="lab" style="width: 96px;">compact</span>
+    <div class="pg">
+      <div class="pg-btn"><i data-lucide="chevron-left"></i></div>
+      <div class="pg-btn">1</div>
+      <div class="pg-btn active">2</div>
+      <div class="pg-btn">3</div>
+      <div class="pg-btn"><i data-lucide="chevron-right"></i></div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

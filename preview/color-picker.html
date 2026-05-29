@@ -1,0 +1,83 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .picker { width: 240px; background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px;
+            box-shadow: var(--zzt-shadow-md); padding: 12px; }
+  .area { width: 100%; aspect-ratio: 1.4 / 1; border-radius: 8px; position: relative;
+          background: linear-gradient(180deg, transparent, #000), linear-gradient(90deg, #fff, hsl(210, 100%, 50%)); }
+  .area .thumb { position:absolute; top: 30%; left: 65%; width: 14px; height: 14px; border-radius: 999px;
+                 background:#fff; transform: translate(-50%, -50%);
+                 box-shadow: 0 0 0 1.5px #fff, 0 0 0 2.5px rgba(0,0,0,0.5); }
+  .hue-strip { margin-top: 10px; height: 12px; border-radius: 999px;
+               background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000); position: relative; }
+  .hue-strip .h-thumb { position: absolute; top: 50%; left: 60%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 999px; background:#fff; box-shadow: 0 0 0 1.5px #fff, 0 0 0 2.5px rgba(0,0,0,0.4); }
+  .alpha-strip { margin-top: 8px; height: 12px; border-radius: 999px; position: relative;
+                 background: linear-gradient(90deg, transparent, hsl(210, 100%, 50%)),
+                             repeating-conic-gradient(#E4E4E7 0% 25%, #FFFFFF 0% 50%) 50% / 8px 8px; }
+  .fields { display: grid; grid-template-columns: 40px 1fr 60px; gap: 6px; margin-top: 10px; align-items: center; }
+  .fields .preview { aspect-ratio: 1/1; border-radius: 6px; background: hsl(210, 100%, 50%); }
+  .fields input { height: 28px; padding: 0 8px; border: 1px solid var(--zzt-border); border-radius: 6px; font-size: 12px; outline: 0; width:100%; font-family: var(--zzt-font-mono); }
+  .swatches { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-top: 10px; }
+  .sw { aspect-ratio: 1/1; border-radius: 4px; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
+  .sw.sel { box-shadow: inset 0 0 0 2px var(--zzt-fg), 0 0 0 1.5px #fff inset; }
+
+  /* trigger */
+  .trig { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px;
+          background:#fff; border:1px solid var(--zzt-border); border-radius: 8px; font-size: 13px; }
+  .trig .chip { width: 16px; height: 16px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1); }
+  .trig .hex { font-family: var(--zzt-font-mono); }
+</style></head><body>
+<div class="row" style="gap: 22px; align-items: flex-start;">
+  <div>
+    <div class="lab" style="margin-bottom: 8px;">trigger · 标签颜色 / 会场主色</div>
+    <div class="col" style="gap: 8px;">
+      <div class="trig"><span class="chip" style="background:#FF0F27"></span><span class="hex">#FF0F27</span></div>
+      <div class="trig"><span class="chip" style="background:#B57856"></span><span class="hex">#B57856</span></div>
+      <div class="trig"><span class="chip" style="background:transparent; box-shadow: inset 0 0 0 1.5px var(--zzt-border-strong); position:relative; overflow:hidden;"><span style="position:absolute; inset:0; background: repeating-conic-gradient(#E4E4E7 0% 25%, #FFFFFF 0% 50%) 50% / 6px 6px;"></span></span><span class="hex" style="color: var(--zzt-fg-muted)">无填充</span></div>
+    </div>
+  </div>
+
+  <div class="picker">
+    <div class="area"><div class="thumb"></div></div>
+    <div class="hue-strip"><div class="h-thumb"></div></div>
+    <div class="alpha-strip"></div>
+    <div class="fields">
+      <div class="preview"></div>
+      <input value="#FF0F27" />
+      <input value="100%" />
+    </div>
+    <div class="swatches">
+      <div class="sw" style="background:#FF0F27"></div>
+      <div class="sw sel" style="background:#B57856"></div>
+      <div class="sw" style="background:#17C964"></div>
+      <div class="sw" style="background:#F5A524"></div>
+      <div class="sw" style="background:#FF0F27"></div>
+      <div class="sw" style="background:#18181B"></div>
+      <div class="sw" style="background:#71717A"></div>
+      <div class="sw" style="background:#F5F5F5"></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lab" style="margin-bottom: 8px;">curated palette · 推荐使用</div>
+    <div style="display: grid; grid-template-columns: repeat(6, 28px); gap: 8px;">
+      <div title="brand-500" style="aspect-ratio:1/1; border-radius:6px; background:#FF0F27; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div title="success-500" style="aspect-ratio:1/1; border-radius:6px; background:#17C964; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div title="warning-500" style="aspect-ratio:1/1; border-radius:6px; background:#F5A524; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div title="danger-500" style="aspect-ratio:1/1; border-radius:6px; background:#FF0F27; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div title="purple-500" style="aspect-ratio:1/1; border-radius:6px; background:#B57856; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div title="zinc-900" style="aspect-ratio:1/1; border-radius:6px; background:#18181B; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="aspect-ratio:1/1; border-radius:6px; background:#FFEDEF;"></div>
+      <div style="aspect-ratio:1/1; border-radius:6px; background:rgba(23,201,100,.12);"></div>
+      <div style="aspect-ratio:1/1; border-radius:6px; background:rgba(245,165,36,.16);"></div>
+      <div style="aspect-ratio:1/1; border-radius:6px; background:rgba(255,15,39,.12);"></div>
+      <div style="aspect-ratio:1/1; border-radius:6px; background:#FFF7EE;"></div>
+      <div style="aspect-ratio:1/1; border-radius:6px; background:#F5F5F5;"></div>
+    </div>
+    <div class="note" style="margin-top: 8px;">For 转转通 prefer the curated 12-color set. The free picker is shown for completeness but should appear only in 活动会场 主色定制 — never in default flows.</div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

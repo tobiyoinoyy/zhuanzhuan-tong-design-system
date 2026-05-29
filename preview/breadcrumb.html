@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .crumbs { display:flex; align-items:center; gap:4px; font-size:13.5px; }
+  .crumbs a { color: var(--zzt-fg-muted); text-decoration:none; padding: 2px 6px; border-radius: 6px; }
+  .crumbs a:hover { background: var(--zzt-zinc-100); }
+  .crumbs .sep { width:14px; height:14px; color: var(--zzt-fg-subtle); }
+  .crumbs .current { color: var(--zzt-fg); font-weight: 500; padding: 2px 6px; }
+  .crumbs i.home { width: 14px; height:14px; }
+</style></head><body>
+<div class="col" style="gap: 16px;">
+  <div class="crumbs">
+    <a href="#"><i data-lucide="home" class="home"></i></a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <a href="#">商品管理</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <span class="current">SKU 列表</span>
+  </div>
+  <div class="crumbs">
+    <a href="#">营销活动</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <a href="#">进行中</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <a href="#">618 大促</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <span class="current">参与 SKU 列表</span>
+  </div>
+  <div class="crumbs">
+    <a href="#">订单售后</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <a href="#">…</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <a href="#">售后</a>
+    <i data-lucide="chevron-right" class="sep"></i>
+    <span class="current">ZZO-220812-00128</span>
+    <span class="note" style="margin-left:8px;">超过 4 级折叠中间项</span>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

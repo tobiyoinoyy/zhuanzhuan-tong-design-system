@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>转转通 · 工作台</title>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="products.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-screen-label="01 Dashboard">
+<div class="shell">
+
+  <!-- ============ Top Bar (full-width) ============ -->
+  <header class="top">
+    <div class="brand"><img class="lockup" src="../../assets/logo-zhuanzhuan.svg" alt="转转通"></div>
+    <div class="links">
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>快捷入口</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/medal.svg)"></span>转转学堂</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/comment.svg)"></span>我要反馈</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>公告<span class="badge">2</span></span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/bell.svg)"></span>通知<span class="badge">5</span></span>
+      <span class="sep-v"></span>
+      <span class="me">
+        <span class="av"></span>
+        <span class="name"><b>张超</b>（管理员）</span>
+      </span>
+      <span class="top-link top-logout" style="margin-left: 6px;">退出</span>
+    </div>
+  </header>
+
+  <div class="shell-row">
+
+  <!-- ============ Side Nav ============ -->
+  <aside class="side">
+    <nav class="nav">
+
+      <button class="nav-item active">
+        <span class="ic" style="--src: url(../../assets/icons/home.svg)"></span>
+        <span class="lab">工作台</span>
+      </button>
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>
+        <span class="lab">常用</span>
+      </button>
+      <button class="nav-item" onclick="location.href='analytics.html'">
+        <span class="ic" style="--src: url(../../assets/icons/chart-line.svg)"></span>
+        <span class="lab">数据看板</span>
+      </button>
+
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/building.svg)"></span>
+          <span class="lab">商户中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商家认证</button>
+          <button class="nav-sub">对账信息中心</button>
+          <button class="nav-sub">合同管理</button>
+          <button class="nav-sub">银行卡管理<span class="hot">热</span></button>
+          <button class="nav-sub">服务评分</button>
+          <button class="nav-sub">退货地址管理</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shopping-bag.svg)"></span>
+          <span class="lab">店铺管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">店铺信息</button>
+          <button class="nav-sub">店铺装修</button>
+          <button class="nav-sub">店铺评分</button>
+          <button class="nav-sub">客服设置</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/box.svg)"></span>
+          <span class="lab">商品管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub" onclick="location.href='products.html'">商品管理<span class="hot">热</span></button>
+          <button class="nav-sub">高库龄商品</button>
+          <button class="nav-sub">退库商品</button>
+          <button class="nav-sub">商品评价</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/boxes.svg)"></span>
+          <span class="lab">供货管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub" onclick="location.href='supply.html'">自主供货</button>
+          <button class="nav-sub">供货单管理</button>
+          <button class="nav-sub">需求大厅</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/trolley.svg)"></span>
+          <span class="lab">订单售后</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">订单列表</button>
+          <button class="nav-sub">售后工单</button>
+          <button class="nav-sub">退货管理</button>
+          <button class="nav-sub">物流跟踪</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>
+          <span class="lab">营销活动</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">活动管理</button>
+          <button class="nav-sub">优惠券</button>
+          <button class="nav-sub">商品推广</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shield-check.svg)"></span>
+          <span class="lab">质检管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商品录入</button>
+          <button class="nav-sub">扫码质检</button>
+          <button class="nav-sub">扫码复检</button>
+          <button class="nav-sub">出库调拨</button>
+          <button class="nav-sub">调拨单</button>
+          <button class="nav-sub">单据中心</button>
+          <button class="nav-sub">分站审核</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/archive.svg)"></span>
+          <span class="lab">仓储管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">入库订单</button>
+          <button class="nav-sub">发货订单</button>
+          <button class="nav-sub">拣货波次</button>
+          <button class="nav-sub">出库复核</button>
+          <button class="nav-sub">出库打单</button>
+          <button class="nav-sub">盘点管理</button>
+          <button class="nav-sub">商品查询</button>
+          <button class="nav-sub">库存流水</button>
+          <button class="nav-sub">耗材申请</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/wallet.svg)"></span>
+          <span class="lab">成本中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">收支明细</button>
+          <button class="nav-sub">保证金</button>
+          <button class="nav-sub">提现记录</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/chart-bar.svg)"></span>
+          <span class="lab">数据中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">经营报表</button>
+          <button class="nav-sub">商品分析</button>
+          <button class="nav-sub">流量分析</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/key.svg)"></span>
+          <span class="lab">商户权限</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">子账号管理</button>
+          <button class="nav-sub">角色权限</button>
+        </div>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/hammer.svg)"></span>
+        <span class="lab">工具</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+
+    <!-- ============ Body ============ -->
+    <div class="body">
+
+      <!-- ===== Left/Main column ===== -->
+      <div class="col-main">
+
+        <!-- Announcement Bar -->
+        <div class="ann">
+          <span class="label"><span class="ic" style="--src: url(../../assets/icons/bell.svg)"></span>公告</span>
+          <span class="item">
+            <span class="tag 履约">履约</span>
+            <span class="ttl">关于近期顺丰物流时效优化的通知，请商家关注本周发货排期</span>
+            <span class="date">10-26</span>
+          </span>
+          <span class="item">
+            <span class="tag 活动">活动</span>
+            <span class="ttl">"金秋焕新"活动 11-01 开启，参与 SKU 可享平台流量加权</span>
+            <span class="date">10-25</span>
+          </span>
+          <span class="more">更多 <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></span>
+        </div>
+
+        <!-- Todo Board (4 columns) -->
+        <div class="card p0 todo-card">
+          <div class="todo-grid">
+            <div class="todo-col">
+              <div class="col-head">
+                <span class="ic ic-lead" style="--src: url(../../assets/icons/shopping-bag.svg)"></span>
+                <h5>商品管理</h5>
+              </div>
+              <div class="todo-row"><span class="name">入仓待发货</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">入仓待质检</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">自质检待质检</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">未上架（未定价）</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">未上架（可退回）</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">待拍视频</span><span class="n">1422</span></div>
+            </div>
+            <div class="todo-col">
+              <div class="col-head">
+                <span class="ic ic-lead" style="--src: url(../../assets/icons/trolley.svg)"></span>
+                <h5>履约/服务</h5>
+              </div>
+              <div class="todo-row"><span class="name">即将发货超时</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">超时发货待确认</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">违规待确认</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">待开发票</span><span class="n muted">——</span></div>
+              <div class="todo-row"><span class="name">工单待处理</span><span class="n">1422</span></div>
+            </div>
+            <div class="todo-col">
+              <div class="col-head">
+                <span class="ic ic-lead" style="--src: url(../../assets/icons/file.svg)"></span>
+                <h5>订单/售后</h5>
+              </div>
+              <div class="todo-row"><span class="name">后验拦截可申诉</span><span class="n muted">——</span></div>
+              <div class="todo-row"><span class="name">后验拦截已下架</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">售后待上架</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">售后待退回</span><span class="n">1422</span></div>
+            </div>
+            <div class="todo-col">
+              <div class="col-head">
+                <span class="ic ic-lead" style="--src: url(../../assets/icons/alert-triangle.svg)"></span>
+                <h5>异常/提醒</h5>
+              </div>
+              <div class="todo-row"><span class="name">长库龄（已上架）</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">反馈待回复</span><span class="n">12</span></div>
+              <div class="todo-row"><span class="name">反馈待完结</span><span class="n">12</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operational Suggestions -->
+        <div class="card">
+          <div class="head">
+            <div style="display:flex; align-items: baseline; gap: 12px;">
+              <h3>经营建议</h3>
+              <span class="sub" style="margin-top: 0;">专属优化方案，您的下一步提效增收指南</span>
+            </div>
+            <a class="link muted">更多经营建议 <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></a>
+          </div>
+
+          <div class="sugg-row">
+            <span class="flame"></span>
+            <span class="kind">流量专区</span>
+            <div class="txt">参考价以下的商品共有10个，昨日已额外双倍提权流量。5个商品<span class="hl">最低降价¥10</span>，即可享受<span class="hl">双倍流量提权</span>。</div>
+            <a class="act">去调价</a>
+          </div>
+
+          <div class="sugg-row">
+            <span class="flame"></span>
+            <span class="kind">流量专区</span>
+            <div class="txt">有20个商品有机会参加<span class="hl">快惠选活动</span>，最低降价¥20即可获得平台流量扶持，预计可增加20%流量。</div>
+            <a class="act">去调价</a>
+          </div>
+        </div>
+
+        <!-- Trading Data -->
+        <div class="card">
+          <div class="head">
+            <div style="display:flex; align-items: center; gap: 16px;">
+              <h3>交易数据</h3>
+              <span class="sub" style="margin-top:0;">数据更新时间：2025-10-26 15:37:39</span>
+              <a class="link"><span class="ic" style="--src: url(../../assets/icons/refresh.svg)"></span>刷新数据</a>
+            </div>
+            <div class="seg">
+              <button class="active">按天</button>
+              <button>按月</button>
+            </div>
+          </div>
+
+          <div class="kpi-row">
+            <div class="kpi active">
+              <div class="top-r"><span class="name">今日销量<span class="info"></span></span><span class="arr"></span></div>
+              <div class="v">3,128</div>
+              <div class="delta-row">
+                <span class="delta up"><span class="ic" style="--src: url(../../assets/icons/arrow-up.svg)"></span>12.3%</span>
+                <span class="delta-tail">较昨日</span>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="top-r"><span class="name">今日 GMV</span><span class="arr"></span></div>
+              <div class="v"><span class="unit">¥</span>128,540</div>
+              <div class="delta-row">
+                <span class="delta up"><span class="ic" style="--src: url(../../assets/icons/arrow-up.svg)"></span>8.6%</span>
+                <span class="delta-tail">较昨日</span>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="top-r"><span class="name">今日客单价</span><span class="arr"></span></div>
+              <div class="v"><span class="unit">¥</span>2,840</div>
+              <div class="delta-row">
+                <span class="delta down"><span class="ic" style="--src: url(../../assets/icons/arrow-down.svg)"></span>3.2%</span>
+                <span class="delta-tail">较昨日</span>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="top-r"><span class="name">今日退款额</span><span class="arr"></span></div>
+              <div class="v"><span class="unit">¥</span>4,820</div>
+              <div class="delta-row">
+                <span class="delta down"><span class="ic" style="--src: url(../../assets/icons/arrow-down.svg)"></span>18.4%</span>
+                <span class="delta-tail">较昨日</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <div style="display:flex; align-items:center; justify-content: space-between;">
+              <h4 style="display:flex; align-items:center; gap:4px;">今日销量 <span style="width:11px; height:11px; opacity:.6; display:inline-block; background: currentColor; -webkit-mask: url(../../assets/icons/info.svg) center / contain no-repeat; mask: url(../../assets/icons/info.svg) center / contain no-repeat;"></span></h4>
+              <div class="chart-legend">
+                <span class="lg"><span class="dot legend-info"></span>销量</span>
+                <span class="lg"><span class="dot legend-purple"></span>客单价</span>
+              </div>
+            </div>
+            <svg viewBox="0 0 760 220" width="100%" style="display:block; margin-top: 12px;" preserveAspectRatio="none">
+              <!-- grid -->
+              <g stroke="var(--zzt-border-subtle)" stroke-dasharray="3 4">
+                <line x1="32" x2="752" y1="40" y2="40"/>
+                <line x1="32" x2="752" y1="85" y2="85"/>
+                <line x1="32" x2="752" y1="130" y2="130"/>
+                <line x1="32" x2="752" y1="175" y2="175"/>
+              </g>
+              <!-- y labels -->
+              <g font-family="Inter" font-size="10" fill="var(--zzt-fg-muted)">
+                <text x="4" y="44">4000</text><text x="4" y="89">3000</text><text x="4" y="134">2000</text><text x="4" y="179">1000</text>
+              </g>
+              <!-- x labels -->
+              <g font-family="Inter" font-size="10" fill="var(--zzt-fg-muted)" text-anchor="middle">
+                <text x="60" y="208">00:00</text><text x="200" y="208">06:00</text>
+                <text x="350" y="208">12:00</text><text x="510" y="208">18:00</text><text x="730" y="208">24:00</text>
+              </g>
+              <!-- sales line (primary accent) — smooth curve -->
+              <path d="M 60 180 C 100 178, 140 175, 180 170 S 240 150, 280 130 S 340 100, 380 80 S 460 60, 500 70 S 580 95, 620 110 S 700 140, 740 155"
+                stroke="var(--zzt-accent-500)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- secondary client-price line (purple) -->
+              <path d="M 60 170 C 110 165, 160 155, 220 150 S 320 140, 380 130 S 480 120, 540 125 S 660 145, 740 150"
+                stroke="var(--zzt-purple-500)" stroke-width="1.8" stroke-dasharray="4 3" fill="none" stroke-linecap="round"/>
+              <!-- highlight point -->
+              <circle cx="380" cy="80" r="4" fill="#fff" stroke="var(--zzt-accent-500)" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- ===== 热销商品排行榜 ===== -->
+        <div class="card ranking-card">
+          <!-- L1 Tabs -->
+          <div class="tabs-l1 tabs-l1-compact">
+            <span class="tab active">平台热销</span>
+            <span class="tab">本店热销</span>
+          </div>
+
+          <!-- Filter row -->
+          <div class="rank-filter">
+            <div class="ctl-w">
+              <div class="inp">
+                <span class="placeholder">请选择</span>
+                <span class="caret"></span>
+              </div>
+            </div>
+            <div class="rank-actions">
+              <button class="btn btn-primary">查询</button>
+              <button class="btn btn-outline">重置</button>
+              <button class="btn btn-primary"><span class="ic" style="--src: url(../../assets/icons/download.svg)"></span>导出</button>
+            </div>
+          </div>
+
+          <!-- Ranking table -->
+          <div class="rank-table-wrap">
+            <table class="products rank-table">
+              <thead>
+                <tr>
+                  <th class="col-rk">排名</th>
+                  <th>商品信息</th>
+                  <th class="col-cat">品类</th>
+                  <th class="col-days">
+                    <span class="sortable">动销天数<span class="sort-ic"></span></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-rk"><span class="medal m1"><span class="ribbon"></span><span class="num">01</span></span></td>
+                  <td>手机 红米 红米 K80 Pro 99·A</td>
+                  <td>手机</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="medal m2"><span class="ribbon"></span><span class="num">02</span></span></td>
+                  <td>平板电脑 华为 华为 MatePad 11 10.95英寸 95·B</td>
+                  <td>平板电脑</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="medal m3"><span class="ribbon"></span><span class="num">03</span></span></td>
+                  <td>笔记本 Apple MacBook Air 13 M3 16GB+512GB 99·S</td>
+                  <td>笔记本</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="rk-n">4</span></td>
+                  <td>手机 vivo vivo X100 Pro 16GB+512GB 95·A</td>
+                  <td>手机</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="rk-n">5</span></td>
+                  <td>智能手表 Apple Watch Series 10 46mm GPS 99·A</td>
+                  <td>智能手表</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="rk-n">6</span></td>
+                  <td>手机 华为 Mate 60 Pro 12GB+512GB 99·A</td>
+                  <td>手机</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="rk-n">7</span></td>
+                  <td>平板电脑 小米 小米 Pad 6 Pro 12GB+512GB 9·C</td>
+                  <td>平板电脑</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td class="col-rk"><span class="rk-n">8</span></td>
+                  <td>笔记本 联想 ThinkBook 14 i7 16GB+1TB 95·B</td>
+                  <td>笔记本</td>
+                  <td>1.00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Lightweight pager -->
+            <div class="pager-row rank-pager">
+              <div class="pager">
+                <span class="pg-btn"><span class="ic" style="--src: url(../../assets/icons/chevron-left.svg)"></span></span>
+                <span class="pg-btn pg-current">1</span>
+                <span class="pg-btn">2</span>
+                <span class="pg-btn">3</span>
+                <span class="pg-btn">4</span>
+                <span class="pg-btn">5</span>
+                <span class="pg-ell">…</span>
+                <span class="pg-btn">10</span>
+                <span class="pg-btn"><span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></span>
+              </div>
+              <span class="pg-select">10 条/页 <span class="caret"></span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== Right column ===== -->
+      <div class="col-side">
+
+        <!-- 商户综合（身份 + 表现 + 限流/返佣 + 保证金） -->
+        <div class="card merchant-summary">
+
+          <!-- 1. 商户身份 -->
+          <div class="merchant-section identity">
+            <div class="merchant-row">
+              <span class="av"></span>
+              <span class="name">西部战区-张超-已验机 2.0</span>
+            </div>
+          </div>
+
+          <!-- 2. 商户综合表现 -->
+          <div class="merchant-section grade">
+            <div class="head">
+              <h3>商户综合表现</h3>
+              <a class="link muted">详情 <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></a>
+            </div>
+            <div class="grade-row">
+              <div class="grade-cat"><b>手机</b><span class="lvl A">质量等级 A</span></div>
+              <div class="tier-bar">
+                <div class="seg">T4</div>
+                <div class="seg">T3</div>
+                <div class="seg">T2</div>
+                <div class="seg active T1"><span class="dot">T1</span></div>
+              </div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-cat"><b>手机</b><span class="lvl B">质量等级 B</span></div>
+              <div class="tier-bar">
+                <div class="seg">T4</div>
+                <div class="seg">T3</div>
+                <div class="seg active T2"><span class="dot">T2</span></div>
+                <div class="seg">T1</div>
+              </div>
+            </div>
+            <div class="grade-row">
+              <div class="grade-cat"><b>笔记本</b><span class="lvl C">质量等级 C</span></div>
+              <div class="tier-bar">
+                <div class="seg active T4"><span class="dot">T4</span></div>
+                <div class="seg">T3</div>
+                <div class="seg">T2</div>
+                <div class="seg">T1</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 商品限流 / 返佣 -->
+          <div class="merchant-section notices">
+            <div class="notice">
+              <span class="ic-sq box-warning"><span class="ic" style="--src: url(../../assets/icons/chart-bar.svg)"></span></span>
+              <div class="body">
+                <div class="row1"><b>商品限流</b><span class="cats">手机、平板、笔记本 全部</span></div>
+                <div class="row2">7 日内累计 3 次售后纠纷，部分商品已被限流，建议优先处理售后单</div>
+              </div>
+            </div>
+            <div class="notice">
+              <span class="ic-sq box-success"><span class="ic" style="--src: url(../../assets/icons/refresh.svg)"></span></span>
+              <div class="body">
+                <div class="row1"><b>返佣福利</b><span class="cats">手机、平板</span></div>
+                <div class="row2">本月成交满 200 单可获 1% 返佣，已完成 168 / 200，即将达标</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 商户保证金 -->
+          <div class="merchant-section deposit-section">
+            <div class="head">
+              <h3>商户保证金</h3>
+              <a class="link muted">扣减规则 <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></a>
+            </div>
+            <div class="deposit-grid">
+              <div class="deposit">
+                <div class="name">转转保证金余额</div>
+                <div class="amount-row">
+                  <div class="v">0.25<small>万元</small></div>
+                  <button class="recharge-btn">充值</button>
+                </div>
+                <div class="deposit-foot">
+                  <span>昨日扣罚 0 笔</span>
+                  <a class="link muted">详情 <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></a>
+                </div>
+              </div>
+              <div class="deposit">
+                <div class="name">找靓机保证金余额</div>
+                <div class="amount-row">
+                  <div class="v">0.28<small>万元</small></div>
+                  <button class="recharge-btn">充值</button>
+                </div>
+                <div class="deposit-foot">
+                  <span>昨日扣罚 0 笔</span>
+                  <a class="link muted">详情 <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 商家日历 -->
+        <div class="card">
+          <div class="head">
+            <h3>商家日历</h3>
+            <div class="cal-head-row">
+              <span class="picker">2025 年 <span class="ic"></span></span>
+              <span class="picker">10 月 <span class="ic"></span></span>
+            </div>
+          </div>
+          <div class="cal">
+            <div class="cal-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+            <div class="cal-grid">
+              <div class="cal-cell muted"><div class="n">29</div><div class="dots"></div></div>
+              <div class="cal-cell muted"><div class="n">30</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">1</div><div class="dots"><span style="background:#FF0F27"></span></div></div>
+              <div class="cal-cell"><div class="n">2</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">3</div><div class="dots"><span style="background:#FF0F27"></span></div></div>
+              <div class="cal-cell"><div class="n">4</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">5</div><div class="dots"></div></div>
+
+              <div class="cal-cell today"><div class="n">6</div><div class="dots"><span style="background:#FF0F27"></span><span style="background:#FF0F27"></span><span style="background:#17C964"></span></div></div>
+              <div class="cal-cell"><div class="n">7</div><div class="dots"><span style="background:#FF0F27"></span></div></div>
+              <div class="cal-cell"><div class="n">8</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">9</div><div class="dots"><span style="background:#B57856"></span></div></div>
+              <div class="cal-cell"><div class="n">10</div><div class="dots"><span style="background:#F5A524"></span></div></div>
+              <div class="cal-cell"><div class="n">11</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">12</div><div class="dots"></div></div>
+
+              <div class="cal-cell"><div class="n">13</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">14</div><div class="dots"><span style="background:#FF0F27"></span><span style="background:#B57856"></span></div></div>
+              <div class="cal-cell"><div class="n">15</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">16</div><div class="dots"><span style="background:#17C964"></span></div></div>
+              <div class="cal-cell"><div class="n">17</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">18</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">19</div><div class="dots"><span style="background:#FF0F27"></span></div></div>
+
+              <div class="cal-cell"><div class="n">20</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">21</div><div class="dots"><span style="background:#F5A524"></span></div></div>
+              <div class="cal-cell"><div class="n">22</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">23</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">24</div><div class="dots"><span style="background:#FF0F27"></span></div></div>
+              <div class="cal-cell"><div class="n">25</div><div class="dots"><span style="background:#FF0F27"></span></div></div>
+              <div class="cal-cell"><div class="n">26</div><div class="dots"></div></div>
+
+              <div class="cal-cell"><div class="n">27</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">28</div><div class="dots"><span style="background:#B57856"></span></div></div>
+              <div class="cal-cell"><div class="n">29</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">30</div><div class="dots"></div></div>
+              <div class="cal-cell"><div class="n">31</div><div class="dots"><span style="background:#17C964"></span><span style="background:#F5A524"></span></div></div>
+              <div class="cal-cell muted"><div class="n">1</div><div class="dots"></div></div>
+              <div class="cal-cell muted"><div class="n">2</div><div class="dots"></div></div>
+            </div>
+            <div style="display:flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; font-size: 11px; color: var(--zzt-fg-muted);">
+              <span style="display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:999px; background:#FF0F27;"></span>双十一大促</span>
+              <span style="display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:999px; background:#FF0F27;"></span>快惠选</span>
+              <span style="display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:999px; background:#17C964;"></span>新人首单</span>
+              <span style="display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:999px; background:#B57856;"></span>会员日</span>
+              <span style="display:inline-flex; align-items:center; gap:4px;"><span style="width:6px; height:6px; border-radius:999px; background:#F5A524;"></span>清仓特惠</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  // Sidebar: group expand/collapse + click-to-activate.
+  // Single items (.nav-item) and leaf sub-items (.nav-sub) share the same active model;
+  // group headers (.nav-grouphead) only toggle expand/collapse — they never carry .active.
+  (function () {
+    var nav = document.querySelector('.side .nav');
+    if (!nav) return;
+    function setActive(el) {
+      nav.querySelectorAll('.nav-item.active, .nav-sub.active').forEach(function (n) { n.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    nav.addEventListener('click', function (e) {
+      var head = e.target.closest('.nav-grouphead');
+      if (head) {
+        var g = head.closest('.nav-group');
+        g.dataset.expanded = g.dataset.expanded === 'true' ? 'false' : 'true';
+        return;
+      }
+      var leaf = e.target.closest('.nav-item, .nav-sub');
+      if (leaf) setActive(leaf);
+    });
+  })();
+</script>
+</body>
+</html>

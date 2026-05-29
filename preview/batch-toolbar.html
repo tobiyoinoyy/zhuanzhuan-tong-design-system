@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>Batch toolbar</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { margin:0; padding:32px 24px; background: var(--zzt-bg-secondary); font-family:var(--zzt-font-sans); }
+  .bar { background:#18181B; color:#fff; border-radius:14px; padding:10px 14px 10px 16px; display:flex; align-items:center; gap:14px;
+         box-shadow: var(--zzt-shadow-lg); max-width: 760px; margin: 0 auto; }
+  .count { font-size:13px; color: #fff; }
+  .count b { color: var(--zzt-accent-400); font-family: var(--zzt-font-num); }
+  .sep { flex:1; }
+  .act { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px;
+         font-size:13px; background: rgba(255,255,255,.10); color:#fff; cursor:pointer; border:none; }
+  .act:hover { background: rgba(255,255,255,.18); }
+  .act.primary { background: var(--zzt-accent-500); }
+  .act.primary:hover { background: var(--zzt-accent-400); }
+  .act.danger { background: rgba(255,15,39,.22); color:#fff; }
+  .act i { width:13px; height:13px; }
+</style></head><body>
+<div class="bar">
+  <span class="count">已选 <b>12</b> / 共 1,284 件</span>
+  <span style="opacity:.5">·</span>
+  <button class="act"><i data-lucide="circle-x"></i>取消选择</button>
+  <span class="sep"></span>
+  <button class="act"><i data-lucide="tag"></i>批量改价</button>
+  <button class="act"><i data-lucide="check"></i>批量上架</button>
+  <button class="act"><i data-lucide="archive"></i>批量下架</button>
+  <button class="act danger"><i data-lucide="trash-2"></i>删除</button>
+</div>
+</body><script>lucide.createIcons();</script></html>

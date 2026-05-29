@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .ra { width:16px; height:16px; border: 1.5px solid var(--zzt-border-strong); border-radius: 999px;
+        background:#fff; position: relative; display: inline-block; flex-shrink: 0; vertical-align: middle; cursor: pointer; }
+  .ra.on { border-color: var(--zzt-accent-500); }
+  .ra.on::after { content:""; position:absolute; left:3px; top:3px; width:7px; height:7px; border-radius:999px; background: var(--zzt-accent-500); }
+  .ra.invalid { border-color: var(--zzt-danger-500); box-shadow: 0 0 0 3px rgba(255,15,39,.16); }
+  .ra.disabled { opacity:.4; pointer-events:none; }
+  .field { display:flex; gap:10px; align-items:flex-start; }
+  .field .label { font-size:13.5px; font-weight:500; }
+  .field .desc { font-size:12px; color: var(--zzt-fg-muted); margin-top: 2px; }
+  /* card style radios */
+  .ra-card { display:flex; gap:10px; align-items:flex-start; padding: 12px 14px; border-radius:12px;
+             border: 1px solid var(--zzt-border-strong); background:#fff; cursor:pointer; min-width:160px; }
+  .ra-card.on { border-color: var(--zzt-accent-500); background: rgba(255,15,39,.04); }
+  .ra-card .ra { margin-top: 1px; }
+</style></head><body>
+<div class="col" style="gap: 16px;">
+  <div class="row" style="gap: 24px;">
+    <div class="field"><span class="ra"></span><span class="label">默认</span></div>
+    <div class="field"><span class="ra on"></span><span class="label">已选</span></div>
+    <div class="field"><span class="ra invalid"></span><span class="label">错误</span></div>
+    <div class="field"><span class="ra disabled"></span><span class="label" style="color:var(--zzt-fg-subtle)">禁用</span></div>
+    <div class="field"><span class="ra on disabled"></span><span class="label" style="color:var(--zzt-fg-subtle)">已选 · 禁用</span></div>
+  </div>
+  <hr style="border:0;border-top:1px dashed var(--zzt-border-subtle);">
+  <div class="lab">供货模式 · radio group</div>
+  <div class="col">
+    <div class="field"><span class="ra on"></span><div><div class="label">平台寄卖（入仓）</div><div class="desc">统一入库，由平台代发货</div></div></div>
+    <div class="field"><span class="ra"></span><div><div class="label">自质检</div><div class="desc">商户自有质检团队，按平台标准出具报告</div></div></div>
+    <div class="field"><span class="ra"></span><div><div class="label">拍图挂售</div><div class="desc">轻量上架，自有库存自发货</div></div></div>
+  </div>
+  <div class="lab" style="margin-top: 10px;">Card-style radio · for prominent choices</div>
+  <div class="row" style="gap: 10px;">
+    <div class="ra-card on"><span class="ra on"></span>
+      <div><div class="label">A 级</div><div class="desc">9 成新及以上 · 建议价 ¥ 4,599</div></div>
+    </div>
+    <div class="ra-card"><span class="ra"></span>
+      <div><div class="label">B 级</div><div class="desc">8 ~ 9 成新 · 建议价 ¥ 3,899</div></div>
+    </div>
+    <div class="ra-card"><span class="ra"></span>
+      <div><div class="label">C 级</div><div class="desc">轻微外观瑕疵 · 建议价 ¥ 3,099</div></div>
+    </div>
+  </div>
+</div>
+</body></html>

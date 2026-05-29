@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><title>Colors · Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:20px; background:var(--zzt-bg); font-family: var(--zzt-font-sans); }
+  .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+  .group { border-radius:12px; border:1px solid var(--zzt-border-subtle); padding:14px; }
+  .head { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; margin-bottom:10px; }
+  .dot { width:10px; height:10px; border-radius:999px; }
+  .sw-row { display:flex; gap:8px; }
+  .sw { flex:1; border-radius:8px; padding:10px 8px; display:flex; flex-direction:column; gap:2px; }
+  .name { font-size:10px; font-weight:600; opacity:.85; }
+  .hex { font-size:9px; opacity:.6; font-family:var(--zzt-font-mono); }
+  .tag { display:inline-flex; align-items:center; gap:6px; padding:2px 10px; border-radius:999px; font-size:11px; font-weight:500; margin-top:10px; }
+</style></head><body>
+<div class="grid">
+  <div class="group">
+    <div class="head"><span class="dot" style="background:#17C964"></span>Success</div>
+    <div class="sw-row">
+      <div class="sw" style="background:#17C964;color:#fff"><span class="name">500</span><span class="hex">#17C964</span></div>
+      <div class="sw" style="background:rgba(23,201,100,.15);color:#0a8a44"><span class="name">soft 15%</span><span class="hex">on white</span></div>
+    </div>
+    <span class="tag" style="background:rgba(23,201,100,.15);color:#0a8a44"><span class="dot" style="background:#17C964"></span>已上架</span>
+  </div>
+  <div class="group">
+    <div class="head"><span class="dot" style="background:#F5A524"></span>Warning</div>
+    <div class="sw-row">
+      <div class="sw" style="background:#F5A524;color:#fff"><span class="name">500</span><span class="hex">#F5A524</span></div>
+      <div class="sw" style="background:rgba(245,165,36,.15);color:#9a6608"><span class="name">soft 15%</span><span class="hex">on white</span></div>
+    </div>
+    <span class="tag" style="background:rgba(245,165,36,.15);color:#9a6608"><span class="dot" style="background:#F5A524"></span>待入仓</span>
+  </div>
+  <div class="group">
+    <div class="head"><span class="dot" style="background:#FF0F27"></span>Danger</div>
+    <div class="sw-row">
+      <div class="sw" style="background:#FF0F27;color:#fff"><span class="name">500</span><span class="hex">#FF0F27</span></div>
+      <div class="sw" style="background:rgba(255,15,39,.12);color:#A20017"><span class="name">soft 12%</span><span class="hex">on white</span></div>
+    </div>
+    <span class="tag" style="background:rgba(255,15,39,.12);color:#A20017"><span class="dot" style="background:#FF0F27"></span>已退回</span>
+  </div>
+</div>
+</body></html>

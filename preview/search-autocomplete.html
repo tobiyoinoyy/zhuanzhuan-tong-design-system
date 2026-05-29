@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .search { display:flex; align-items:center; gap:8px; height: 40px; padding: 0 14px;
+            border: 1px solid var(--zzt-border); border-radius: 999px; background: var(--zzt-zinc-75); width: 480px; }
+  .search input { flex:1; border: 0; outline: 0; background: transparent; font-size: 14px; font-family: inherit; }
+  .search i { width: 16px; height: 16px; color: var(--zzt-fg-muted); }
+  .search .kbd { font-family: var(--zzt-font-mono); font-size: 11px; background: #fff; border: 1px solid var(--zzt-border-subtle); border-radius: 4px; padding: 1px 5px; color: var(--zzt-fg-muted); }
+  .search .x { width: 16px; height: 16px; border-radius: 999px; background: var(--zzt-zinc-200); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+  .search .x i { width: 9px; height: 9px; color: var(--zzt-fg); }
+  .ac { width: 480px; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; background:#fff; box-shadow: var(--zzt-shadow-md); overflow: hidden; }
+  .ac-hd { padding: 10px 14px; font-size: 11px; color: var(--zzt-fg-muted); text-transform: uppercase; letter-spacing: 0.06em; background: var(--zzt-zinc-75); border-bottom: 1px solid var(--zzt-border-subtle); }
+  .ac-item { display:flex; align-items:center; gap: 12px; padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--zzt-border-subtle); }
+  .ac-item:hover, .ac-item.active { background: rgba(255,15,39,.06); }
+  .ac-item:last-child { border-bottom: 0; }
+  .ac-thumb { width: 36px; height: 36px; border-radius: 6px; background-image: linear-gradient(135deg, #EBEBEC 25%, #F5F5F5 25%, #F5F5F5 50%, #EBEBEC 50%, #EBEBEC 75%, #F5F5F5 75%, #F5F5F5); background-size: 8px 8px; }
+  .ac-body { flex: 1; }
+  .ac-name { font-size: 13.5px; font-weight: 500; }
+  .ac-name .hl { background: rgba(245,165,36,.30); color: var(--zzt-fg); padding: 0 2px; border-radius: 2px; }
+  .ac-meta { font-size: 11.5px; color: var(--zzt-fg-muted); margin-top: 2px; display: flex; gap: 8px; }
+  .ac-tag { padding: 0 6px; border-radius: 4px; background: var(--zzt-zinc-150); font-size: 10.5px; color: var(--zzt-zinc-700); }
+  .col-gap { display:flex; flex-direction: column; gap: 14px; }
+  .col-gap .l { font-size: 12px; color: var(--zzt-fg-muted); }
+</style></head><body>
+<div class="col-gap">
+  <div>
+    <div class="l">global search · 顶栏</div>
+    <div class="search"><i data-lucide="search"></i><input placeholder="搜索商品 / 订单号 / 客户"><span class="kbd">⌘ K</span></div>
+  </div>
+  <div>
+    <div class="l">in-context search · with clear</div>
+    <div class="search" style="background:#fff;"><i data-lucide="search"></i><input value="iPhone 14"><span class="x"><i data-lucide="x"></i></span></div>
+  </div>
+  <div>
+    <div class="l">联想 · autocomplete dropdown</div>
+    <div class="ac">
+      <div class="ac-hd">建议 · 3 项</div>
+      <div class="ac-item active">
+        <div class="ac-thumb"></div>
+        <div class="ac-body">
+          <div class="ac-name"><span class="hl">iPhone</span> 14 Pro 256GB 深空黑</div>
+          <div class="ac-meta">SKU-58219 · <span class="ac-tag">手机</span> 在售 28 件</div>
+        </div>
+        <i data-lucide="corner-down-left" style="width:14px;height:14px;color:var(--zzt-fg-muted)"></i>
+      </div>
+      <div class="ac-item">
+        <div class="ac-thumb"></div>
+        <div class="ac-body">
+          <div class="ac-name"><span class="hl">iPhone</span> 13 128GB 蓝色</div>
+          <div class="ac-meta">SKU-58218 · <span class="ac-tag">手机</span> 在售 42 件</div>
+        </div>
+      </div>
+      <div class="ac-item">
+        <div class="ac-thumb"></div>
+        <div class="ac-body">
+          <div class="ac-name"><span class="hl">iPhone</span> 15 Pro Max 1TB</div>
+          <div class="ac-meta">SKU-58210 · <span class="ac-tag">手机</span> 已下架</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><title>Shadows · Elevation</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:24px; background:#fff; }
+  .grid { display:grid; grid-template-columns: repeat(5, 1fr); gap:18px; }
+  .card { background:#fff; height:78px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--zzt-fg-muted); font-family:var(--zzt-font-mono); }
+  .name { display:block; font-size:11px; font-weight:600; margin-top:8px; color:var(--zzt-fg); font-family: var(--zzt-font-sans); text-align:center; }
+</style></head><body>
+<div class="grid">
+  <div>
+    <div class="card" style="box-shadow: var(--zzt-shadow-xs); border:1px solid rgba(0,0,0,.03)">xs</div>
+    <span class="name">divider</span>
+  </div>
+  <div>
+    <div class="card" style="box-shadow: var(--zzt-shadow-sm)">sm</div>
+    <span class="name">card hover</span>
+  </div>
+  <div>
+    <div class="card" style="box-shadow: var(--zzt-shadow-md)">md</div>
+    <span class="name">popover</span>
+  </div>
+  <div>
+    <div class="card" style="box-shadow: var(--zzt-shadow-lg)">lg</div>
+    <span class="name">modal</span>
+  </div>
+  <div>
+    <div class="card" style="box-shadow: var(--zzt-shadow-inner); background:var(--zzt-zinc-100)">inner</div>
+    <span class="name">pressed</span>
+  </div>
+</div>
+</body></html>

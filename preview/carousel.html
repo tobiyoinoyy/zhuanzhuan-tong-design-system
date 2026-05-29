@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { background: var(--zzt-zinc-75); padding: 20px; }
+  .gal { display: flex; gap: 12px; align-items: flex-start; }
+  .main { width: 240px; height: 240px; border-radius: 16px;
+          background-image: linear-gradient(135deg, #C5D6F2 0%, #84A8E1 100%);
+          position: relative; overflow: hidden; }
+  .main::after { content: "iPhone 14 Pro"; position: absolute; left: 16px; bottom: 14px; color: #fff; font-weight: 500; font-size: 13.5px; opacity: 0.9; }
+  .thumbs { display: flex; flex-direction: column; gap: 8px; }
+  .th { width: 56px; height: 56px; border-radius: 12px; background: var(--zzt-zinc-200); cursor: pointer; border: 2px solid transparent; }
+  .th.sel { border-color: var(--zzt-accent-500); }
+  .th.muted { opacity: 0.5; }
+  .pager { display: inline-flex; gap: 6px; margin-top: 10px; align-items: center; }
+  .pager .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--zzt-zinc-300); }
+  .pager .dot.sel { background: var(--zzt-accent-500); width: 20px; border-radius: 999px; }
+  .arrow { width: 28px; height: 28px; border-radius: 999px; background: rgba(0,0,0,0.5); color: #fff;
+           display: inline-flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+  .arrow i { width: 14px; height: 14px; }
+  .arrow.l { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); }
+  .arrow.r { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); }
+</style></head><body>
+<div class="gal">
+  <div class="main">
+    <div class="arrow l"><i data-lucide="chevron-left"></i></div>
+    <div class="arrow r"><i data-lucide="chevron-right"></i></div>
+  </div>
+  <div class="thumbs">
+    <div class="th sel"></div>
+    <div class="th"></div>
+    <div class="th"></div>
+    <div class="th muted"></div>
+    <div class="th muted"></div>
+  </div>
+  <div style="margin-left: 24px;">
+    <div style="font-size: 12px; color: var(--zzt-fg-muted); margin-bottom: 6px;">indicator · dots</div>
+    <div class="pager"><span class="dot sel"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div style="font-size: 12px; color: var(--zzt-fg-muted); margin: 22px 0 6px;">indicator · counter</div>
+    <span style="background: rgba(0,0,0,0.5); color: #fff; padding: 2px 10px; border-radius: 999px; font-family: var(--zzt-font-num); font-size: 12px;">1 / 5</span>
+  </div>
+</div>
+<div class="note" style="margin-top: 14px;">Product galleries · used in 商品详情 and 质检图集. 96×96 selected thumbnail · arrow buttons appear on hover.</div>
+<script>lucide.createIcons();</script>
+</body></html>

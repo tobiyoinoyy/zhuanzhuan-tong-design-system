@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  /* Linear */
+  .pb { background: var(--zzt-zinc-150); border-radius: 999px; overflow: hidden; height: 8px; }
+  .pb .fill { height:100%; border-radius: 999px; background: var(--zzt-accent-500); }
+  .pb.lg { height: 12px; }
+  .pb.sm { height: 4px; }
+  .pb .success { background: var(--zzt-success-500); }
+  .pb .warning { background: var(--zzt-warning-500); }
+  .pb .danger { background: var(--zzt-danger-500); }
+  .pb .striped { background-image: linear-gradient(45deg, rgba(255,255,255,.25) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.25) 50%, rgba(255,255,255,.25) 75%, transparent 75%); background-size: 12px 12px; }
+  .row-lbl { display:flex; justify-content:space-between; font-size:12px; color: var(--zzt-fg-muted); margin-bottom: 4px; }
+  .row-lbl b { color: var(--zzt-fg); font-family: var(--zzt-font-num); font-weight:600; }
+  /* Circular */
+  .circ { width:64px; height: 64px; }
+  .circ-row { display:flex; gap: 20px; align-items: center; }
+  .circ-lab { font-size: 12px; color: var(--zzt-fg-muted); }
+</style></head><body>
+<div class="col" style="gap: 16px;">
+  <div>
+    <div class="row-lbl"><span>本月入仓进度</span><span><b>62</b> / 100</span></div>
+    <div class="pb"><div class="fill" style="width: 62%"></div></div>
+  </div>
+  <div>
+    <div class="row-lbl"><span>质检通过率</span><span style="color: var(--zzt-success-500)"><b>94.2%</b></span></div>
+    <div class="pb"><div class="fill success" style="width: 94%"></div></div>
+  </div>
+  <div>
+    <div class="row-lbl"><span>退货率</span><span style="color: var(--zzt-danger-500)"><b>2.4%</b></span></div>
+    <div class="pb sm"><div class="fill danger" style="width: 22%"></div></div>
+  </div>
+  <div>
+    <div class="row-lbl"><span>上传中</span><span><b>74%</b></span></div>
+    <div class="pb lg"><div class="fill striped" style="width: 74%"></div></div>
+  </div>
+  <hr style="border:0;border-top:1px dashed var(--zzt-border-subtle);">
+  <div class="circ-row">
+    <svg class="circ" viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="var(--zzt-zinc-150)" stroke-width="4"/><circle cx="18" cy="18" r="14" fill="none" stroke="var(--zzt-accent-500)" stroke-width="4" stroke-linecap="round" stroke-dasharray="55 88" transform="rotate(-90 18 18)"/><text x="18" y="20" text-anchor="middle" font-family="Inter" font-size="9" font-weight="600" fill="var(--zzt-fg)">62%</text></svg>
+    <div><div style="font-size:13.5px;font-weight:500">入仓进度</div><div class="circ-lab">62 件 · 共 100 件</div></div>
+    <svg class="circ" viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="none" stroke="var(--zzt-zinc-150)" stroke-width="4"/><circle cx="18" cy="18" r="14" fill="none" stroke="var(--zzt-success-500)" stroke-width="4" stroke-linecap="round" stroke-dasharray="83 88" transform="rotate(-90 18 18)"/><text x="18" y="20" text-anchor="middle" font-family="Inter" font-size="9" font-weight="600" fill="var(--zzt-fg)">94%</text></svg>
+    <div><div style="font-size:13.5px;font-weight:500">质检通过率</div><div class="circ-lab">本周</div></div>
+    <svg class="circ" viewBox="0 0 36 36" style="animation: spin 1.4s linear infinite;"><circle cx="18" cy="18" r="14" fill="none" stroke="var(--zzt-zinc-150)" stroke-width="4"/><circle cx="18" cy="18" r="14" fill="none" stroke="var(--zzt-accent-500)" stroke-width="4" stroke-linecap="round" stroke-dasharray="22 88"/></svg>
+    <div><div style="font-size:13.5px;font-weight:500">加载中</div><div class="circ-lab">indeterminate spinner</div></div>
+  </div>
+</div>
+<style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+</body></html>

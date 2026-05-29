@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Brand · Logo</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:24px; background: var(--zzt-bg); }
+  .row { display:flex; gap:24px; align-items:center; }
+  .swatch { flex:1; display:flex; align-items:center; justify-content:center; height:96px; border-radius: 12px; border:1px solid var(--zzt-border); }
+  .light { background:#fff; }
+  .dark  { background: var(--zzt-zinc-900); }
+  .mark  { background: var(--zzt-zinc-100); }
+  .label { font-size:11px; color: var(--zzt-fg-muted); margin-top:8px; text-align:center; font-family: var(--zzt-font-sans); }
+  .swatch img { max-height: 38px; max-width: 90%; object-fit: contain; }
+  .markimg img { height: 64px; max-width: 80%; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div style="flex:2">
+    <div class="swatch light"><img src="../assets/logo-zhuanzhuan.svg" alt="logo"></div>
+    <div class="label">Primary lockup · light</div>
+  </div>
+  <div style="flex:2">
+    <div class="swatch dark"><img src="../assets/logo-zhuanzhuan-dark.svg" alt="logo"></div>
+    <div class="label">Primary lockup · dark</div>
+  </div>
+  <div style="flex:1">
+    <div class="swatch mark markimg"><img src="../assets/logo-mark.svg" alt="mark"></div>
+    <div class="label">App mark</div>
+  </div>
+</div>
+</body>
+</html>

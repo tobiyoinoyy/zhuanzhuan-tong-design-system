@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><title>Radius</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:20px; }
+  .grid { display:grid; grid-template-columns: repeat(7, 1fr); gap:14px; }
+  .item { display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .box { width:78px; height:78px; background: var(--zzt-zinc-100); border:1px solid var(--zzt-border-strong); }
+  .label { font-size:11px; color:var(--zzt-fg-muted); font-family: var(--zzt-font-mono); }
+  .name { font-size:11px; font-weight:600;}
+</style></head><body>
+<div class="grid">
+  <div class="item"><div class="box" style="border-radius:0"></div><span class="name">none</span><span class="label">0</span></div>
+  <div class="item"><div class="box" style="border-radius:4px"></div><span class="name">xs</span><span class="label">4px</span></div>
+  <div class="item"><div class="box" style="border-radius:8px"></div><span class="name">md</span><span class="label">8px</span></div>
+  <div class="item"><div class="box" style="border-radius:12px"></div><span class="name">lg ★</span><span class="label">12px</span></div>
+  <div class="item"><div class="box" style="border-radius:16px"></div><span class="name">xl</span><span class="label">16px</span></div>
+  <div class="item"><div class="box" style="border-radius:24px"></div><span class="name">3xl ★</span><span class="label">24px</span></div>
+  <div class="item"><div class="box" style="border-radius:999px"></div><span class="name">pill</span><span class="label">999px</span></div>
+</div>
+</body></html>

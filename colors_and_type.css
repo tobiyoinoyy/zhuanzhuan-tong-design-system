@@ -1,0 +1,261 @@
+/* =============================================================
+   转转通 Design System — colors_and_type.css
+   Tokens distilled from the Figma "UI System to B-zhuan化" file.
+   Color names follow the Figma semantics; values are the exact
+   RGB values seen in the source (see METADATA.md).
+   ============================================================= */
+
+/* ---------- PingFang SC (Chinese UI) ---------- */
+@font-face {
+  font-family: "PingFang SC";
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PingFangSC-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "PingFang SC";
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PingFangSC-Ultralight.woff2") format("woff2");
+}
+/* PingFang has no native Light weight uploaded — falls back to Regular */
+@font-face {
+  font-family: "PingFang SC";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PingFangSC-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "PingFang SC";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PingFangSC-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "PingFang SC";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PingFangSC-Semibold.woff2") format("woff2");
+}
+
+/* Inter (Latin / numeric) loaded from Google Fonts where used.
+   Add to <head>: <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> */
+
+:root {
+  /* =========================================================
+     COLOR TOKENS
+     ========================================================= */
+
+  /* ---- Brand / Accent — ZZ RED #FF0F27 (Pantone 185 C)
+     Sole brand color per the 2026.04 VI manual. White is the dominant
+     surface; red is the punctuation. No warm/cool bias — the same
+     value reads identically on screen, print, fabric, signage. ---- */
+  --zzt-accent-50:  #FFEDEF;
+  --zzt-accent-100: #FFD7DC;
+  --zzt-accent-200: #FFB1BA;
+  --zzt-accent-300: #FF7281;
+  --zzt-accent-400: #FF4256;          /* hover (lighter, not darker) */
+  --zzt-accent-500: #FF0F27;          /* ZZ RED — primary brand */
+  --zzt-accent-600: #D8001A;          /* pressed / darker */
+  --zzt-accent-700: #A20017;          /* VI auxiliary 深红 — dark text on light bg */
+  --zzt-accent-soft:        rgba(255,15,39,0.07);
+  --zzt-accent-soft-strong: rgba(255,15,39,0.12);
+
+  /* Aliases — same color, semantic name */
+  --zz-red-50:   var(--zzt-accent-50);
+  --zz-red-500:  var(--zzt-accent-500);
+  --zz-red-700:  var(--zzt-accent-700);
+
+  /* ---- Warm auxiliary palette (from VI manual §22 辅助色)
+     Used for: 营销活动, 会员日, secondary categories, brand backgrounds,
+     decorative accents. NEVER as a primary brand stand-in. ---- */
+  --zzt-warm-50:  #FFF7EE;            /* softest peach surface */
+  --zzt-warm-100: #FCE8D5;
+  --zzt-warm-200: #F0B895;            /* VI peach */
+  --zzt-warm-500: #B57856;            /* VI caramel */
+  --zzt-warm-700: #8C3200;            /* VI rust */
+  --zzt-warm-900: #410000;            /* VI deepest maroon */
+
+  /* Back-compat aliases — old --zzt-purple-* tokens now resolve
+     to the warm ramp. Existing component CSS continues to work,
+     but new code should reference --zzt-warm-* directly. */
+  --zzt-purple-50:  var(--zzt-warm-50);
+  --zzt-purple-300: var(--zzt-warm-200);
+  --zzt-purple-500: var(--zzt-warm-500);
+  --zzt-purple-600: var(--zzt-warm-700);
+
+  /* ---- Semantic ---- */
+  --zzt-success-500: #17C964;         /* rgb 23,201,100 */
+  --zzt-success-soft: rgba(23,201,100,0.15);
+  --zzt-warning-500: #F5A524;         /* rgb 245,165,36 */
+  --zzt-warning-soft: rgba(245,165,36,0.15);
+
+  /* Info / platform blue — used for 平台信息 type-tags, system
+     notifications, neutral informational banners. NOT a brand color;
+     reserved for system-emitted (vs merchant/operations) signals. */
+  --zzt-info-50:   #EEF3FF;           /* soft surface — solid, no rgba */
+  --zzt-info-100:  #DCE6FF;
+  --zzt-info-200:  #B9CDFF;
+  --zzt-info-300:  #6E94F5;
+  --zzt-info-500:  #2D63E5;           /* primary platform blue */
+  --zzt-info-600:  #1F4FCC;
+  --zzt-info-700:  #1B47B0;           /* dark text on light bg */
+  --zzt-info-soft:        rgba(45,99,229,0.08);
+  --zzt-info-soft-strong: rgba(45,99,229,0.14);
+  /* Danger unified with brand red per the 2026.04 VI:
+     destructive states (删除/退回/警告) use ZZ RED itself.
+     The old salmon shades (#FF383C / #FF5551) are gone. */
+  --zzt-danger-500:  var(--zzt-accent-500);
+  --zzt-danger-400:  var(--zzt-accent-400);
+  --zzt-danger-soft: var(--zzt-accent-soft);
+
+  /* ---- Neutral ramp (zinc-aligned, matches figma) ---- */
+  --zzt-zinc-50:  #FCFCFC;            /* rgb 252,252,252 */
+  --zzt-zinc-75:  #FAFAFA;            /* rgb 250,250,250 */
+  --zzt-zinc-100: #F5F5F5;            /* rgb 245,245,245 */
+  --zzt-zinc-150: #EBEBEC;            /* rgb 235,235,236 */
+  --zzt-zinc-200: #E4E4E7;            /* rgb 228,228,231 */
+  --zzt-zinc-250: #DEDEE0;            /* rgb 222,222,224 */
+  --zzt-zinc-300: #C1C1C5;
+  --zzt-zinc-400: #A1A1AA;            /* rgb 161,161,170 */
+  --zzt-zinc-500: #71717A;            /* rgb 113,113,122 */
+  --zzt-zinc-600: #52525B;
+  --zzt-zinc-700: #3F3F46;
+  --zzt-zinc-800: #28282C;
+  --zzt-zinc-900: #18181B;            /* rgb 24,24,27 */
+  --zzt-zinc-950: #0F0F11;
+
+  /* ---- Foreground (text + iconography) ---- */
+  --zzt-fg:           var(--zzt-zinc-900);    /* default text */
+  --zzt-fg-muted:     var(--zzt-zinc-500);    /* secondary text, descriptions */
+  --zzt-fg-subtle:    var(--zzt-zinc-400);    /* placeholder, disabled */
+  --zzt-fg-inverse:   var(--zzt-zinc-50);     /* text on dark surfaces */
+  --zzt-fg-link:      var(--zzt-accent-500);
+  --zzt-fg-on-accent: #FCFCFC;
+
+  /* ---- Background ---- */
+  --zzt-bg:           #FFFFFF;
+  --zzt-bg-secondary: var(--zzt-zinc-75);     /* page background, table headers */
+  --zzt-bg-tertiary: var(--zzt-zinc-100);
+  --zzt-bg-inverse:   var(--zzt-zinc-900);
+
+  /* ---- Surface (cards, popovers) ---- */
+  --zzt-surface:           #FFFFFF;
+  --zzt-surface-secondary: var(--zzt-zinc-75);
+  --zzt-surface-tertiary:  var(--zzt-zinc-100);
+  --zzt-surface-transparent: rgba(255,255,255,0.92);
+  --zzt-surface-overlay:   rgba(24,24,27,0.45);   /* modal scrim */
+
+  /* ---- Border ---- */
+  --zzt-border:           rgba(0,0,0,0.12);
+  --zzt-border-strong:    var(--zzt-zinc-250);
+  --zzt-border-subtle:    var(--zzt-zinc-200);
+  --zzt-border-inverse:   rgba(255,255,255,0.12);
+  --zzt-border-accent:    var(--zzt-accent-500);
+  --zzt-border-danger:    var(--zzt-danger-500);
+
+  /* =========================================================
+     RADIUS
+     ========================================================= */
+  --zzt-radius-none: 0;
+  --zzt-radius-xs:   4px;
+  --zzt-radius-sm:   6px;
+  --zzt-radius-md:   8px;
+  --zzt-radius-lg:   12px;     /* default card/input radius */
+  --zzt-radius-xl:   16px;     /* button-sm, larger card */
+  --zzt-radius-2xl:  20px;
+  --zzt-radius-3xl:  24px;     /* primary button, large card */
+  --zzt-radius-pill: 999px;
+
+  /* =========================================================
+     SHADOW / ELEVATION
+     ========================================================= */
+  --zzt-shadow-xs: 0 0 1px 0 rgba(0,0,0,0.06);
+  --zzt-shadow-sm: 0 0 1px 0 rgba(0,0,0,0.06), 0 1px 2px 0 rgba(0,0,0,0.06);
+  --zzt-shadow-md: 0 0 1px 0 rgba(0,0,0,0.06), 0 1px 2px 0 rgba(0,0,0,0.06), 0 2px 4px 0 rgba(0,0,0,0.04);
+  --zzt-shadow-lg: 0 0 1px 0 rgba(0,0,0,0.06), 0 2px 6px 0 rgba(0,0,0,0.05), 0 8px 24px 0 rgba(0,0,0,0.08);
+  --zzt-shadow-xl: 0 0 1px 0 rgba(0,0,0,0.06), 0 4px 16px 0 rgba(0,0,0,0.08), 0 16px 48px 0 rgba(0,0,0,0.12);
+  --zzt-shadow-inner: inset 0 0 1px 0 rgba(0,0,0,0.30);
+
+  /* Focus ring */
+  --zzt-focus-ring: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--zzt-accent-500);
+
+  /* =========================================================
+     SPACING (4px base)
+     ========================================================= */
+  --zzt-space-0:  0;
+  --zzt-space-1:  4px;
+  --zzt-space-2:  8px;
+  --zzt-space-3:  12px;
+  --zzt-space-4:  16px;
+  --zzt-space-5:  20px;
+  --zzt-space-6:  24px;
+  --zzt-space-8:  32px;
+  --zzt-space-10: 40px;
+  --zzt-space-12: 48px;
+  --zzt-space-16: 64px;
+
+  /* =========================================================
+     TYPOGRAPHY
+     ========================================================= */
+  --zzt-font-sans: "Inter", "PingFang SC", "Helvetica Neue", "Microsoft YaHei",
+                   ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --zzt-font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  --zzt-font-num:  "Inter", ui-sans-serif, system-ui, sans-serif; /* tabular numbers */
+
+  /* Type scale — pixel sizes match the figma values most heavily used */
+  --zzt-text-2xs: 10px;
+  --zzt-text-xs:  12px;
+  --zzt-text-sm:  14px;       /* body small / table cell */
+  --zzt-text-md:  16px;       /* body / button md */
+  --zzt-text-lg:  18px;       /* section title */
+  --zzt-text-xl:  20px;
+  --zzt-text-2xl: 24px;       /* card metric */
+  --zzt-text-3xl: 32px;
+  --zzt-text-4xl: 40px;
+  --zzt-text-display: 56px;
+
+  /* Line heights — Figma uses 1.43 for body */
+  --zzt-lh-tight:  1.2;
+  --zzt-lh-snug:   1.35;
+  --zzt-lh-normal: 1.43;
+  --zzt-lh-relaxed: 1.6;
+
+  /* Letter spacing */
+  --zzt-tracking-tight:  -0.020em;
+  --zzt-tracking-default: -0.005em;
+  --zzt-tracking-wide:    0;
+}
+
+/* =========================================================
+   Semantic typography classes
+   ========================================================= */
+html, body {
+  font-family: var(--zzt-font-sans);
+  color: var(--zzt-fg);
+  background: var(--zzt-bg);
+  font-size: var(--zzt-text-sm);
+  line-height: var(--zzt-lh-normal);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+.zzt-display { font-size: var(--zzt-text-display); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+.zzt-h1 { font-size: var(--zzt-text-3xl); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+.zzt-h2 { font-size: var(--zzt-text-2xl); font-weight: 600; line-height: 1.2;  letter-spacing: -0.005em; }
+.zzt-h3 { font-size: var(--zzt-text-xl);  font-weight: 600; line-height: 1.25; }
+.zzt-h4 { font-size: var(--zzt-text-lg);  font-weight: 500; line-height: 1.3;  letter-spacing: -0.005em; }
+.zzt-title    { font-size: var(--zzt-text-md);  font-weight: 500; line-height: 1.43; letter-spacing: -0.005em; }
+.zzt-body     { font-size: var(--zzt-text-sm);  font-weight: 400; line-height: 1.5; }
+.zzt-body-strong { font-size: var(--zzt-text-sm); font-weight: 500; line-height: 1.43; letter-spacing: -0.005em; }
+.zzt-caption  { font-size: var(--zzt-text-xs);  font-weight: 400; line-height: 1.5; color: var(--zzt-fg-muted); }
+.zzt-overline { font-size: var(--zzt-text-2xs); font-weight: 500; line-height: 1.4; letter-spacing: 0.08em; text-transform: uppercase; color: var(--zzt-fg-muted); }
+.zzt-metric   { font-family: var(--zzt-font-num); font-size: var(--zzt-text-3xl); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.zzt-code     { font-family: var(--zzt-font-mono); font-size: 13px; }
+.zzt-link     { color: var(--zzt-fg-link); text-decoration: none; }
+.zzt-link:hover { text-decoration: underline; }

@@ -1,0 +1,64 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { background: var(--zzt-zinc-75); padding: 28px 22px; }
+  .pop {
+    width: 280px; background: #fff; border-radius: 12px;
+    box-shadow: var(--zzt-shadow-md); border: 1px solid rgba(0,0,0,.06);
+    padding: 14px; position: relative;
+  }
+  .pop::before { content:""; position: absolute; top: -6px; left: 28px; width:12px; height:12px;
+                 background:#fff; transform: rotate(45deg); border-top: 1px solid rgba(0,0,0,.06); border-left: 1px solid rgba(0,0,0,.06); }
+  .pop h4 { margin: 0 0 6px; font-size: 13.5px; font-weight: 600; }
+  .pop p { margin: 0 0 10px; font-size: 12.5px; color: var(--zzt-fg-muted); line-height: 1.5; }
+  .pop .actions { display:flex; gap: 6px; justify-content: flex-end; margin-top: 8px; }
+
+  .menu {
+    width: 240px; background: #fff; border-radius: 12px;
+    box-shadow: var(--zzt-shadow-md); border: 1px solid rgba(0,0,0,.06);
+    padding: 6px;
+  }
+  .menu-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px;
+               border-radius: 8px; font-size: 13.5px; cursor: pointer; color: var(--zzt-fg); }
+  .menu-item:hover { background: var(--zzt-zinc-100); }
+  .menu-item i { width: 14px; height: 14px; color: var(--zzt-fg-muted); }
+  .menu-item .kbd { margin-left: auto; font-family: var(--zzt-font-mono); font-size: 11px; color: var(--zzt-fg-muted); }
+  .menu-item.danger { color: var(--zzt-danger-500); }
+  .menu-item.danger i { color: var(--zzt-danger-500); }
+  .menu-item.selected { background: rgba(255,15,39,.08); color: var(--zzt-accent-700); }
+  .menu-item.selected i { color: var(--zzt-accent-500); }
+  .menu-sep { height: 1px; background: var(--zzt-border-subtle); margin: 4px 6px; }
+  .menu-label { font-size: 11px; color: var(--zzt-fg-muted); padding: 6px 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+</style></head><body>
+<div class="row" style="gap: 24px; align-items: flex-start;">
+  <div class="pop">
+    <h4>确认退回该批次？</h4>
+    <p>退回后将通知商户重新质检，预计需要 3 个工作日。</p>
+    <div class="actions">
+      <button class="btn ghost sm">取消</button>
+      <button class="btn danger sm">确认退回</button>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-label">操作</div>
+    <div class="menu-item"><i data-lucide="edit"></i>编辑</div>
+    <div class="menu-item"><i data-lucide="copy"></i>复制 SKU <span class="kbd">⌘ D</span></div>
+    <div class="menu-item selected"><i data-lucide="check"></i>设为推荐</div>
+    <div class="menu-item"><i data-lucide="megaphone"></i>加入活动</div>
+    <div class="menu-sep"></div>
+    <div class="menu-item"><i data-lucide="archive"></i>下架</div>
+    <div class="menu-item danger"><i data-lucide="trash-2"></i>删除 SKU</div>
+  </div>
+
+  <div class="menu" style="width: 200px;">
+    <div class="menu-label">质检处置</div>
+    <div class="menu-item"><i data-lucide="check"></i>采纳并调价</div>
+    <div class="menu-item"><i data-lucide="rotate-ccw"></i>转入翻新</div>
+    <div class="menu-item danger"><i data-lucide="x"></i>退回商户</div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

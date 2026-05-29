@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<title>转转通 · 商品管理</title>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="products.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<body data-screen-label="02 Products">
+<div class="shell">
+
+  <!-- ============ Top Bar (full-width) ============ -->
+  <header class="top">
+    <div class="brand"><img class="lockup" src="../../assets/logo-zhuanzhuan.svg" alt="转转通"></div>
+    <div class="links">
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>快捷入口</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/medal.svg)"></span>转转学堂</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/comment.svg)"></span>我要反馈</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>公告<span class="badge">2</span></span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/bell.svg)"></span>通知<span class="badge">5</span></span>
+      <span class="sep-v"></span>
+      <span class="me">
+        <span class="av"></span>
+        <span class="name"><b>张超</b>（管理员）</span>
+      </span>
+      <span class="top-link top-logout" style="margin-left: 6px;">退出</span>
+    </div>
+  </header>
+
+  <div class="shell-row">
+
+  <!-- ============ Side Nav ============ -->
+  <aside class="side">
+    <nav class="nav">
+
+      <button class="nav-item" onclick="location.href='index.html'">
+        <span class="ic" style="--src: url(../../assets/icons/home.svg)"></span>
+        <span class="lab">工作台</span>
+      </button>
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>
+        <span class="lab">常用</span>
+      </button>
+      <button class="nav-item" onclick="location.href='analytics.html'">
+        <span class="ic" style="--src: url(../../assets/icons/chart-line.svg)"></span>
+        <span class="lab">数据看板</span>
+      </button>
+
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/building.svg)"></span>
+          <span class="lab">商户中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商家认证</button>
+          <button class="nav-sub">对账信息中心</button>
+          <button class="nav-sub">合同管理</button>
+          <button class="nav-sub">银行卡管理<span class="hot">热</span></button>
+          <button class="nav-sub">服务评分</button>
+          <button class="nav-sub">退货地址管理</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shopping-bag.svg)"></span>
+          <span class="lab">店铺管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">店铺信息</button>
+          <button class="nav-sub">店铺装修</button>
+          <button class="nav-sub">店铺评分</button>
+          <button class="nav-sub">客服设置</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="true">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/box.svg)"></span>
+          <span class="lab">商品管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub active">商品管理<span class="hot">热</span></button>
+          <button class="nav-sub">高库龄商品</button>
+          <button class="nav-sub">退库商品</button>
+          <button class="nav-sub">商品评价</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/boxes.svg)"></span>
+          <span class="lab">供货管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub" onclick="location.href='supply.html'">自主供货</button>
+          <button class="nav-sub">供货单管理</button>
+          <button class="nav-sub">需求大厅</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/trolley.svg)"></span>
+          <span class="lab">订单售后</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">订单列表</button>
+          <button class="nav-sub">售后工单</button>
+          <button class="nav-sub">退货管理</button>
+          <button class="nav-sub">物流跟踪</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>
+          <span class="lab">营销活动</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">活动管理</button>
+          <button class="nav-sub">优惠券</button>
+          <button class="nav-sub">商品推广</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shield-check.svg)"></span>
+          <span class="lab">质检管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商品录入</button>
+          <button class="nav-sub">扫码质检</button>
+          <button class="nav-sub">扫码复检</button>
+          <button class="nav-sub">出库调拨</button>
+          <button class="nav-sub">调拨单</button>
+          <button class="nav-sub">单据中心</button>
+          <button class="nav-sub">分站审核</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/archive.svg)"></span>
+          <span class="lab">仓储管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">入库订单</button>
+          <button class="nav-sub">发货订单</button>
+          <button class="nav-sub">拣货波次</button>
+          <button class="nav-sub">出库复核</button>
+          <button class="nav-sub">出库打单</button>
+          <button class="nav-sub">盘点管理</button>
+          <button class="nav-sub">商品查询</button>
+          <button class="nav-sub">库存流水</button>
+          <button class="nav-sub">耗材申请</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/wallet.svg)"></span>
+          <span class="lab">成本中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">收支明细</button>
+          <button class="nav-sub">保证金</button>
+          <button class="nav-sub">提现记录</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/chart-bar.svg)"></span>
+          <span class="lab">数据中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">经营报表</button>
+          <button class="nav-sub">商品分析</button>
+          <button class="nav-sub">流量分析</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/key.svg)"></span>
+          <span class="lab">商户权限</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">子账号管理</button>
+          <button class="nav-sub">角色权限</button>
+        </div>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/hammer.svg)"></span>
+        <span class="lab">工具</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+
+    <!-- ============ Body (single column) ============ -->
+    <div class="page">
+
+      <!-- ===== Notice carousel (top of page) ===== -->
+      <div class="notice-bar" id="noticeBar" data-interval="3000" style="background-color: rgb(236, 245, 255); border-color: rgb(22, 119, 255);">
+        <span class="nt-tag t-platform" data-tag-host="">平台信息</span>
+
+        <div class="nt-track">
+          <!-- 1 / 5 -->
+          <div class="nt-item is-active" data-type="platform" data-tag-label="平台信息" data-time="2026-05-27 09:14">
+            <span class="nt-text">系统将于 5 月 30 日 02:00–04:00 升级订单中台,期间下单可能延迟,请提前安排发货。</span>
+            <span class="nt-action" data-action="detail">查看详情</span>
+          </div>
+          <!-- 2 / 5 -->
+          <div class="nt-item" data-type="shengyi" data-tag-label="生意参谋" data-time="2026-05-27 08:42">
+            <span class="nt-text">您有 12 个商品近 7 日转化率低于品类均值,建议结合诊断报告调整定价策略。</span>
+            <span class="nt-action" data-action="repricing">一键调价</span>
+          </div>
+          <!-- 3 / 3 -->
+          <div class="nt-item" data-type="billion" data-tag-label="百亿补贴" data-time="2026-05-27 07:30">
+            <span class="nt-text">百亿补贴 6·6 大促招商已开放,符合资质的 iPhone / 华为旗舰可优先报名。</span>
+            <span class="nt-action" data-action="enroll">立即报名</span>
+          </div>
+        </div>
+
+        <div class="nt-ctrl">
+          <span class="nt-btn nt-prev" title="上一条">
+            <span class="ic" style="--src: url(../../assets/icons/chevron-left.svg)"></span>
+          </span>
+          <span class="nt-pager"><b class="nt-cur">1</b> / <span class="nt-total">3</span></span>
+          <span class="nt-btn nt-next" title="下一条">
+            <span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span>
+          </span>
+          <span class="nt-sep"></span>
+          <span class="nt-btn nt-expand" title="展开全部">
+            <span class="ic" style="--src: url(../../assets/icons/chevron-down.svg)"></span>
+          </span>
+        </div>
+
+        <!-- Drop-down panel — populated from .nt-track on expand -->
+        <div class="nt-panel" hidden=""></div>
+      </div>
+
+      <!-- ===== Header card: tabs ===== -->
+      <div class="card page-head">
+        <!-- L1: business mode tabs -->
+        <div class="tabs-l1">
+          <span class="tab active">一机一拍</span>
+          <span class="tab">深库存</span>
+        </div>
+        <!-- L2: status filter tabs + right meta -->
+        <div class="tabs-l2-row">
+          <div class="tabs-l2">
+            <span class="tab active">全部<span class="count">3065</span></span>
+            <span class="tab">质检中<span class="count">42</span></span>
+            <span class="tab">未上架<span class="count">128</span></span>
+            <span class="tab">已上架<span class="count">2814</span></span>
+            <span class="tab">已售出<span class="count">62</span></span>
+            <span class="tab">售后中<span class="count">5</span></span>
+            <span class="tab">已退回<span class="count">14</span></span>
+          </div>
+          <span class="l2-meta">
+            可送检：<span class="n">5</span>
+            <span class="meta-sep"></span>
+            今日上架数：<span class="n">0</span>
+            <span class="ic-info"></span>
+          </span>
+        </div>
+      </div>
+
+      <!-- ===== Filter card ===== -->
+      <div class="card filter-card">
+        <div class="filter-grid">
+
+          <!-- Row 1 -->
+          <div class="field-inline">
+            <span class="label">品类：</span>
+            <div class="ctl">
+              <div class="inp">
+                <span class="placeholder">请选择品类</span>
+                <span class="caret"></span>
+              </div>
+            </div>
+          </div>
+          <div class="field-inline">
+            <span class="label">品牌：</span>
+            <div class="ctl">
+              <div class="inp">
+                <span class="placeholder">请选择品牌</span>
+                <span class="caret"></span>
+              </div>
+            </div>
+          </div>
+          <div class="field-inline">
+            <span class="label">型号：</span>
+            <div class="ctl">
+              <div class="inp text">
+                <input type="text" placeholder="请输入型号">
+              </div>
+            </div>
+          </div>
+          <div class="field-inline">
+            <span class="label">商品类型：</span>
+            <div class="ctl">
+              <div class="inp">
+                <span class="placeholder">请选择商品类型</span>
+                <span class="caret"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="field-inline">
+            <span class="label">成色：</span>
+            <div class="ctl">
+              <div class="inp">
+                <span class="placeholder">请选择成色</span>
+                <span class="caret"></span>
+              </div>
+            </div>
+          </div>
+          <div class="field-inline">
+            <span class="label">录入时间：</span>
+            <div class="ctl">
+              <div class="inp range">
+                <span class="slot empty">开始</span>
+                <span class="arrow">→</span>
+                <span class="slot empty">结束</span>
+                <span class="ic-cal" style="margin-left:auto;"></span>
+              </div>
+            </div>
+          </div>
+          <div class="field-inline">
+            <button class="label-picker">质检码<span class="caret"></span></button>
+            <div class="ctl">
+              <div class="inp">
+                <input type="text" placeholder="请输入">
+              </div>
+            </div>
+          </div>
+          <div class="field-inline">
+            <span class="label">IMEI：</span>
+            <div class="ctl">
+              <div class="inp text">
+                <input type="text" placeholder="请输入 IMEI">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="filter-foot">
+          <div class="acts">
+            <button class="btn btn-primary">查询</button>
+            <button class="btn btn-outline">重置</button>
+            <button class="btn btn-outline"><span class="ic" style="--src: url(../../assets/icons/download.svg)"></span>导出</button>
+            <button class="btn btn-outline btn-batch">
+              <span class="ic" style="--src: url(../../assets/icons/tags.svg)"></span>
+              批量操作<span class="caret-dn"></span>
+            </button>
+          </div>
+          <span class="expand-link">展开 <span class="caret"></span></span>
+        </div>
+      </div>
+
+      <!-- ===== Table card ===== -->
+      <div class="card table-card">
+        <div class="table-wrap">
+          <table class="products">
+            <thead>
+              <tr>
+                <th class="col-ck"><span class="ck indeterminate" title="全选"></span></th>
+                <th class="col-info">商品信息</th>
+                <th class="col-price">定价</th>
+                <th class="col-state">商品状态</th>
+                <th class="col-time">录入时间</th>
+                <th class="col-ops">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td class="col-ck"><span class="ck"></span></td>
+                <td class="col-info">
+                  <div class="sku-cell">
+                    <div class="sku-thumb has-img" style="--img: url(../../assets/products/huawei-p30-blue.png)"></div>
+                    <div class="sku-body">
+                      <div class="sku-title-row">
+                        <span class="cond-badge"><span class="ap"><b>99</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                        <span class="sku-title">华为 HUAWEI P30 8GB+128GB 海域蓝</span>
+                      </div>
+                      <div class="sku-tags">
+                        <span class="tag-out">自质检</span>
+                      </div>
+                      <div class="sku-spec">
+                        <span>二手优品</span>
+                        <span class="sep">|</span><span>海域蓝</span>
+                        <span class="sep">|</span><span>移动5G，联通5G，电信5G</span>
+                        <span class="sep">|</span><span>8GB+128GB</span>
+                        <span class="sep">|</span><span>国行</span>
+                      </div>
+                      <div class="sku-ids">
+                        <span class="pair"><span class="k">质检码：</span><span class="v">1004011902</span><span class="ic-copy"></span></span>
+                        <span class="pair"><span class="k">IMEI：</span><span class="v">202605180606001</span><span class="ic-copy"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">
+                  <div class="price-main">¥1,288</div>
+                  <div class="price-aux">
+                    <span class="k">预计结算价</span><span class="v">¥1,159.20</span>
+                    <span class="k">预计红包成本</span><span class="v muted">—</span>
+                  </div>
+                </td>
+                <td class="col-state"><span class="status qc"><span class="dot"></span>质检中</span></td>
+                <td class="col-time">
+                  <div class="time-cell">
+                    <div>2026-05-18</div>
+                    <div class="t">18:06:53</div>
+                    <span class="rel">今日</span>
+                  </div>
+                </td>
+                <td class="col-ops">
+                  <div class="ops">
+                    <a class="primary">查看质检报告</a>
+                    <a>商品详情</a>
+                    <a class="danger">删除</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-ck"><span class="ck on"></span></td>
+                <td class="col-info">
+                  <div class="sku-cell">
+                    <div class="sku-thumb has-img" style="--img: url(../../assets/products/iphone-11-red.png)"></div>
+                    <div class="sku-body">
+                      <div class="sku-title-row">
+                        <span class="cond-badge"><span class="ap"><b>95</b><span class="suf">新</span></span><span class="fn">B</span></span>
+                        <span class="sku-title">Apple iPhone 11 128GB 红色 国行双卡</span>
+                      </div>
+                      <div class="sku-tags">
+                        <span class="tag-out accent">官方质检</span>
+                      </div>
+                      <div class="sku-spec">
+                        <span>二手良品</span>
+                        <span class="sep">|</span><span>红色</span>
+                        <span class="sep">|</span><span>移动5G，联通5G，电信5G</span>
+                        <span class="sep">|</span><span>128GB</span>
+                        <span class="sep">|</span><span>国行双卡</span>
+                      </div>
+                      <div class="sku-ids">
+                        <span class="pair"><span class="k">质检码：</span><span class="v">1004011875</span><span class="ic-copy"></span></span>
+                        <span class="pair"><span class="k">IMEI：</span><span class="v">202605180504217</span><span class="ic-copy"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">
+                  <div class="price-main">¥1,888</div>
+                  <div class="price-aux">
+                    <span class="k">预计结算价</span><span class="v">¥1,718.08</span>
+                    <span class="k">预计红包成本</span><span class="v">-¥38.00</span>
+                  </div>
+                </td>
+                <td class="col-state"><span class="status off"><span class="dot"></span>未上架</span></td>
+                <td class="col-time">
+                  <div class="time-cell">
+                    <div>2026-05-18</div>
+                    <div class="t">14:22:08</div>
+                    <span class="rel">今日</span>
+                  </div>
+                </td>
+                <td class="col-ops">
+                  <div class="ops">
+                    <a class="primary">上架</a>
+                    <a>商品详情</a>
+                    <a class="danger">删除</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-ck"><span class="ck"></span></td>
+                <td class="col-info">
+                  <div class="sku-cell">
+                    <div class="sku-thumb has-img" style="--img: url(../../assets/products/iphone-11-white.png)"></div>
+                    <div class="sku-body">
+                      <div class="sku-title-row">
+                        <span class="cond-badge"><span class="ap"><b>99</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                        <span class="sku-title">Apple iPhone 11 256GB 白色 国行双卡</span>
+                      </div>
+                      <div class="sku-tags">
+                        <span class="tag-out accent">官方质检</span>
+                      </div>
+                      <div class="sku-spec">
+                        <span>二手优品</span>
+                        <span class="sep">|</span><span>白色</span>
+                        <span class="sep">|</span><span>移动5G，联通5G，电信5G</span>
+                        <span class="sep">|</span><span>256GB</span>
+                        <span class="sep">|</span><span>国行双卡</span>
+                      </div>
+                      <div class="sku-ids">
+                        <span class="pair"><span class="k">质检码：</span><span class="v">1004011712</span><span class="ic-copy"></span></span>
+                        <span class="pair"><span class="k">IMEI：</span><span class="v">202605171432905</span><span class="ic-copy"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">
+                  <div class="price-main">¥2,199</div>
+                  <div class="price-aux">
+                    <span class="k">预计结算价</span><span class="v">¥2,007.13</span>
+                    <span class="k">预计红包成本</span><span class="v">-¥44.00</span>
+                  </div>
+                </td>
+                <td class="col-state"><span class="status on"><span class="dot"></span>已上架</span></td>
+                <td class="col-time">
+                  <div class="time-cell">
+                    <div>2026-05-17</div>
+                    <div class="t">14:32:90</div>
+                    <span class="rel">昨日</span>
+                  </div>
+                </td>
+                <td class="col-ops">
+                  <div class="ops">
+                    <a class="primary">商品详情</a>
+                    <a>下架</a>
+                    <a class="danger">退库</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-ck"><span class="ck"></span></td>
+                <td class="col-info">
+                  <div class="sku-cell">
+                    <div class="sku-thumb placeholder"></div>
+                    <div class="sku-body">
+                      <div class="sku-title-row">
+                        <span class="cond-badge"><span class="ap"><b>99</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                        <span class="sku-title">Apple iPad Air 5 64GB WLAN 紫色</span>
+                      </div>
+                      <div class="sku-tags">
+                        <span class="tag-out">自质检</span>
+                      </div>
+                      <div class="sku-spec">
+                        <span>二手优品</span>
+                        <span class="sep">|</span><span>紫色</span>
+                        <span class="sep">|</span><span>WLAN</span>
+                        <span class="sep">|</span><span>64GB</span>
+                        <span class="sep">|</span><span>国行</span>
+                      </div>
+                      <div class="sku-ids">
+                        <span class="pair"><span class="k">质检码：</span><span class="v">1004010994</span><span class="ic-copy"></span></span>
+                        <span class="pair"><span class="k">IMEI：</span><span class="v">—</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">
+                  <div class="price-main">¥2,180</div>
+                  <div class="price-aux">
+                    <span class="k">预计结算价</span><span class="v">¥1,966.18</span>
+                    <span class="k">预计红包成本</span><span class="v">-¥44.00</span>
+                  </div>
+                </td>
+                <td class="col-state"><span class="status sold"><span class="dot"></span>已售出</span></td>
+                <td class="col-time">
+                  <div class="time-cell">
+                    <div>2026-05-16</div>
+                    <div class="t">09:18:42</div>
+                    <span class="rel">3 天前</span>
+                  </div>
+                </td>
+                <td class="col-ops">
+                  <div class="ops">
+                    <a class="primary">商品详情</a>
+                    <a>订单详情</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-ck"><span class="ck"></span></td>
+                <td class="col-info">
+                  <div class="sku-cell">
+                    <div class="sku-thumb placeholder"></div>
+                    <div class="sku-body">
+                      <div class="sku-title-row">
+                        <span class="cond-badge"><span class="ap"><b>95</b><span class="suf">新</span></span><span class="fn">B</span></span>
+                        <span class="sku-title">小米 14 Ultra 16GB+512GB 龙晶蓝</span>
+                      </div>
+                      <div class="sku-tags">
+                        <span class="tag-out">自质检</span>
+                      </div>
+                      <div class="sku-spec">
+                        <span>二手良品</span>
+                        <span class="sep">|</span><span>龙晶蓝</span>
+                        <span class="sep">|</span><span>移动5G，联通5G，电信5G</span>
+                        <span class="sep">|</span><span>16GB+512GB</span>
+                        <span class="sep">|</span><span>国行</span>
+                      </div>
+                      <div class="sku-ids">
+                        <span class="pair"><span class="k">质检码：</span><span class="v">1004010812</span><span class="ic-copy"></span></span>
+                        <span class="pair"><span class="k">IMEI：</span><span class="v">202605151107603</span><span class="ic-copy"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">
+                  <div class="price-main">¥3,580</div>
+                  <div class="price-aux">
+                    <span class="k">预计结算价</span><span class="v">¥3,222.00</span>
+                    <span class="k">预计红包成本</span><span class="v muted">—</span>
+                  </div>
+                </td>
+                <td class="col-state"><span class="status aftersale"><span class="dot"></span>售后中</span></td>
+                <td class="col-time">
+                  <div class="time-cell">
+                    <div>2026-05-15</div>
+                    <div class="t">11:07:60</div>
+                    <span class="rel">4 天前</span>
+                  </div>
+                </td>
+                <td class="col-ops">
+                  <div class="ops">
+                    <a class="primary">售后详情</a>
+                    <a>商品详情</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="col-ck"><span class="ck"></span></td>
+                <td class="col-info">
+                  <div class="sku-cell">
+                    <div class="sku-thumb placeholder"></div>
+                    <div class="sku-body">
+                      <div class="sku-title-row">
+                        <span class="cond-badge"><span class="ap zh">9成新</span><span class="fn">C</span></span>
+                        <span class="sku-title">vivo X100 Pro 16GB+512GB 星迹蓝</span>
+                      </div>
+                      <div class="sku-tags">
+                        <span class="tag-out">自质检</span>
+                      </div>
+                      <div class="sku-spec">
+                        <span>二手优品</span>
+                        <span class="sep">|</span><span>星迹蓝</span>
+                        <span class="sep">|</span><span>移动5G，联通5G，电信5G</span>
+                        <span class="sep">|</span><span>16GB+512GB</span>
+                        <span class="sep">|</span><span>国行</span>
+                      </div>
+                      <div class="sku-ids">
+                        <span class="pair"><span class="k">质检码：</span><span class="v">1004010608</span><span class="ic-copy"></span></span>
+                        <span class="pair"><span class="k">IMEI：</span><span class="v">202605140832104</span><span class="ic-copy"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="col-price">
+                  <div class="price-main muted">¥ -</div>
+                  <div class="price-aux">
+                    <span class="k">预计结算价</span><span class="v muted">—</span>
+                    <span class="k">预计红包成本</span><span class="v muted">—</span>
+                  </div>
+                </td>
+                <td class="col-state"><span class="status returned"><span class="dot"></span>已退回</span></td>
+                <td class="col-time">
+                  <div class="time-cell">
+                    <div>2026-05-14</div>
+                    <div class="t">08:32:10</div>
+                    <span class="rel">5 天前</span>
+                  </div>
+                </td>
+                <td class="col-ops">
+                  <div class="ops">
+                    <a class="primary">商品详情</a>
+                    <a class="danger">催仓库退回</a>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pager-row">
+          <span class="pg-info">共 <b>3,065</b> 条 · 第 <b>1-50</b> 条</span>
+          <div class="pager-right">
+            <div class="pager">
+              <span class="pg-btn disabled"><span class="ic" style="--src: url(../../assets/icons/chevron-left.svg)"></span></span>
+              <span class="pg-btn active">1</span>
+              <span class="pg-btn">2</span>
+              <span class="pg-btn">3</span>
+              <span class="pg-btn">4</span>
+              <span class="pg-btn">5</span>
+              <span class="pg-ell">…</span>
+              <span class="pg-btn">62</span>
+              <span class="pg-btn"><span class="ic" style="--src: url(../../assets/icons/chevron-right.svg)"></span></span>
+            </div>
+            <span class="pg-select">50 条/页 <span class="caret"></span></span>
+            <span class="pg-select pg-jump">跳至 <input value="1"> 页</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  // ============================================================
+  // Notice carousel — 3s auto-rotate, hover pause, prev/next,
+  // expand-to-panel (up to 3 visible rows), click-outside to close.
+  // ============================================================
+  (function () {
+    var bar = document.getElementById('noticeBar');
+    if (!bar) return;
+
+    var track = bar.querySelector('.nt-track');
+    var items = Array.prototype.slice.call(track.querySelectorAll('.nt-item'));
+    var tagHost = bar.querySelector('[data-tag-host]');
+    var curEl = bar.querySelector('.nt-cur');
+    var totalEl = bar.querySelector('.nt-total');
+    var prev = bar.querySelector('.nt-prev');
+    var next = bar.querySelector('.nt-next');
+    var expand = bar.querySelector('.nt-expand');
+    var panel = bar.querySelector('.nt-panel');
+    var TYPE_CLASSES = ['t-platform', 't-shengyi', 't-billion'];
+    var TYPE_LABEL = { platform: '平台信息', shengyi: '生意参谋', billion: '百亿补贴' };
+    var idx = 0, total = items.length, timer = null;
+    var interval = parseInt(bar.dataset.interval, 10) || 3000;
+
+    totalEl.textContent = total;
+
+    function go(i) {
+      idx = (i + total) % total;
+      items.forEach(function (el, n) {
+        el.classList.toggle('is-active', n === idx);
+      });
+      var active = items[idx];
+      var type = active.dataset.type || 'platform';
+      var label = active.dataset.tagLabel || TYPE_LABEL[type] || '';
+      TYPE_CLASSES.forEach(function (c) { tagHost.classList.remove(c); });
+      tagHost.classList.add('t-' + type);
+      tagHost.textContent = label;
+      curEl.textContent = idx + 1;
+    }
+
+    function start() {
+      stop();
+      if (bar.classList.contains('is-open')) return; // paused while open
+      timer = setInterval(function () { go(idx + 1); }, interval);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    bar.addEventListener('mouseenter', stop);
+    bar.addEventListener('mouseleave', start);
+
+    prev.addEventListener('click', function (e) {
+      e.stopPropagation();
+      go(idx - 1);
+      start();
+    });
+    next.addEventListener('click', function (e) {
+      e.stopPropagation();
+      go(idx + 1);
+      start();
+    });
+
+    // ----- Expand panel: build rows from current items, max 3 -----
+    function buildPanel() {
+      panel.innerHTML = '';
+      items.slice(0, 3).forEach(function (it) {
+        var row = document.createElement('div');
+        row.className = 'nt-row';
+
+        var tagType = it.dataset.type || 'platform';
+        var tagLabel = it.dataset.tagLabel || TYPE_LABEL[tagType] || '';
+        var time = it.dataset.time || '';
+        var text = it.querySelector('.nt-text').textContent;
+        var actEl = it.querySelector('.nt-action');
+        var actLabel = actEl ? actEl.textContent : '';
+
+        var tag = document.createElement('span');
+        tag.className = 'nt-tag t-' + tagType;
+        tag.textContent = tagLabel;
+        row.appendChild(tag);
+
+        var txt = document.createElement('div');
+        txt.className = 'nt-rowtxt';
+        var p1 = document.createElement('span');
+        p1.textContent = text;
+        var p2 = document.createElement('span');
+        p2.className = 'nt-time';
+        p2.textContent = time;
+        txt.appendChild(p1);
+        txt.appendChild(p2);
+        row.appendChild(txt);
+
+        if (actLabel) {
+          var act = document.createElement('span');
+          act.className = 'nt-rowact';
+          act.textContent = actLabel + ' ›';
+          row.appendChild(act);
+        }
+        panel.appendChild(row);
+      });
+    }
+
+    function open() {
+      buildPanel();
+      panel.removeAttribute('hidden');
+      bar.classList.add('is-open');
+      stop();
+    }
+    function close() {
+      panel.setAttribute('hidden', '');
+      bar.classList.remove('is-open');
+      start();
+    }
+    expand.addEventListener('click', function (e) {
+      e.stopPropagation();
+      bar.classList.contains('is-open') ? close() : open();
+    });
+    document.addEventListener('click', function (e) {
+      if (!bar.classList.contains('is-open')) return;
+      if (!bar.contains(e.target)) close();
+    });
+
+    go(0);
+    start();
+  })();
+</script>
+<script>
+  // Sidebar: group expand/collapse + click-to-activate.
+  // Single items (.nav-item) and leaf sub-items (.nav-sub) share the same active model;
+  // group headers (.nav-grouphead) only toggle expand/collapse — they never carry .active.
+  (function () {
+    var nav = document.querySelector('.side .nav');
+    if (!nav) return;
+    function setActive(el) {
+      nav.querySelectorAll('.nav-item.active, .nav-sub.active').forEach(function (n) { n.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    nav.addEventListener('click', function (e) {
+      var head = e.target.closest('.nav-grouphead');
+      if (head) {
+        var g = head.closest('.nav-group');
+        g.dataset.expanded = g.dataset.expanded === 'true' ? 'false' : 'true';
+        return;
+      }
+      var leaf = e.target.closest('.nav-item, .nav-sub');
+      if (leaf) setActive(leaf);
+    });
+    // Scroll active item into view on load
+    var active = nav.querySelector('.nav-sub.active, .nav-item.active');
+    if (active) nav.scrollTop = Math.max(0, active.offsetTop - 80);
+  })();
+</script>
+
+
+</body></html>

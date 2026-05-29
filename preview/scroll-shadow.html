@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { background: var(--zzt-zinc-75); padding: 18px; }
+  .stack { display:flex; gap:18px; }
+  .box { position:relative; width: 260px; height: 200px; background:#fff; border-radius: 12px; overflow:hidden;
+         border: 1px solid rgba(0,0,0,0.04); }
+  .box .lines { padding: 14px 16px; display:flex; flex-direction: column; gap: 6px; font-size: 12.5px; color: var(--zzt-fg); }
+  .box .lines .row { display:flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--zzt-border-subtle); }
+  .box .lines .row b { font-family: var(--zzt-font-num); font-weight: 500; }
+  .fade-t { position: absolute; top: 0; left: 0; right: 0; height: 28px; background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0) 100%); pointer-events: none; }
+  .fade-b { position: absolute; bottom: 0; left: 0; right: 0; height: 36px; background: linear-gradient(0deg, #fff 0%, rgba(255,255,255,0) 100%); pointer-events: none; }
+  .lab { font-size: 11px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); position: absolute; top: 8px; left: 12px; }
+
+  /* Horizontal */
+  .row-h { position: relative; background:#fff; border-radius: 12px; padding: 12px; overflow:hidden; border: 1px solid rgba(0,0,0,0.04); width: 540px; }
+  .row-h .chips { display: flex; gap: 8px; flex-wrap: nowrap; }
+  .row-h .chip { padding: 4px 12px; background: var(--zzt-zinc-100); border-radius: 999px; font-size: 12px; white-space: nowrap; }
+  .row-h .fade-l { position: absolute; top: 0; bottom: 0; left: 0; width: 32px; background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0) 100%); }
+  .row-h .fade-r { position: absolute; top: 0; bottom: 0; right: 0; width: 32px; background: linear-gradient(-90deg, #fff 0%, rgba(255,255,255,0) 100%); }
+</style></head><body>
+<div class="stack">
+  <div class="box">
+    <span class="lab">vertical · bottom fade</span>
+    <div class="lines" style="padding-top: 30px;">
+      <div class="row"><span>今日 GMV</span><b>¥ 128,540</b></div>
+      <div class="row"><span>待发货</span><b>86</b></div>
+      <div class="row"><span>已发货</span><b>142</b></div>
+      <div class="row"><span>已签收</span><b>1,024</b></div>
+      <div class="row"><span>售后中</span><b>3</b></div>
+    </div>
+    <div class="fade-b"></div>
+  </div>
+  <div class="box">
+    <span class="lab">vertical · top + bottom fade</span>
+    <div class="lines" style="padding-top: 26px; padding-bottom: 30px;">
+      <div class="row"><span>iPhone 14 Pro</span><b>¥ 4,599</b></div>
+      <div class="row"><span>iPad Air 5</span><b>¥ 3,180</b></div>
+      <div class="row"><span>MacBook Air M2</span><b>¥ 7,899</b></div>
+      <div class="row"><span>AirPods Pro 2</span><b>¥ 1,399</b></div>
+    </div>
+    <div class="fade-t"></div>
+    <div class="fade-b"></div>
+  </div>
+</div>
+<div class="row-h" style="margin-top: 18px;">
+  <div class="chips">
+    <span class="chip">手机</span><span class="chip">平板</span><span class="chip">笔记本</span><span class="chip">耳机</span><span class="chip">手表</span><span class="chip">摄影摄像</span><span class="chip">配件</span><span class="chip">游戏机</span>
+  </div>
+  <div class="fade-l"></div>
+  <div class="fade-r"></div>
+</div>
+<div style="margin-top: 14px; font-size: 12.5px; color: var(--zzt-fg-muted);">
+  渐消投影 · scroll-shadow on overflowing containers. The fade matches the surface color so it disappears at the edge without a hard line.
+</div>
+</body></html>

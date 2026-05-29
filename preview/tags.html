@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>Tags</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:22px; background:#fff; font-family:var(--zzt-font-sans); }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom: 10px; }
+  .lab { font-size:11px; color:var(--zzt-fg-muted); width:96px; font-family: var(--zzt-font-mono); }
+  .tag { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:500; padding:2px 10px; border-radius:999px; line-height:18px; }
+  .dot { width:6px; height:6px; border-radius:999px; }
+  .cat { border-radius:6px; padding:2px 8px; }
+  .count { background:var(--zzt-zinc-200); color:var(--zzt-zinc-600); border-radius:999px; padding:0 6px; font-size:10px; }
+</style></head><body>
+<div class="row"><span class="lab">status</span>
+  <span class="tag" style="background:rgba(23,201,100,.12); color:#0a8a44"><span class="dot" style="background:#17C964"></span>进行中</span>
+  <span class="tag" style="background:rgba(245,165,36,.15); color:#9a6608"><span class="dot" style="background:#F5A524"></span>待入仓</span>
+  <span class="tag" style="background:rgba(255,15,39,.12); color:#A20017"><span class="dot" style="background:#FF0F27"></span>已退回</span>
+  <span class="tag" style="background:rgba(255,15,39,.12); color:#A20017"><span class="dot" style="background:#FF0F27"></span>已质检</span>
+  <span class="tag" style="background:var(--zzt-zinc-150); color:var(--zzt-zinc-600)"><span class="dot" style="background:#71717A"></span>已下架</span>
+</div>
+<div class="row"><span class="lab">category</span>
+  <span class="tag cat" style="background:var(--zzt-zinc-150); color:var(--zzt-zinc-700)">手机</span>
+  <span class="tag cat" style="background:var(--zzt-zinc-150); color:var(--zzt-zinc-700)">平板</span>
+  <span class="tag cat" style="background:var(--zzt-zinc-150); color:var(--zzt-zinc-700)">笔记本</span>
+  <span class="tag cat" style="background:var(--zzt-zinc-150); color:var(--zzt-zinc-700)">耳机</span>
+</div>
+<div class="row"><span class="lab">qualification</span>
+  <span class="tag cat" style="background:rgba(255,15,39,.12); color:#A20017">KA 商户</span>
+  <span class="tag cat" style="background:rgba(255,15,39,.12); color:#A20017">官方认证</span>
+  <span class="tag cat" style="background:rgba(255,15,39,.12); color:#A20017">自质检授权</span>
+</div>
+<div class="row"><span class="lab">promotion</span>
+  <span class="tag cat" style="background:#FFF7EE; color:#8C3200">618 大促</span>
+  <span class="tag cat" style="background:#FFF7EE; color:#8C3200">满 200 减 30</span>
+  <span class="tag cat" style="background:#FFF7EE; color:#8C3200">官方补贴</span>
+</div>
+<div class="row"><span class="lab">count</span>
+  <span style="font-size:13px">商品 <span class="count">128</span></span>
+  <span style="font-size:13px">待审核 <span class="count" style="background:#FF0F27;color:#fff">7</span></span>
+</div>
+</body></html>

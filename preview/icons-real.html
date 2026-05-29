@@ -1,0 +1,182 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { padding: 18px 22px; }
+  .grp { margin-bottom: 18px; }
+  .grp h5 { margin: 0 0 8px; font-size: 11px; font-weight: 500; color: var(--zzt-fg-muted);
+            text-transform: uppercase; letter-spacing: 0.06em; }
+  .grid { display: grid; grid-template-columns: repeat(14, 1fr); gap: 14px 6px; }
+  .ic { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .ic .svg-ic {
+    width: 18px; height: 18px;
+    background: currentColor;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-size: contain; mask-size: contain;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    color: var(--zzt-fg);
+  }
+  .ic span { font-size: 9.5px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); text-align: center; line-height: 1.1; }
+  .t-s { color: var(--zzt-success-500); }
+  .t-w { color: var(--zzt-warning-500); }
+  .t-d { color: var(--zzt-danger-500); }
+  .t-a { color: var(--zzt-accent-500); }
+</style>
+</head><body>
+<div class="grp">
+  <h5>导航 · 主菜单 / 顶栏</h5>
+  <div class="grid">
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/home.svg); mask-image:url(../assets/icons/home.svg)"></span><span>home</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/box.svg); mask-image:url(../assets/icons/box.svg)"></span><span>products</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/boxes.svg); mask-image:url(../assets/icons/boxes.svg)"></span><span>supply</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/shield-check.svg); mask-image:url(../assets/icons/shield-check.svg)"></span><span>qc</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/megaphone.svg); mask-image:url(../assets/icons/megaphone.svg)"></span><span>promo</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/receipt.svg); mask-image:url(../assets/icons/receipt.svg)"></span><span>orders</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/wallet.svg); mask-image:url(../assets/icons/wallet.svg)"></span><span>cost</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chart-bar.svg); mask-image:url(../assets/icons/chart-bar.svg)"></span><span>data</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/headphones.svg); mask-image:url(../assets/icons/headphones.svg)"></span><span>cs</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/gear.svg); mask-image:url(../assets/icons/gear.svg)"></span><span>settings</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/bell.svg); mask-image:url(../assets/icons/bell.svg)"></span><span>bell</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/search.svg); mask-image:url(../assets/icons/search.svg)"></span><span>search</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/comment.svg); mask-image:url(../assets/icons/comment.svg)"></span><span>chat</span></div>
+    <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/person.svg); mask-image:url(../assets/icons/person.svg)"></span><span>user</span></div>
+  </div>
+</div>
+
+<div class="grp"><h5>动作 · CRUD &amp; toolbar</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/plus.svg); mask-image:url(../assets/icons/plus.svg)"></span><span>add</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/edit.svg); mask-image:url(../assets/icons/edit.svg)"></span><span>edit</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/copy.svg); mask-image:url(../assets/icons/copy.svg)"></span><span>copy</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/delete.svg); mask-image:url(../assets/icons/delete.svg)"></span><span>delete</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/save.svg); mask-image:url(../assets/icons/save.svg)"></span><span>save</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/check.svg); mask-image:url(../assets/icons/check.svg)"></span><span>check</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/close.svg); mask-image:url(../assets/icons/close.svg)"></span><span>close</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/download.svg); mask-image:url(../assets/icons/download.svg)"></span><span>export</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/upload.svg); mask-image:url(../assets/icons/upload.svg)"></span><span>import</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/filter.svg); mask-image:url(../assets/icons/filter.svg)"></span><span>filter</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/refresh.svg); mask-image:url(../assets/icons/refresh.svg)"></span><span>refresh</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/sliders.svg); mask-image:url(../assets/icons/sliders.svg)"></span><span>sliders</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/more-horizontal.svg); mask-image:url(../assets/icons/more-horizontal.svg)"></span><span>more-h</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/more-vertical.svg); mask-image:url(../assets/icons/more-vertical.svg)"></span><span>more-v</span></div>
+</div></div>
+
+<div class="grp"><h5>状态 · feedback</h5><div class="grid">
+  <div class="ic"><span class="svg-ic t-s" style="-webkit-mask-image:url(../assets/icons/circle-check.svg); mask-image:url(../assets/icons/circle-check.svg)"></span><span>success</span></div>
+  <div class="ic"><span class="svg-ic t-w" style="-webkit-mask-image:url(../assets/icons/circle-alert.svg); mask-image:url(../assets/icons/circle-alert.svg)"></span><span>warning</span></div>
+  <div class="ic"><span class="svg-ic t-d" style="-webkit-mask-image:url(../assets/icons/circle-x.svg); mask-image:url(../assets/icons/circle-x.svg)"></span><span>danger</span></div>
+  <div class="ic"><span class="svg-ic t-a" style="-webkit-mask-image:url(../assets/icons/info.svg); mask-image:url(../assets/icons/info.svg)"></span><span>info</span></div>
+  <div class="ic"><span class="svg-ic t-w" style="-webkit-mask-image:url(../assets/icons/alert-triangle.svg); mask-image:url(../assets/icons/alert-triangle.svg)"></span><span>alert</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/help.svg); mask-image:url(../assets/icons/help.svg)"></span><span>help</span></div>
+  <div class="ic"><span class="svg-ic t-d" style="-webkit-mask-image:url(../assets/icons/ban.svg); mask-image:url(../assets/icons/ban.svg)"></span><span>ban</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/clock.svg); mask-image:url(../assets/icons/clock.svg)"></span><span>pending</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/eye.svg); mask-image:url(../assets/icons/eye.svg)"></span><span>visible</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/eye-off.svg); mask-image:url(../assets/icons/eye-off.svg)"></span><span>hidden</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/lock.svg); mask-image:url(../assets/icons/lock.svg)"></span><span>locked</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/lock-open.svg); mask-image:url(../assets/icons/lock-open.svg)"></span><span>unlocked</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/shield.svg); mask-image:url(../assets/icons/shield.svg)"></span><span>shield</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/key.svg); mask-image:url(../assets/icons/key.svg)"></span><span>key</span></div>
+</div></div>
+
+<div class="grp"><h5>商务 · commerce</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/box.svg); mask-image:url(../assets/icons/box.svg)"></span><span>box</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/boxes.svg); mask-image:url(../assets/icons/boxes.svg)"></span><span>boxes</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/archive.svg); mask-image:url(../assets/icons/archive.svg)"></span><span>archive</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/shopping-bag.svg); mask-image:url(../assets/icons/shopping-bag.svg)"></span><span>bag</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/shopping-cart.svg); mask-image:url(../assets/icons/shopping-cart.svg)"></span><span>cart</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/trolley.svg); mask-image:url(../assets/icons/trolley.svg)"></span><span>trolley</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/tag.svg); mask-image:url(../assets/icons/tag.svg)"></span><span>tag</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/tags.svg); mask-image:url(../assets/icons/tags.svg)"></span><span>tags</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/ticket.svg); mask-image:url(../assets/icons/ticket.svg)"></span><span>coupon</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/percent.svg); mask-image:url(../assets/icons/percent.svg)"></span><span>discount</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/gift.svg); mask-image:url(../assets/icons/gift.svg)"></span><span>gift</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/credit-card.svg); mask-image:url(../assets/icons/credit-card.svg)"></span><span>card</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/wallet.svg); mask-image:url(../assets/icons/wallet.svg)"></span><span>wallet</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/receipt.svg); mask-image:url(../assets/icons/receipt.svg)"></span><span>receipt</span></div>
+</div></div>
+
+<div class="grp"><h5>3C 数码品类</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/smartphone.svg); mask-image:url(../assets/icons/smartphone.svg)"></span><span>phone</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/laptop.svg); mask-image:url(../assets/icons/laptop.svg)"></span><span>laptop</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/headphones.svg); mask-image:url(../assets/icons/headphones.svg)"></span><span>earphone</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/camera.svg); mask-image:url(../assets/icons/camera.svg)"></span><span>camera</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/video.svg); mask-image:url(../assets/icons/video.svg)"></span><span>video</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/microphone.svg); mask-image:url(../assets/icons/microphone.svg)"></span><span>mic</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/keyboard.svg); mask-image:url(../assets/icons/keyboard.svg)"></span><span>keyboard</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/image.svg); mask-image:url(../assets/icons/image.svg)"></span><span>image</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/printer.svg); mask-image:url(../assets/icons/printer.svg)"></span><span>printer</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/play.svg); mask-image:url(../assets/icons/play.svg)"></span><span>play</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/pause.svg); mask-image:url(../assets/icons/pause.svg)"></span><span>pause</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/stop.svg); mask-image:url(../assets/icons/stop.svg)"></span><span>stop</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/qr-code.svg); mask-image:url(../assets/icons/qr-code.svg)"></span><span>qr</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/scan.svg); mask-image:url(../assets/icons/scan.svg)"></span><span>scan</span></div>
+</div></div>
+
+<div class="grp"><h5>数据 · charts &amp; signals</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chart-line.svg); mask-image:url(../assets/icons/chart-line.svg)"></span><span>line</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chart-bar.svg); mask-image:url(../assets/icons/chart-bar.svg)"></span><span>bar</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chart-column.svg); mask-image:url(../assets/icons/chart-column.svg)"></span><span>column</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chart-pie.svg); mask-image:url(../assets/icons/chart-pie.svg)"></span><span>pie</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/target.svg); mask-image:url(../assets/icons/target.svg)"></span><span>target</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/zap.svg); mask-image:url(../assets/icons/zap.svg)"></span><span>fast</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/bolt.svg); mask-image:url(../assets/icons/bolt.svg)"></span><span>bolt</span></div>
+  <div class="ic"><span class="svg-ic t-d" style="-webkit-mask-image:url(../assets/icons/flame.svg); mask-image:url(../assets/icons/flame.svg)"></span><span>hot</span></div>
+  <div class="ic"><span class="svg-ic t-w" style="-webkit-mask-image:url(../assets/icons/crown.svg); mask-image:url(../assets/icons/crown.svg)"></span><span>top</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/medal.svg); mask-image:url(../assets/icons/medal.svg)"></span><span>medal</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/star.svg); mask-image:url(../assets/icons/star.svg)"></span><span>star</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/rocket.svg); mask-image:url(../assets/icons/rocket.svg)"></span><span>rocket</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/heart.svg); mask-image:url(../assets/icons/heart.svg)"></span><span>heart</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/bookmark.svg); mask-image:url(../assets/icons/bookmark.svg)"></span><span>bookmark</span></div>
+</div></div>
+
+<div class="grp"><h5>方向 · directional</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chevron-up.svg); mask-image:url(../assets/icons/chevron-up.svg)"></span><span>chev-up</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chevron-down.svg); mask-image:url(../assets/icons/chevron-down.svg)"></span><span>chev-dn</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chevron-left.svg); mask-image:url(../assets/icons/chevron-left.svg)"></span><span>chev-l</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/chevron-right.svg); mask-image:url(../assets/icons/chevron-right.svg)"></span><span>chev-r</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/arrow-up.svg); mask-image:url(../assets/icons/arrow-up.svg)"></span><span>arr-up</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/arrow-down.svg); mask-image:url(../assets/icons/arrow-down.svg)"></span><span>arr-dn</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/arrow-left.svg); mask-image:url(../assets/icons/arrow-left.svg)"></span><span>arr-l</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/arrow-right.svg); mask-image:url(../assets/icons/arrow-right.svg)"></span><span>arr-r</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/caret-up.svg); mask-image:url(../assets/icons/caret-up.svg)"></span><span>caret-up</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/caret-down.svg); mask-image:url(../assets/icons/caret-down.svg)"></span><span>caret-dn</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/share.svg); mask-image:url(../assets/icons/share.svg)"></span><span>share</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/external-link.svg); mask-image:url(../assets/icons/external-link.svg)"></span><span>open</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/external.svg); mask-image:url(../assets/icons/external.svg)"></span><span>external</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/grip.svg); mask-image:url(../assets/icons/grip.svg)"></span><span>grip</span></div>
+</div></div>
+
+<div class="grp"><h5>文件 / 沟通 / 位置</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/file.svg); mask-image:url(../assets/icons/file.svg)"></span><span>file</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/folder.svg); mask-image:url(../assets/icons/folder.svg)"></span><span>folder</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/folder-open.svg); mask-image:url(../assets/icons/folder-open.svg)"></span><span>open</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/folders.svg); mask-image:url(../assets/icons/folders.svg)"></span><span>folders</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/paperclip.svg); mask-image:url(../assets/icons/paperclip.svg)"></span><span>attach</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/link.svg); mask-image:url(../assets/icons/link.svg)"></span><span>link</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/mail.svg); mask-image:url(../assets/icons/mail.svg)"></span><span>mail</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/comment.svg); mask-image:url(../assets/icons/comment.svg)"></span><span>comment</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/comments.svg); mask-image:url(../assets/icons/comments.svg)"></span><span>comments</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/users.svg); mask-image:url(../assets/icons/users.svg)"></span><span>users</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/user-plus.svg); mask-image:url(../assets/icons/user-plus.svg)"></span><span>add user</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/user-x.svg); mask-image:url(../assets/icons/user-x.svg)"></span><span>remove</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/map-pin.svg); mask-image:url(../assets/icons/map-pin.svg)"></span><span>pin</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/globe.svg); mask-image:url(../assets/icons/globe.svg)"></span><span>globe</span></div>
+</div></div>
+
+<div class="grp"><h5>原始几何 · primitives</h5><div class="grid">
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/circle.svg); mask-image:url(../assets/icons/circle.svg)"></span><span>circle</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/circle-small.svg); mask-image:url(../assets/icons/circle-small.svg)"></span><span>dot</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/square.svg); mask-image:url(../assets/icons/square.svg)"></span><span>square</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/triangle-up.svg); mask-image:url(../assets/icons/triangle-up.svg)"></span><span>triangle</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/diamond.svg); mask-image:url(../assets/icons/diamond.svg)"></span><span>diamond</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/circle-plus.svg); mask-image:url(../assets/icons/circle-plus.svg)"></span><span>add</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/circle-minus.svg); mask-image:url(../assets/icons/circle-minus.svg)"></span><span>remove</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/check-2.svg); mask-image:url(../assets/icons/check-2.svg)"></span><span>check2</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/equal.svg); mask-image:url(../assets/icons/equal.svg)"></span><span>equal</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/sun.svg); mask-image:url(../assets/icons/sun.svg)"></span><span>sun</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/moon.svg); mask-image:url(../assets/icons/moon.svg)"></span><span>moon</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/pin.svg); mask-image:url(../assets/icons/pin.svg)"></span><span>pin</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/wrench.svg); mask-image:url(../assets/icons/wrench.svg)"></span><span>wrench</span></div>
+  <div class="ic"><span class="svg-ic" style="-webkit-mask-image:url(../assets/icons/hammer.svg); mask-image:url(../assets/icons/hammer.svg)"></span><span>hammer</span></div>
+</div></div>
+
+</body></html>

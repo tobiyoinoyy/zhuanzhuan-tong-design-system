@@ -1,0 +1,82 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .row + .row { margin-top: 18px; }
+  .grp h5 { margin: 0 0 8px; font-size: 11px; color: var(--zzt-fg-muted);
+            text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+  /* Sizes */
+  .sz { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .sz i { color: var(--zzt-fg); }
+  .sz .l { font-size: 10.5px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); }
+  /* Color demo */
+  .ic-wrap { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px;
+             border-radius: 8px; font-size: 13px; }
+  .ic-wrap i { width: 16px; height: 16px; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .swatch .l { font-size: 11px; color: var(--zzt-fg-muted); }
+  .badge-ic { width: 32px; height: 32px; border-radius: 999px;
+              display: inline-flex; align-items: center; justify-content: center; }
+  .badge-ic i { width: 16px; height: 16px; }
+</style></head><body>
+<div class="row grp">
+  <div style="flex: 1;">
+    <h5>Sizes · 12 / 14 / 16 / 20 / 24 / 32</h5>
+    <div class="row" style="gap: 22px; align-items: flex-end;">
+      <div class="sz"><i data-lucide="package" style="width:12px; height:12px"></i><span class="l">12 · tag</span></div>
+      <div class="sz"><i data-lucide="package" style="width:14px; height:14px"></i><span class="l">14 · button</span></div>
+      <div class="sz"><i data-lucide="package" style="width:16px; height:16px"></i><span class="l">16 · row</span></div>
+      <div class="sz"><i data-lucide="package" style="width:20px; height:20px"></i><span class="l">20 · nav</span></div>
+      <div class="sz"><i data-lucide="package" style="width:24px; height:24px"></i><span class="l">24 · header</span></div>
+      <div class="sz"><i data-lucide="package" style="width:32px; height:32px"></i><span class="l">32 · empty</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="row grp" style="margin-top: 20px;">
+  <div style="flex: 1;">
+    <h5>Color via <code>currentColor</code> — inherits from text</h5>
+    <div class="row" style="gap: 10px;">
+      <span class="ic-wrap" style="color: var(--zzt-fg)"><i data-lucide="package"></i>默认 fg</span>
+      <span class="ic-wrap" style="color: var(--zzt-fg-muted)"><i data-lucide="package"></i>muted</span>
+      <span class="ic-wrap" style="background: var(--zzt-accent-500); color:#fff"><i data-lucide="package"></i>on accent</span>
+      <span class="ic-wrap" style="color: var(--zzt-success-500); background: rgba(23,201,100,.12)"><i data-lucide="circle-check"></i>success</span>
+      <span class="ic-wrap" style="color: var(--zzt-warning-500); background: rgba(245,165,36,.16)"><i data-lucide="alert-triangle"></i>warning</span>
+      <span class="ic-wrap" style="color: var(--zzt-danger-500); background: rgba(255,15,39,.12)"><i data-lucide="circle-x"></i>danger</span>
+    </div>
+  </div>
+</div>
+
+<div class="row grp" style="margin-top: 20px;">
+  <div style="flex: 1;">
+    <h5>Container patterns · circle badge, square chip</h5>
+    <div class="row" style="gap: 10px;">
+      <span class="badge-ic" style="background: rgba(255,15,39,.12); color: var(--zzt-accent-500)"><i data-lucide="package"></i></span>
+      <span class="badge-ic" style="background: rgba(23,201,100,.14); color: var(--zzt-success-500)"><i data-lucide="check"></i></span>
+      <span class="badge-ic" style="background: rgba(245,165,36,.16); color: var(--zzt-warning-500)"><i data-lucide="alarm-clock"></i></span>
+      <span class="badge-ic" style="background: rgba(255,15,39,.12); color: var(--zzt-danger-500)"><i data-lucide="x"></i></span>
+      <span class="badge-ic" style="background: var(--zzt-purple-50); color: var(--zzt-purple-600)"><i data-lucide="megaphone"></i></span>
+      <span class="badge-ic" style="background: var(--zzt-zinc-150); color: var(--zzt-fg)"><i data-lucide="settings"></i></span>
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px;
+                   border-radius: 8px; background: var(--zzt-zinc-900); color:#fff"><i data-lucide="terminal" style="width:16px;height:16px"></i></span>
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px;
+                   border-radius: 8px; background: linear-gradient(135deg, #FF0F27 0%, #A20017 100%); color:#fff"><i data-lucide="zap" style="width:16px;height:16px"></i></span>
+    </div>
+  </div>
+</div>
+
+<div class="row grp" style="margin-top: 20px;">
+  <div style="flex: 1;">
+    <h5>Usage rules</h5>
+    <ul style="margin: 0; padding-left: 18px; font-size: 12.5px; color: var(--zzt-fg-muted); line-height: 1.7;">
+      <li>Stroke: <b style="color:var(--zzt-fg)">1.5 px</b> · Style: line · Matches Figma <code>/Icons/*</code> 1:1 (709 icons).</li>
+      <li>Loaded via <code>https://unpkg.com/lucide@latest</code>; call <code>lucide.createIcons()</code> after mount.</li>
+      <li>Color always inherits via <code>currentColor</code>. Never set <code>fill</code>/<code>stroke</code> inline — use the parent's <code>color</code>.</li>
+      <li>Status icons (<code>circle-check / alert-triangle / circle-x / info</code>) MUST use semantic tones, not arbitrary blues.</li>
+      <li>Inside buttons: <b style="color:var(--zzt-fg)">14 px</b>. In table rows: <b style="color:var(--zzt-fg)">16 px</b>. Sidebar / nav: <b style="color:var(--zzt-fg)">20 px</b>. Drawer headers: <b style="color:var(--zzt-fg)">24 px</b>.</li>
+    </ul>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

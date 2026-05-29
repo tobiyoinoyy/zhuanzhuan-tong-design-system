@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .row { gap: 24px; }
+  .demo { display: flex; align-items: center; gap: 12px; }
+  .demo span { font-size: 13px; }
+  .sep-h { flex: 1; height: 1px; background: var(--zzt-border-subtle); }
+  .sep-h.strong { background: var(--zzt-border-strong); }
+  .sep-h.subtle { background: rgba(0,0,0,0.04); }
+  .sep-v { width: 1px; height: 24px; background: var(--zzt-border-strong); align-self: center; }
+  .sep-l { font-size: 11.5px; color: var(--zzt-fg-muted); padding: 0 8px; }
+  .sep-d { flex: 1; border-top: 1px dashed var(--zzt-border-strong); height: 0; }
+  .lbl { font-size: 12px; color: var(--zzt-fg-muted); margin-bottom: 6px; }
+  .col-gap { display: flex; flex-direction: column; gap: 18px; }
+</style></head><body>
+<div class="col-gap">
+  <div>
+    <div class="lbl">Horizontal · subtle / default / strong</div>
+    <div class="demo"><span class="sep-h subtle"></span></div>
+    <div class="demo" style="margin-top: 10px;"><span class="sep-h"></span></div>
+    <div class="demo" style="margin-top: 10px;"><span class="sep-h strong"></span></div>
+  </div>
+  <div>
+    <div class="lbl">Horizontal · with center label (section break)</div>
+    <div class="demo"><span class="sep-h"></span><span class="sep-l">OR</span><span class="sep-h"></span></div>
+    <div class="demo" style="margin-top: 10px;"><span class="sep-h"></span><span class="sep-l">本月数据</span><span class="sep-h"></span></div>
+  </div>
+  <div>
+    <div class="lbl">Vertical · used in toolbars, breadcrumbs</div>
+    <div class="demo">
+      <span>编辑</span><span class="sep-v"></span>
+      <span>复制</span><span class="sep-v"></span>
+      <span>下架</span><span class="sep-v"></span>
+      <span style="color: var(--zzt-danger-500)">删除</span>
+    </div>
+  </div>
+  <div>
+    <div class="lbl">Dashed · drop zone / placeholder</div>
+    <div class="demo"><span class="sep-d"></span></div>
+  </div>
+</div>
+</body></html>

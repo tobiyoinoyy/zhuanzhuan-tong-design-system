@@ -1,0 +1,78 @@
+/* ===========================================================
+   preview/_card.css
+   Shared styles for design-system preview cards.
+   Loaded after the root colors_and_type.css.
+   =========================================================== */
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 18px 22px;
+  background: #fff;
+  font-family: var(--zzt-font-sans);
+  color: var(--zzt-fg);
+  font-size: 13px;
+}
+
+/* Layout helpers */
+.row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 10px; }
+.grid { display: grid; gap: 12px; }
+.lab { font-size: 11px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); }
+.note { font-size: 11px; color: var(--zzt-fg-muted); margin-top: 4px; }
+
+/* ===== Button (matches /page13) ===== */
+.btn { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:999px;
+       font-size:14px; font-weight:500; letter-spacing:-.005em; border:1px solid transparent; cursor:pointer; font-family:inherit; }
+.btn.sm { padding:6px 12px; font-size:13px; }
+.btn.primary { background: var(--zzt-accent-500); color:#fff; }
+.btn.primary:hover { background: var(--zzt-accent-400); }
+.btn.secondary { background: var(--zzt-zinc-150); color: var(--zzt-fg); }
+.btn.outline { background:#fff; color: var(--zzt-fg); border-color: var(--zzt-border-strong); }
+.btn.ghost { background: transparent; color: var(--zzt-fg); }
+.btn.danger { background: var(--zzt-danger-500); color:#fff; }
+.btn.tertiary { background: transparent; color: var(--zzt-fg); padding: 6px 8px; }
+.btn i { width: 14px; height: 14px; }
+
+/* ===== Tag/Chip ===== */
+.tag { display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:500;
+       padding: 2px 10px; border-radius: 999px; line-height: 18px; white-space: nowrap; }
+.tag.sm { font-size:11px; padding: 1px 8px; line-height:16px; }
+.tag.lg { font-size: 13px; padding: 4px 12px; line-height: 20px; }
+.tag .dot { width: 6px; height: 6px; border-radius: 999px; }
+
+/* ===== Pill (mini count) ===== */
+.pill { background: var(--zzt-zinc-150); color: var(--zzt-zinc-700); border-radius: 6px;
+        padding: 2px 8px; font-size: 12px; font-weight: 500; }
+
+/* ===== Card ===== */
+.card { background: #fff; border-radius: 12px; border: 1px solid rgba(0,0,0,0.06); padding: 14px; }
+.card.flat { box-shadow: none; }
+.card.elev { box-shadow: var(--zzt-shadow-sm); border: 0; }
+.card.surface { background: var(--zzt-zinc-75); }
+
+/* ===== Input (text) ===== */
+.input { display:flex; align-items:center; gap:6px; height: 36px; padding: 0 12px;
+         background:#fff; border: 1px solid var(--zzt-border); border-radius: 8px;
+         font-size: 14px; font-family: inherit; }
+.input.focus { border-color: var(--zzt-accent-500); box-shadow: 0 0 0 3px rgba(255,15,39,.16); }
+.input.error { border-color: var(--zzt-danger-500); }
+.input.disabled { background: var(--zzt-zinc-100); color: var(--zzt-fg-subtle); }
+.input .placeholder { color: var(--zzt-fg-subtle); }
+.input i { width: 14px; height: 14px; color: var(--zzt-fg-muted); }
+
+/* ===== Tones ===== */
+.t-success { color: #0a8a44; }
+.t-warning { color: #9a6608; }
+.t-danger  { color: #A20017; }
+.t-info    { color: #A20017; }
+.t-neutral { color: var(--zzt-zinc-600); }
+.t-muted   { color: var(--zzt-fg-muted); }
+
+.bg-success { background: rgba(23,201,100,.12); }
+.bg-warning { background: rgba(245,165,36,.15); }
+.bg-danger  { background: rgba(255,15,39,.12); }
+.bg-info    { background: rgba(255,15,39,.12); }
+.bg-neutral { background: var(--zzt-zinc-150); }
+.bg-purple  { background: var(--zzt-purple-50); }
+.fg-purple  { color: var(--zzt-purple-600); }

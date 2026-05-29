@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .di { display:inline-flex; align-items:center; gap:8px; height:36px; padding: 0 12px;
+        background:#fff; border: 1px solid var(--zzt-border); border-radius: 8px; min-width: 200px; font-size: 14px; }
+  .di .placeholder { color: var(--zzt-fg-subtle); }
+  .di i.lead { width: 14px; height: 14px; color: var(--zzt-fg-muted); }
+  .di .v { font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums; }
+  .di .x { margin-left:auto; width: 16px; height: 16px; border-radius:999px; background: var(--zzt-zinc-200); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; }
+  .di .x i { width: 9px; height: 9px; color: var(--zzt-fg); }
+  .di.focus { border-color: var(--zzt-accent-500); box-shadow: 0 0 0 3px rgba(255,15,39,.16); }
+  .di.range { gap: 6px; min-width: 260px; }
+  .di.range .sep { color: var(--zzt-fg-subtle); }
+  .lab { font-size: 11.5px; color: var(--zzt-fg-muted); margin-bottom:6px; }
+  .col-gap { display:flex; flex-direction: column; gap: 14px; }
+</style></head><body>
+<div class="col-gap">
+  <div>
+    <div class="lab">date input</div>
+    <div class="row" style="gap: 12px;">
+      <div class="di"><i data-lucide="calendar" class="lead"></i><span class="placeholder">请选择日期</span></div>
+      <div class="di"><i data-lucide="calendar" class="lead"></i><span class="v">2026-05-18</span><span class="x"><i data-lucide="x"></i></span></div>
+      <div class="di focus"><i data-lucide="calendar" class="lead"></i><span class="v">2026-05-18</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="lab">date range</div>
+    <div class="row" style="gap: 12px;">
+      <div class="di range"><i data-lucide="calendar" class="lead"></i><span class="placeholder">开始日期</span><span class="sep">→</span><span class="placeholder">结束日期</span></div>
+      <div class="di range"><i data-lucide="calendar" class="lead"></i><span class="v">2026-05-12</span><span class="sep">→</span><span class="v">2026-05-18</span><span class="x"><i data-lucide="x"></i></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="lab">time picker</div>
+    <div class="row" style="gap: 12px;">
+      <div class="di" style="min-width: 140px;"><i data-lucide="clock" class="lead"></i><span class="placeholder">HH : MM</span></div>
+      <div class="di" style="min-width: 140px;"><i data-lucide="clock" class="lead"></i><span class="v">09 : 24</span></div>
+      <div class="di range" style="min-width: 240px;"><i data-lucide="clock" class="lead"></i><span class="v">09 : 00</span><span class="sep">→</span><span class="v">18 : 00</span></div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

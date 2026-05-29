@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>Empty state</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:22px; background:#fff; font-family:var(--zzt-font-sans); display:flex; gap:20px; }
+  .col { flex:1; border:1px solid var(--zzt-border-subtle); border-radius:12px; padding:18px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; background: var(--zzt-zinc-75); }
+  .ic { width:72px; height:72px; color: var(--zzt-zinc-400); }
+  h4 { margin:6px 0 0; font-size:14px; font-weight:500; color: var(--zzt-fg);}
+  p { margin:0; font-size:12px; color: var(--zzt-fg-muted); max-width: 220px; }
+  .cta { margin-top:8px; padding:6px 14px; border-radius:999px; background: var(--zzt-accent-500); color:#fff; font-size:12px; font-weight:500; border:none; cursor:pointer;}
+</style></head><body>
+<div class="col">
+  <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="8" y="14" width="48" height="40" rx="6"/>
+    <path d="M8 24h48M18 14V8M46 14V8"/>
+    <path d="M22 36h20M22 44h12" stroke-dasharray="2 3"/>
+  </svg>
+  <h4>暂无营销活动</h4>
+  <p>新建一个活动后，将在这里看到列表</p>
+  <button class="cta">新建活动</button>
+</div>
+<div class="col">
+  <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M14 20l18-10 18 10v24l-18 10-18-10z"/>
+    <path d="M14 20l18 10 18-10M32 30v24"/>
+  </svg>
+  <h4>没有待入仓商品</h4>
+  <p>当前供货周期内的商品都已经入仓</p>
+</div>
+<div class="col">
+  <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="28" cy="28" r="14"/>
+    <path d="M38 38l12 12" stroke-linecap="round"/>
+    <path d="M22 28h12M28 22v12"/>
+  </svg>
+  <h4>未找到匹配结果</h4>
+  <p>试试更换搜索词或清除筛选条件</p>
+  <button class="cta" style="background:transparent; color:var(--zzt-accent-500); padding:4px 10px;">清除筛选</button>
+</div>
+</body></html>

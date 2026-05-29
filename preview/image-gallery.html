@@ -1,0 +1,90 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .pv { width: 280px; background:#000; border-radius: 14px; overflow: hidden; position: relative; }
+  .pv-main { aspect-ratio: 4/5; background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), transparent 55%),
+      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.3), transparent 50%),
+      linear-gradient(135deg, #6F8FBD 0%, #28282C 100%); position: relative; }
+  .pv-main::after { content:"iPhone 14 Pro"; position: absolute; bottom: 10px; left: 12px; color: rgba(255,255,255,0.6); font-size: 11px; font-family: var(--zzt-font-mono); }
+  .pv-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 32px; height: 32px;
+            border-radius: 999px; background: rgba(0,0,0,0.45); color:#fff; display:inline-flex;
+            align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); }
+  .pv-nav i { width: 14px; height: 14px; }
+  .pv-nav.prev { left: 10px; }
+  .pv-nav.next { right: 10px; }
+  .pv-tools { position: absolute; top: 10px; right: 10px; display:inline-flex; gap: 4px; }
+  .pv-tools button { width: 28px; height: 28px; border-radius: 999px; background: rgba(0,0,0,0.45); color:#fff; border: 0; cursor: pointer; display:inline-flex; align-items:center; justify-content:center; backdrop-filter: blur(8px); }
+  .pv-tools button i { width: 12px; height: 12px; }
+  .pv-counter { position: absolute; top: 10px; left: 10px; color:#fff; font-size: 11px; padding: 2px 8px; border-radius:999px; background: rgba(0,0,0,0.45); font-family: var(--zzt-font-num); backdrop-filter: blur(8px); }
+  .pv-thumbs { background:#18181B; padding: 8px; display: flex; gap: 6px; overflow-x: auto; }
+  .pv-thumbs .t { width: 44px; height: 44px; border-radius: 6px; flex-shrink: 0; cursor: pointer; background-image: linear-gradient(135deg, #B7C9E2, #6F8FBD); }
+  .pv-thumbs .t.sel { box-shadow: 0 0 0 2px var(--zzt-accent-500); }
+  .pv-thumbs .t.t2 { background-image: linear-gradient(135deg, #C5D6F2, #E0E5EC); }
+  .pv-thumbs .t.t3 { background-image: linear-gradient(135deg, #FAB186, #BB81EE); }
+  .pv-thumbs .t.t4 { background-image: linear-gradient(135deg, #F5A524, #FF0F27); }
+  .pv-thumbs .t.t5 { background-image: linear-gradient(135deg, #28282C, #6F8FBD); }
+
+  /* Gallery grid */
+  .gallery { display:grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .g-cell { aspect-ratio: 1/1; border-radius: 8px; position: relative; overflow:hidden; cursor: pointer; }
+  .g-cell::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0); transition: background .15s; }
+  .g-cell:hover::after { background: rgba(0,0,0,0.20); }
+  .g-cell.t1 { background-image: linear-gradient(135deg, #B7C9E2, #6F8FBD); }
+  .g-cell.t2 { background-image: linear-gradient(135deg, #C5D6F2, #E0E5EC); }
+  .g-cell.t3 { background-image: linear-gradient(135deg, #FAB186, #BB81EE); }
+  .g-cell.t4 { background-image: linear-gradient(135deg, #F5A524, #FF0F27); }
+  .g-cell.t5 { background-image: linear-gradient(135deg, #28282C, #6F8FBD); }
+  .g-cell .badge { position: absolute; top: 6px; left: 6px; padding: 1px 6px; border-radius: 4px;
+                   background: rgba(0,0,0,0.55); color:#fff; font-size: 10px; font-weight: 500; backdrop-filter: blur(6px); }
+  .g-cell .more { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+                  background: rgba(0,0,0,0.55); color: #fff; font-size: 18px; font-weight: 500; font-family: var(--zzt-font-num); }
+  .lab2 { font-size: 11px; color: var(--zzt-fg-muted); margin-bottom: 6px; }
+</style></head><body>
+<div class="row" style="gap: 22px; align-items: flex-start;">
+  <div>
+    <div class="lab2">lightbox · 全屏预览</div>
+    <div class="pv">
+      <div class="pv-counter">3 / 8</div>
+      <div class="pv-tools">
+        <button><i data-lucide="zoom-in"></i></button>
+        <button><i data-lucide="rotate-cw"></i></button>
+        <button><i data-lucide="download"></i></button>
+        <button><i data-lucide="x"></i></button>
+      </div>
+      <div class="pv-main">
+        <div class="pv-nav prev"><i data-lucide="chevron-left"></i></div>
+        <div class="pv-nav next"><i data-lucide="chevron-right"></i></div>
+      </div>
+      <div class="pv-thumbs">
+        <div class="t"></div>
+        <div class="t t2"></div>
+        <div class="t sel"></div>
+        <div class="t t3"></div>
+        <div class="t t4"></div>
+        <div class="t t5"></div>
+        <div class="t t2"></div>
+        <div class="t"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;">
+    <div class="lab2">grid · 商详图集</div>
+    <div class="gallery" style="width: 320px;">
+      <div class="g-cell t1"><span class="badge">主图</span></div>
+      <div class="g-cell t2"></div>
+      <div class="g-cell t3"></div>
+      <div class="g-cell t4"></div>
+      <div class="g-cell t5"><span class="badge" style="background: rgba(245,165,36,.85)">划痕</span></div>
+      <div class="g-cell t1"></div>
+      <div class="g-cell t2"></div>
+      <div class="g-cell t3"><div class="more">+ 4</div></div>
+    </div>
+    <div class="note" style="margin-top: 10px;">主图 / 细节图 / 划痕标注图 / IMEI 条码 · 上限 8 张</div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Tab badge · variants</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  body {
+    margin: 0; padding: 32px;
+    background: var(--zzt-bg);
+    font-family: var(--zzt-font-sans);
+    color: var(--zzt-fg);
+  }
+  .stack { display: flex; flex-direction: column; gap: 24px; max-width: 920px; margin: 0 auto; }
+  .variant {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px 24px 4px;
+    position: relative;
+  }
+  .var-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 6px;
+  }
+  .var-num {
+    font-family: var(--zzt-font-num);
+    font-size: 11px; font-weight: 600;
+    color: var(--zzt-accent-500);
+    background: var(--zzt-accent-soft);
+    padding: 2px 6px; border-radius: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .var-title { font-size: 15px; font-weight: 600; }
+  .var-note  { font-size: 12.5px; color: var(--zzt-fg-muted); margin: 2px 0 14px; line-height: 1.5; }
+
+  /* ===== shared tab strip (same structure as products.html) ===== */
+  .strip {
+    display: flex; align-items: center; gap: 4px;
+    padding: 4px 0 0;
+    /* Tab baseline paused for review. Restore if the grey guide line is needed again:
+       border-bottom: 1px solid var(--zzt-border-subtle); */
+    border-bottom: 0;
+    margin: 0 -8px;
+    padding-left: 8px; padding-right: 8px;
+  }
+  .tab {
+    position: relative;
+    padding: 14px 14px;
+    font-size: 13.5px; font-weight: 500;
+    color: var(--zzt-fg-muted);
+    cursor: pointer; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .tab.active { color: var(--zzt-accent-500); font-weight: 600; }
+  .tab.active::after {
+    content: ""; position: absolute; left: 14px; right: 14px; bottom: -1px;
+    height: 2px; background: var(--zzt-accent-500); border-radius: 1px;
+  }
+  .count {
+    background: var(--zzt-zinc-150); color: var(--zzt-zinc-600);
+    border-radius: 999px; padding: 0 8px;
+    font-size: 10.5px; line-height: 18px;
+    font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+  .tab.active .count {
+    background: var(--zzt-accent-soft); color: var(--zzt-accent-700);
+  }
+
+</style>
+</head>
+<body>
+<div class="stack">
+
+  <!-- Recap of current -->
+  <div class="variant" style="background: #FAFAFA;">
+    <div class="var-head"><span class="var-num">0</span><span class="var-title">当前方案（红圈处的橘色浮泡）</span></div>
+    <p class="var-note">浮在 tab 右上角的橘色气泡，左下尖角。问题：盖住相邻 tab 的下划线；橘色与主色蓝抢眼；位置看起来像通知角标但其实是 CTA。</p>
+    <div class="strip">
+      <span class="tab active">全部<span class="count">3065</span></span>
+      <span class="tab">质检中<span class="count">42</span></span>
+      <span class="tab">未上架<span class="count">128</span></span>
+      <span class="tab" style="position:relative;">
+        已上架<span class="count">2814</span>
+        <span style="position:absolute; top:2px; right:-8px; background:#F7A33A; color:#fff; font-size:10.5px; line-height:16px; font-weight:600; padding:0 6px; border-radius:999px 999px 999px 4px; white-space:nowrap; font-family:var(--zzt-font-num);">可送检 5</span>
+      </span>
+      <span class="tab">已售出<span class="count">62</span></span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

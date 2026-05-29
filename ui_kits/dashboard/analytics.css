@@ -1,0 +1,287 @@
+/* ============================================================
+   analytics.css — 数据看板 · 页面专属样式
+   只补 dashboard.css / products.css 没有的部分。
+   - 复用 .card / .kpi / .seg / .rank-table / .medal / .pager (dashboard.css)
+   - 复用 .inp / .btn / .field-inline / .sku-thumb (products.css)
+   - 本文件不污染共享 CSS
+   ============================================================ */
+
+/* ---------- 页面壳 ----------
+   .main > .page 已经是 flex column gap:16，不要再叠 margin-top，
+   否则 panel 之间变成 32px，跟工作台/products 不统一。 */
+.panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 22px;            /* 与 dashboard.css 的 .card 同步 */
+}
+
+.panel-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 16px;
+}
+.panel-head .ttl {
+  font-size: 16px; font-weight: 600; color: var(--zzt-fg);
+  letter-spacing: -0.005em;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.panel-head .ttl .stamp {
+  font-size: 12px; color: var(--zzt-fg-subtle); font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+.panel-head .actions { display: inline-flex; gap: 8px; align-items: center; }
+
+/* ---------- 流量数据：筛选 + KPI ----------
+   筛选行直接坐在白色 panel 上，不要再套一层灰底胶囊
+   （灰底 + 白底 panel 会出现"卡中卡"的双层背景，违反 CLAUDE.md
+   "每张卡只决定一种底色"原则）。 */
+.flow-filter {
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.flow-filter .ff-group {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px;
+}
+.flow-filter .inp { width: 160px; }
+.flow-filter .inp.range { width: 240px; }
+
+.kpi-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.kpi.empty .v { color: var(--zzt-fg-subtle); }
+.kpi .empty-tip {
+  font-size: 12px; color: var(--zzt-fg-subtle);
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.kpi .empty-tip::before {
+  content: ""; width: 4px; height: 4px; border-radius: 999px;
+  background: var(--zzt-fg-subtle); opacity: .6;
+}
+
+/* ---------- 商品/交易/在售：内嵌灰卡 tile ---------- */
+.tile-grid { display: grid; gap: 12px; }
+.tile-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.tile-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+.tile-grid.cols-6 { grid-template-columns: repeat(3, 1fr); } /* 商品数据用 3x2 排列更稳 */
+
+.tile {
+  background: var(--zzt-zinc-75);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+  min-width: 0;
+}
+.tile .row1 {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; min-height: 20px;
+}
+.tile .row1 .lbl {
+  font-size: 13px; color: var(--zzt-fg-muted); font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.tile .row1 .lbl .info {
+  width: 12px; height: 12px; opacity: .55;
+  background: currentColor;
+  -webkit-mask: url(../../assets/icons/info.svg) center/contain no-repeat;
+          mask: url(../../assets/icons/info.svg) center/contain no-repeat;
+}
+.tile .row1 .link {
+  font-size: 12px; color: var(--zzt-accent-500); cursor: pointer;
+  text-decoration: none; font-weight: 500;
+}
+.tile .row1 .link:hover { text-decoration: underline; }
+.tile .row1 .pick {
+  font-size: 12px; color: var(--zzt-fg-muted);
+  display: inline-flex; align-items: center; gap: 3px; cursor: pointer;
+  padding: 2px 6px; border-radius: 6px;
+}
+.tile .row1 .pick:hover { background: #fff; color: var(--zzt-fg); }
+.tile .row1 .pick .caret {
+  width: 10px; height: 10px; background: currentColor;
+  -webkit-mask: url(../../assets/icons/caret-down.svg) center/contain no-repeat;
+          mask: url(../../assets/icons/caret-down.svg) center/contain no-repeat;
+}
+
+.tile .v {
+  font-family: var(--zzt-font-num);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 28px; letter-spacing: -0.025em;
+  color: var(--zzt-fg); line-height: 1.05;
+}
+.tile.zero .v { color: var(--zzt-fg-subtle); }
+.tile .yday {
+  font-size: 12px; color: var(--zzt-fg-subtle);
+  font-variant-numeric: tabular-nums;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.tile .yday b {
+  font-weight: 500; color: var(--zzt-fg-muted);
+}
+
+/* ---------- 销售走势 ---------- */
+.trend-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 16px;
+}
+.trend-chart {
+  background: var(--zzt-zinc-75);
+  border-radius: 12px;
+  padding: 20px 16px 14px;
+}
+.trend-legend {
+  display: flex; gap: 18px; align-items: center;
+  font-size: 12px; color: var(--zzt-fg-muted);
+  margin-bottom: 8px; padding: 0 8px;
+}
+.trend-legend .lg { display: inline-flex; align-items: center; gap: 6px; }
+.trend-legend .lg .bar {
+  width: 12px; height: 8px; border-radius: 2px;
+  background: var(--zzt-accent-500);
+}
+.trend-legend .lg .line {
+  width: 14px; height: 2px;
+  background: var(--zzt-success-500); border-radius: 2px; position: relative;
+}
+.trend-legend .lg .line::after {
+  content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  width: 6px; height: 6px; border-radius: 999px;
+  background: var(--zzt-success-500); border: 1.5px solid #fff;
+}
+
+.trend-chart svg {
+  display: block; width: 100%;
+  /* viewBox 720×240 按宽度等比缩放，容器宽 ~1080 时高约 360。
+     这样文字、柱子粗细、折线笔触都按 3:1 整体放大，不会出现"扁体字"。 */
+  height: auto; aspect-ratio: 3 / 1;
+}
+.trend-chart .grid { stroke: rgba(0,0,0,.06); stroke-width: 1; }
+.trend-chart .axis { stroke: rgba(0,0,0,.12); stroke-width: 1; }
+.trend-chart .axis-label {
+  fill: var(--zzt-fg-subtle); font-size: 11px;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.trend-chart .x-tick {
+  fill: var(--zzt-fg-muted); font-size: 11px;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+}
+.trend-chart .bar {
+  fill: var(--zzt-accent-500);
+}
+.trend-chart .bar.zero { fill: var(--zzt-zinc-200); }
+.trend-chart .line {
+  fill: none; stroke: var(--zzt-success-500); stroke-width: 2;
+  stroke-linejoin: round; stroke-linecap: round;
+}
+.trend-chart .dot {
+  fill: #fff; stroke: var(--zzt-success-500); stroke-width: 1.6;
+}
+.trend-chart .value-label {
+  fill: var(--zzt-fg); font-size: 11px; font-weight: 600;
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  text-anchor: middle;
+}
+
+/* ---------- 走势筛选行 ----------
+   位置：在 panel-head 与 trend-chart 之间。panel-head 自身 margin-bottom:16，
+   所以这里只需留一个到 chart 的 12px 间距即可；不再用旧的 margin-top: 16。 */
+.trend-filter {
+  margin: 0 0 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 240px)) 1fr;
+  gap: 12px 18px;
+  align-items: center;
+}
+.trend-filter .actions {
+  display: inline-flex; gap: 8px; justify-content: flex-end;
+}
+
+/* ---------- 排行表 ---------- */
+.rank-wrap {
+  background: var(--zzt-zinc-150, #ECECED);
+  background: rgba(0,0,0,.04);
+  border-radius: 20px;
+  padding: 4px;
+}
+.rank-wrap .rank-inner {
+  background: #fff; border-radius: 16px; overflow: hidden;
+}
+.rank-table.full {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  font-size: 13px;
+}
+.rank-table.full thead th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 500; color: var(--zzt-fg-muted);
+  font-size: 12px;
+  background: transparent;
+  border-bottom: 1px solid var(--zzt-border-subtle);
+  white-space: nowrap;
+}
+.rank-table.full thead th .sortable {
+  display: inline-flex; align-items: center; gap: 4px; cursor: pointer; user-select: none;
+}
+.rank-table.full thead th .sortable:hover { color: var(--zzt-fg); }
+.rank-table.full thead th .sortable .ic {
+  width: 10px; height: 10px; opacity: .5;
+  background: currentColor;
+  -webkit-mask: url(../../assets/icons/caret-down.svg) center/contain no-repeat;
+          mask: url(../../assets/icons/caret-down.svg) center/contain no-repeat;
+}
+.rank-table.full thead th .sortable.desc .ic { transform: none; opacity: .85; color: var(--zzt-accent-500); }
+.rank-table.full thead th .sortable.asc .ic { transform: rotate(180deg); opacity: .85; color: var(--zzt-accent-500); }
+
+.rank-table.full tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(205,205,206,.5);
+  font-size: 13px; color: var(--zzt-fg);
+  vertical-align: middle;
+}
+.rank-table.full tbody tr:last-child td { border-bottom: 0; }
+.rank-table.full tbody tr:hover td { background: var(--zzt-zinc-75); }
+
+.rank-table.full td.num {
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  font-weight: 600; color: var(--zzt-fg);
+}
+.rank-table.full td.num.zero { color: var(--zzt-fg-subtle); font-weight: 400; }
+
+.rk-cell { display: inline-flex; align-items: center; }
+
+/* SKU cell: 排行榜版 — 复用 products.css 的 .sku-thumb / .sku-body / .sku-title-row /
+   .cond-badge / .sku-title / .sku-tags(.tag-out) / .sku-spec。
+   排行榜列宽较窄，不渲染 .sku-ids（质检码/IMEI），由 sku-tags + sku-spec 两行承担信息密度。
+   覆盖项：
+   - .sku-cell 改 flex-start 顶对齐（products 默认 stretch，多行内容下 thumb 居中会显得偏低）
+   - .sku-spec 缩到单行省略，避免在窄列里换行 */
+.rank-table.full .sku-cell { align-items: flex-start; }
+.rank-table.full .sku-body { gap: 4px; }
+.rank-table.full .sku-spec {
+  flex-wrap: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; display: block;
+}
+.rank-table.full .sku-spec .sep { margin: 0 6px; }
+
+/* ranking column header / body */
+.col-rank { width: 64px; text-align: center; }
+.col-rank-cell { text-align: center; }
+.col-rank-cell .rk-n {
+  font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums;
+  color: var(--zzt-fg-subtle); font-weight: 500; font-size: 14px;
+}
+
+/* ---------- 空态文案 ---------- */
+.empty-row {
+  text-align: center; padding: 40px 0;
+  color: var(--zzt-fg-subtle); font-size: 13px;
+}
+
+/* ---------- 工具：紧凑 inp（筛选行） ---------- */
+.inp.compact { height: 36px; }
+
+/* ---------- 响应式：≤ 1280px 折一档 ---------- */
+@media (max-width: 1280px) {
+  .tile-grid.cols-5 { grid-template-columns: repeat(3, 1fr); }
+  .tile-grid.cols-6 { grid-template-columns: repeat(2, 1fr); }
+  .trend-filter { grid-template-columns: repeat(2, 1fr); }
+  .trend-filter .actions { grid-column: 1 / -1; justify-content: flex-start; }
+}

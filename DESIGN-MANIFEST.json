@@ -1,0 +1,1073 @@
+{
+  "schema": "open-design.design-manifest.v1",
+  "title": "转转通 Design System (0526更新)",
+  "entryFile": "index.html",
+  "sourceFiles": {
+    "all": [
+      "assets/icons/alert-triangle.svg",
+      "assets/icons/archive.svg",
+      "assets/icons/arrow-down.svg",
+      "assets/icons/arrow-left.svg",
+      "assets/icons/arrow-right.svg",
+      "assets/icons/arrow-up.svg",
+      "assets/icons/ban.svg",
+      "assets/icons/bell.svg",
+      "assets/icons/bolt.svg",
+      "assets/icons/bookmark.svg",
+      "assets/icons/box.svg",
+      "assets/icons/boxes.svg",
+      "assets/icons/building.svg",
+      "assets/icons/calendar.svg",
+      "assets/icons/camera.svg",
+      "assets/icons/caret-down.svg",
+      "assets/icons/caret-up.svg",
+      "assets/icons/chart-bar.svg",
+      "assets/icons/chart-column.svg",
+      "assets/icons/chart-line.svg",
+      "assets/icons/chart-pie.svg",
+      "assets/icons/check-2.svg",
+      "assets/icons/check.svg",
+      "assets/icons/chevron-down.svg",
+      "assets/icons/chevron-left.svg",
+      "assets/icons/chevron-right.svg",
+      "assets/icons/chevron-up.svg",
+      "assets/icons/circle-alert.svg",
+      "assets/icons/circle-check.svg",
+      "assets/icons/circle-minus.svg",
+      "assets/icons/circle-plus.svg",
+      "assets/icons/circle-small.svg",
+      "assets/icons/circle-x.svg",
+      "assets/icons/circle.svg",
+      "assets/icons/clock.svg",
+      "assets/icons/close.svg",
+      "assets/icons/comment.svg",
+      "assets/icons/comments.svg",
+      "assets/icons/copy.svg",
+      "assets/icons/credit-card.svg",
+      "assets/icons/crown.svg",
+      "assets/icons/delete.svg",
+      "assets/icons/diamond.svg",
+      "assets/icons/download.svg",
+      "assets/icons/edit.svg",
+      "assets/icons/equal.svg",
+      "assets/icons/external-link.svg",
+      "assets/icons/external.svg",
+      "assets/icons/eye-off.svg",
+      "assets/icons/eye.svg",
+      "assets/icons/file.svg",
+      "assets/icons/filter.svg",
+      "assets/icons/flame.svg",
+      "assets/icons/folder-open.svg",
+      "assets/icons/folder.svg",
+      "assets/icons/folders.svg",
+      "assets/icons/gear.svg",
+      "assets/icons/gift.svg",
+      "assets/icons/globe.svg",
+      "assets/icons/grip.svg",
+      "assets/icons/hammer.svg",
+      "assets/icons/headphones.svg",
+      "assets/icons/heart.svg",
+      "assets/icons/help.svg",
+      "assets/icons/home.svg",
+      "assets/icons/image.svg",
+      "assets/icons/info.svg",
+      "assets/icons/key.svg",
+      "assets/icons/keyboard.svg",
+      "assets/icons/laptop.svg",
+      "assets/icons/link.svg",
+      "assets/icons/lock-open.svg",
+      "assets/icons/lock.svg",
+      "assets/icons/mail.svg",
+      "assets/icons/map-pin.svg",
+      "assets/icons/medal.svg",
+      "assets/icons/megaphone.svg",
+      "assets/icons/microphone.svg",
+      "assets/icons/minus.svg",
+      "assets/icons/MISSING.md",
+      "assets/icons/moon.svg",
+      "assets/icons/more-horizontal.svg",
+      "assets/icons/more-vertical.svg",
+      "assets/icons/paperclip.svg",
+      "assets/icons/pause.svg",
+      "assets/icons/percent.svg",
+      "assets/icons/person.svg",
+      "assets/icons/pin.svg",
+      "assets/icons/play.svg",
+      "assets/icons/plus.svg",
+      "assets/icons/printer.svg",
+      "assets/icons/qr-code.svg",
+      "assets/icons/receipt.svg",
+      "assets/icons/refresh.svg",
+      "assets/icons/rocket.svg",
+      "assets/icons/save.svg",
+      "assets/icons/scan.svg",
+      "assets/icons/search.svg",
+      "assets/icons/share.svg",
+      "assets/icons/shield-check.svg",
+      "assets/icons/shield.svg",
+      "assets/icons/shopping-bag.svg",
+      "assets/icons/shopping-cart.svg",
+      "assets/icons/sliders.svg",
+      "assets/icons/smartphone.svg",
+      "assets/icons/square.svg",
+      "assets/icons/star.svg",
+      "assets/icons/stop.svg",
+      "assets/icons/sun.svg",
+      "assets/icons/tag.svg",
+      "assets/icons/tags.svg",
+      "assets/icons/target.svg",
+      "assets/icons/thumbs-down.svg",
+      "assets/icons/thumbs-up.svg",
+      "assets/icons/ticket.svg",
+      "assets/icons/triangle-down.svg",
+      "assets/icons/triangle-up.svg",
+      "assets/icons/trolley.svg",
+      "assets/icons/upload.svg",
+      "assets/icons/user-plus.svg",
+      "assets/icons/user-x.svg",
+      "assets/icons/users.svg",
+      "assets/icons/video.svg",
+      "assets/icons/wallet.svg",
+      "assets/icons/wrench.svg",
+      "assets/icons/zap.svg",
+      "assets/logo-mark.svg",
+      "assets/logo-zhuanzhuan-dark.svg",
+      "assets/logo-zhuanzhuan.svg",
+      "assets/products/huawei-p30-blue.png",
+      "assets/products/iphone-11-red.png",
+      "assets/products/iphone-11-white.png",
+      "assets/README.md",
+      "CLAUDE.md",
+      "colors_and_type.css",
+      "design-canvas.jsx",
+      "explorations/tab-badge-options.html",
+      "fonts/PingFangSC-Medium.woff2",
+      "fonts/PingFangSC-Regular.woff2",
+      "fonts/PingFangSC-Semibold.woff2",
+      "fonts/PingFangSC-Thin.woff2",
+      "fonts/PingFangSC-Ultralight.woff2",
+      "index.html",
+      "preview/_card.css",
+      "preview/accordion.html",
+      "preview/alert.html",
+      "preview/avatar.html",
+      "preview/badge.html",
+      "preview/batch-toolbar.html",
+      "preview/brand-graphic.html",
+      "preview/brand-logo.html",
+      "preview/breadcrumb.html",
+      "preview/button-group-toolbar.html",
+      "preview/buttons.html",
+      "preview/cards.html",
+      "preview/carousel.html",
+      "preview/checkbox.html",
+      "preview/close-button.html",
+      "preview/color-picker.html",
+      "preview/colors-brand.html",
+      "preview/colors-neutrals.html",
+      "preview/colors-semantic.html",
+      "preview/condition-badge.html",
+      "preview/data-table.html",
+      "preview/date-time-input.html",
+      "preview/datepicker.html",
+      "preview/drawer.html",
+      "preview/empty-states.html",
+      "preview/field-helper.html",
+      "preview/form-fields.html",
+      "preview/iconography.html",
+      "preview/icons-catalog.html",
+      "preview/icons-real.html",
+      "preview/icons-usage.html",
+      "preview/image-gallery.html",
+      "preview/kbd.html",
+      "preview/kpi-cards.html",
+      "preview/link.html",
+      "preview/loaders.html",
+      "preview/modal.html",
+      "preview/number-input.html",
+      "preview/otp.html",
+      "preview/overlay-scrim.html",
+      "preview/pagination.html",
+      "preview/popover-menu.html",
+      "preview/progress.html",
+      "preview/radii.html",
+      "preview/radio.html",
+      "preview/rate-grade.html",
+      "preview/result-pages.html",
+      "preview/scroll-shadow-backdrop.html",
+      "preview/scroll-shadow.html",
+      "preview/search-autocomplete.html",
+      "preview/select-menu.html",
+      "preview/separator.html",
+      "preview/shadows.html",
+      "preview/sidebar.html",
+      "preview/skeleton.html",
+      "preview/slider.html",
+      "preview/spacing.html",
+      "preview/stepper.html",
+      "preview/switch.html",
+      "preview/tab-badge-variants.html",
+      "preview/tabs.html",
+      "preview/tags.html",
+      "preview/time-date-input.html",
+      "preview/toast.html",
+      "preview/tooltip.html",
+      "preview/topbar.html",
+      "preview/transfer.html",
+      "preview/tree-cascader.html",
+      "preview/type-scale.html",
+      "preview/type-specimen.html",
+      "preview/upload.html",
+      "README.md",
+      "screenshots/sidebar-products.png",
+      "screenshots/sidebar-v2.png",
+      "SKILL.md",
+      "ui_kits/dashboard/dashboard.css",
+      "ui_kits/dashboard/index.html",
+      "ui_kits/dashboard/products.css",
+      "ui_kits/dashboard/products.html",
+      "ui_kits/dashboard/README.md",
+      "ui_kits/mobile_companion/index.html",
+      "ui_kits/mobile_companion/mobile.css",
+      "ui_kits/mobile_companion/MobileApp.jsx",
+      "ui_kits/mobile_companion/README.md",
+      "ui_kits/pc_console/console.css",
+      "ui_kits/pc_console/Dashboard.jsx",
+      "ui_kits/pc_console/index.html",
+      "ui_kits/pc_console/Orders.jsx",
+      "ui_kits/pc_console/Primitives.jsx",
+      "ui_kits/pc_console/Products.jsx",
+      "ui_kits/pc_console/Promotion.jsx",
+      "ui_kits/pc_console/QCDrawer.jsx",
+      "ui_kits/pc_console/README.md",
+      "ui_kits/pc_console/Shell.jsx",
+      "uploads/26转转vi使用规范手册.pdf.pdf",
+      "uploads/Clipboard_Screenshot_1779700151.png",
+      "uploads/Clipboard_Screenshot_1779701198.png",
+      "uploads/Clipboard_Screenshot_1779702077.png",
+      "uploads/Clipboard_Screenshot_1779704006.png",
+      "uploads/Clipboard_Screenshot_1779704110.png",
+      "uploads/Clipboard_Screenshot_1779711482.png",
+      "uploads/Clipboard_Screenshot_1779764932.png",
+      "uploads/Clipboard_Screenshot_1779766408.png",
+      "uploads/Clipboard_Screenshot_1779773670.png",
+      "uploads/Clipboard_Screenshot_1779773716.png",
+      "uploads/Clipboard_Screenshot_1779773824.png",
+      "uploads/Clipboard_Screenshot_1779774704.png",
+      "uploads/Clipboard_Screenshot_1779775184.png",
+      "uploads/Clipboard_Screenshot_1779775288.png",
+      "uploads/Clipboard_Screenshot_1779775377.png",
+      "uploads/Clipboard_Screenshot_1779775658.png",
+      "uploads/Clipboard_Screenshot_1779775777.png",
+      "uploads/Clipboard_Screenshot_1779775990.png",
+      "uploads/pasted-1779765665244-0.png",
+      "uploads/zhuanzhuan-vi.pdf"
+    ],
+    "html": [
+      "explorations/tab-badge-options.html",
+      "index.html",
+      "preview/accordion.html",
+      "preview/alert.html",
+      "preview/avatar.html",
+      "preview/badge.html",
+      "preview/batch-toolbar.html",
+      "preview/brand-graphic.html",
+      "preview/brand-logo.html",
+      "preview/breadcrumb.html",
+      "preview/button-group-toolbar.html",
+      "preview/buttons.html",
+      "preview/cards.html",
+      "preview/carousel.html",
+      "preview/checkbox.html",
+      "preview/close-button.html",
+      "preview/color-picker.html",
+      "preview/colors-brand.html",
+      "preview/colors-neutrals.html",
+      "preview/colors-semantic.html",
+      "preview/condition-badge.html",
+      "preview/data-table.html",
+      "preview/date-time-input.html",
+      "preview/datepicker.html",
+      "preview/drawer.html",
+      "preview/empty-states.html",
+      "preview/field-helper.html",
+      "preview/form-fields.html",
+      "preview/iconography.html",
+      "preview/icons-catalog.html",
+      "preview/icons-real.html",
+      "preview/icons-usage.html",
+      "preview/image-gallery.html",
+      "preview/kbd.html",
+      "preview/kpi-cards.html",
+      "preview/link.html",
+      "preview/loaders.html",
+      "preview/modal.html",
+      "preview/number-input.html",
+      "preview/otp.html",
+      "preview/overlay-scrim.html",
+      "preview/pagination.html",
+      "preview/popover-menu.html",
+      "preview/progress.html",
+      "preview/radii.html",
+      "preview/radio.html",
+      "preview/rate-grade.html",
+      "preview/result-pages.html",
+      "preview/scroll-shadow-backdrop.html",
+      "preview/scroll-shadow.html",
+      "preview/search-autocomplete.html",
+      "preview/select-menu.html",
+      "preview/separator.html",
+      "preview/shadows.html",
+      "preview/sidebar.html",
+      "preview/skeleton.html",
+      "preview/slider.html",
+      "preview/spacing.html",
+      "preview/stepper.html",
+      "preview/switch.html",
+      "preview/tab-badge-variants.html",
+      "preview/tabs.html",
+      "preview/tags.html",
+      "preview/time-date-input.html",
+      "preview/toast.html",
+      "preview/tooltip.html",
+      "preview/topbar.html",
+      "preview/transfer.html",
+      "preview/tree-cascader.html",
+      "preview/type-scale.html",
+      "preview/type-specimen.html",
+      "preview/upload.html",
+      "ui_kits/dashboard/index.html",
+      "ui_kits/dashboard/products.html",
+      "ui_kits/mobile_companion/index.html",
+      "ui_kits/pc_console/index.html"
+    ],
+    "css": [
+      "colors_and_type.css",
+      "preview/_card.css",
+      "ui_kits/dashboard/dashboard.css",
+      "ui_kits/dashboard/products.css",
+      "ui_kits/mobile_companion/mobile.css",
+      "ui_kits/pc_console/console.css"
+    ],
+    "scriptsAndComponents": [
+      "design-canvas.jsx",
+      "ui_kits/mobile_companion/MobileApp.jsx",
+      "ui_kits/pc_console/Dashboard.jsx",
+      "ui_kits/pc_console/Orders.jsx",
+      "ui_kits/pc_console/Primitives.jsx",
+      "ui_kits/pc_console/Products.jsx",
+      "ui_kits/pc_console/Promotion.jsx",
+      "ui_kits/pc_console/QCDrawer.jsx",
+      "ui_kits/pc_console/Shell.jsx"
+    ],
+    "assets": [
+      "assets/icons/alert-triangle.svg",
+      "assets/icons/archive.svg",
+      "assets/icons/arrow-down.svg",
+      "assets/icons/arrow-left.svg",
+      "assets/icons/arrow-right.svg",
+      "assets/icons/arrow-up.svg",
+      "assets/icons/ban.svg",
+      "assets/icons/bell.svg",
+      "assets/icons/bolt.svg",
+      "assets/icons/bookmark.svg",
+      "assets/icons/box.svg",
+      "assets/icons/boxes.svg",
+      "assets/icons/building.svg",
+      "assets/icons/calendar.svg",
+      "assets/icons/camera.svg",
+      "assets/icons/caret-down.svg",
+      "assets/icons/caret-up.svg",
+      "assets/icons/chart-bar.svg",
+      "assets/icons/chart-column.svg",
+      "assets/icons/chart-line.svg",
+      "assets/icons/chart-pie.svg",
+      "assets/icons/check-2.svg",
+      "assets/icons/check.svg",
+      "assets/icons/chevron-down.svg",
+      "assets/icons/chevron-left.svg",
+      "assets/icons/chevron-right.svg",
+      "assets/icons/chevron-up.svg",
+      "assets/icons/circle-alert.svg",
+      "assets/icons/circle-check.svg",
+      "assets/icons/circle-minus.svg",
+      "assets/icons/circle-plus.svg",
+      "assets/icons/circle-small.svg",
+      "assets/icons/circle-x.svg",
+      "assets/icons/circle.svg",
+      "assets/icons/clock.svg",
+      "assets/icons/close.svg",
+      "assets/icons/comment.svg",
+      "assets/icons/comments.svg",
+      "assets/icons/copy.svg",
+      "assets/icons/credit-card.svg",
+      "assets/icons/crown.svg",
+      "assets/icons/delete.svg",
+      "assets/icons/diamond.svg",
+      "assets/icons/download.svg",
+      "assets/icons/edit.svg",
+      "assets/icons/equal.svg",
+      "assets/icons/external-link.svg",
+      "assets/icons/external.svg",
+      "assets/icons/eye-off.svg",
+      "assets/icons/eye.svg",
+      "assets/icons/file.svg",
+      "assets/icons/filter.svg",
+      "assets/icons/flame.svg",
+      "assets/icons/folder-open.svg",
+      "assets/icons/folder.svg",
+      "assets/icons/folders.svg",
+      "assets/icons/gear.svg",
+      "assets/icons/gift.svg",
+      "assets/icons/globe.svg",
+      "assets/icons/grip.svg",
+      "assets/icons/hammer.svg",
+      "assets/icons/headphones.svg",
+      "assets/icons/heart.svg",
+      "assets/icons/help.svg",
+      "assets/icons/home.svg",
+      "assets/icons/image.svg",
+      "assets/icons/info.svg",
+      "assets/icons/key.svg",
+      "assets/icons/keyboard.svg",
+      "assets/icons/laptop.svg",
+      "assets/icons/link.svg",
+      "assets/icons/lock-open.svg",
+      "assets/icons/lock.svg",
+      "assets/icons/mail.svg",
+      "assets/icons/map-pin.svg",
+      "assets/icons/medal.svg",
+      "assets/icons/megaphone.svg",
+      "assets/icons/microphone.svg",
+      "assets/icons/minus.svg",
+      "assets/icons/MISSING.md",
+      "assets/icons/moon.svg",
+      "assets/icons/more-horizontal.svg",
+      "assets/icons/more-vertical.svg",
+      "assets/icons/paperclip.svg",
+      "assets/icons/pause.svg",
+      "assets/icons/percent.svg",
+      "assets/icons/person.svg",
+      "assets/icons/pin.svg",
+      "assets/icons/play.svg",
+      "assets/icons/plus.svg",
+      "assets/icons/printer.svg",
+      "assets/icons/qr-code.svg",
+      "assets/icons/receipt.svg",
+      "assets/icons/refresh.svg",
+      "assets/icons/rocket.svg",
+      "assets/icons/save.svg",
+      "assets/icons/scan.svg",
+      "assets/icons/search.svg",
+      "assets/icons/share.svg",
+      "assets/icons/shield-check.svg",
+      "assets/icons/shield.svg",
+      "assets/icons/shopping-bag.svg",
+      "assets/icons/shopping-cart.svg",
+      "assets/icons/sliders.svg",
+      "assets/icons/smartphone.svg",
+      "assets/icons/square.svg",
+      "assets/icons/star.svg",
+      "assets/icons/stop.svg",
+      "assets/icons/sun.svg",
+      "assets/icons/tag.svg",
+      "assets/icons/tags.svg",
+      "assets/icons/target.svg",
+      "assets/icons/thumbs-down.svg",
+      "assets/icons/thumbs-up.svg",
+      "assets/icons/ticket.svg",
+      "assets/icons/triangle-down.svg",
+      "assets/icons/triangle-up.svg",
+      "assets/icons/trolley.svg",
+      "assets/icons/upload.svg",
+      "assets/icons/user-plus.svg",
+      "assets/icons/user-x.svg",
+      "assets/icons/users.svg",
+      "assets/icons/video.svg",
+      "assets/icons/wallet.svg",
+      "assets/icons/wrench.svg",
+      "assets/icons/zap.svg",
+      "assets/logo-mark.svg",
+      "assets/logo-zhuanzhuan-dark.svg",
+      "assets/logo-zhuanzhuan.svg",
+      "assets/products/huawei-p30-blue.png",
+      "assets/products/iphone-11-red.png",
+      "assets/products/iphone-11-white.png",
+      "assets/README.md",
+      "CLAUDE.md",
+      "fonts/PingFangSC-Medium.woff2",
+      "fonts/PingFangSC-Regular.woff2",
+      "fonts/PingFangSC-Semibold.woff2",
+      "fonts/PingFangSC-Thin.woff2",
+      "fonts/PingFangSC-Ultralight.woff2",
+      "README.md",
+      "screenshots/sidebar-products.png",
+      "screenshots/sidebar-v2.png",
+      "SKILL.md",
+      "ui_kits/dashboard/README.md",
+      "ui_kits/mobile_companion/README.md",
+      "ui_kits/pc_console/README.md",
+      "uploads/26转转vi使用规范手册.pdf.pdf",
+      "uploads/Clipboard_Screenshot_1779700151.png",
+      "uploads/Clipboard_Screenshot_1779701198.png",
+      "uploads/Clipboard_Screenshot_1779702077.png",
+      "uploads/Clipboard_Screenshot_1779704006.png",
+      "uploads/Clipboard_Screenshot_1779704110.png",
+      "uploads/Clipboard_Screenshot_1779711482.png",
+      "uploads/Clipboard_Screenshot_1779764932.png",
+      "uploads/Clipboard_Screenshot_1779766408.png",
+      "uploads/Clipboard_Screenshot_1779773670.png",
+      "uploads/Clipboard_Screenshot_1779773716.png",
+      "uploads/Clipboard_Screenshot_1779773824.png",
+      "uploads/Clipboard_Screenshot_1779774704.png",
+      "uploads/Clipboard_Screenshot_1779775184.png",
+      "uploads/Clipboard_Screenshot_1779775288.png",
+      "uploads/Clipboard_Screenshot_1779775377.png",
+      "uploads/Clipboard_Screenshot_1779775658.png",
+      "uploads/Clipboard_Screenshot_1779775777.png",
+      "uploads/Clipboard_Screenshot_1779775990.png",
+      "uploads/pasted-1779765665244-0.png",
+      "uploads/zhuanzhuan-vi.pdf"
+    ]
+  },
+  "screens": [
+    {
+      "file": "explorations/tab-badge-options.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "index.html",
+      "role": "launcher-overview",
+      "implementationNote": "Use this as the navigation/overview entry only; implement each linked screen file as its own route/surface."
+    },
+    {
+      "file": "preview/accordion.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/alert.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/avatar.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/badge.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/batch-toolbar.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/brand-graphic.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/brand-logo.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/breadcrumb.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/button-group-toolbar.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/buttons.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/cards.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/carousel.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/checkbox.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/close-button.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/color-picker.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/colors-brand.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/colors-neutrals.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/colors-semantic.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/condition-badge.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/data-table.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/date-time-input.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/datepicker.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/drawer.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/empty-states.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/field-helper.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/form-fields.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/iconography.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/icons-catalog.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/icons-real.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/icons-usage.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/image-gallery.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/kbd.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/kpi-cards.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/link.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/loaders.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/modal.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/number-input.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/otp.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/overlay-scrim.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/pagination.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/popover-menu.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/progress.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/radii.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/radio.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/rate-grade.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/result-pages.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/scroll-shadow-backdrop.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/scroll-shadow.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/search-autocomplete.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/select-menu.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/separator.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/shadows.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/sidebar.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/skeleton.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/slider.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/spacing.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/stepper.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/switch.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/tab-badge-variants.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/tabs.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/tags.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/time-date-input.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/toast.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/tooltip.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/topbar.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/transfer.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/tree-cascader.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/type-scale.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/type-specimen.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "preview/upload.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "ui_kits/dashboard/index.html",
+      "role": "launcher-overview",
+      "implementationNote": "Use this as the navigation/overview entry only; implement each linked screen file as its own route/surface."
+    },
+    {
+      "file": "ui_kits/dashboard/products.html",
+      "role": "product-screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "ui_kits/mobile_companion/index.html",
+      "role": "launcher-overview",
+      "implementationNote": "Use this as the navigation/overview entry only; implement each linked screen file as its own route/surface."
+    },
+    {
+      "file": "ui_kits/pc_console/index.html",
+      "role": "launcher-overview",
+      "implementationNote": "Use this as the navigation/overview entry only; implement each linked screen file as its own route/surface."
+    }
+  ],
+  "screenFilePolicy": {
+    "mode": "screen-file-first",
+    "entryFileRole": "launcher-overview",
+    "rules": [
+      "Each distinct user-facing screen or surface must be delivered and implemented as its own file/route.",
+      "If a landing page is present or requested, keep it in landing.html and do not merge it into the product app screen.",
+      "When multiple HTML screens exist, index.html is a launcher/overview only; it must not be treated as the combined final UI.",
+      "Keep product app screens, landing pages, platform screens, and OS widget surfaces separate in production code."
+    ]
+  },
+  "appModules": [
+    "Identify domain-specific in-app modules from the exported UI; do not reduce them to generic cards.",
+    "For each major module, implement purpose, default/loading/empty/error/success states, and responsive behavior.",
+    "Keep app modules separate from OS home-screen widgets in the production component model."
+  ],
+  "osWidgets": [
+    "If the export includes home-screen, lock-screen, Live Activity, tablet glance, or Android widget surfaces, implement them as platform quick-access surfaces outside the app UI.",
+    "If none are present, do not invent OS widgets unless the product requirements request them."
+  ],
+  "landingPage": {
+    "detection": "Inspect files and screen names for a marketing/landing page surface. If present, keep it separate from product app screens.",
+    "requiredSections": [
+      "hero",
+      "value props",
+      "product proof/screenshots",
+      "feature proof",
+      "CTA"
+    ]
+  },
+  "tokens": {
+    "source": [
+      "colors_and_type.css",
+      "preview/_card.css",
+      "ui_kits/dashboard/dashboard.css",
+      "ui_kits/dashboard/products.css",
+      "ui_kits/mobile_companion/mobile.css",
+      "ui_kits/pc_console/console.css"
+    ],
+    "required": [
+      "background",
+      "surface",
+      "foreground",
+      "muted text",
+      "border",
+      "accent",
+      "radius",
+      "shadow",
+      "spacing",
+      "type scale",
+      "motion"
+    ],
+    "note": "Extract/freeze tokens before framework implementation so coding tools do not substitute default theme colors or typography."
+  },
+  "interactions": {
+    "source": [
+      "design-canvas.jsx",
+      "ui_kits/mobile_companion/MobileApp.jsx",
+      "ui_kits/pc_console/Dashboard.jsx",
+      "ui_kits/pc_console/Orders.jsx",
+      "ui_kits/pc_console/Primitives.jsx",
+      "ui_kits/pc_console/Products.jsx",
+      "ui_kits/pc_console/Promotion.jsx",
+      "ui_kits/pc_console/QCDrawer.jsx",
+      "ui_kits/pc_console/Shell.jsx"
+    ],
+    "requiredStates": [
+      "default",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading",
+      "empty",
+      "error",
+      "success"
+    ],
+    "requiredBehaviors": [
+      "forms/validation where present",
+      "tabs/filters where present",
+      "dialogs/sheets/drawers where present",
+      "copy/generate/share actions where present",
+      "player or quick controls where present"
+    ],
+    "note": "If the prototype is static, derive missing behavior from visible controls and document it before coding."
+  },
+  "responsiveViewports": [
+    {
+      "name": "mobile-compact",
+      "width": 360,
+      "height": 800,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-standard",
+      "width": 390,
+      "height": 844,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-large",
+      "width": 430,
+      "height": 932,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "foldable-small-tablet",
+      "width": 600,
+      "height": 960,
+      "category": "foldable-tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 820,
+      "height": 1180,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "laptop",
+      "width": 1366,
+      "height": 768,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "wide",
+      "width": 1920,
+      "height": 1080,
+      "category": "wide",
+      "mustAvoidHorizontalScroll": true
+    }
+  ],
+  "implementationChecklist": [
+    "Open entryFile first and map screens, modules, tokens, and interactions.",
+    "Extract tokens before writing framework components.",
+    "Implement app-specific modules with real states instead of generic card grids.",
+    "Preserve or rebuild JS interactions for meaningful UX actions.",
+    "Validate screenshots at desktop/tablet/mobile viewports with no horizontal overflow.",
+    "Keep landing pages, in-app modules, and OS widgets as separate implementation surfaces."
+  ]
+}

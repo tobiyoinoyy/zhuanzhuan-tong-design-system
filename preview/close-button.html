@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .close { width: 24px; height: 24px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+           background: var(--zzt-zinc-150); cursor: pointer; border: 0; }
+  .close i { width: 12px; height: 12px; color: var(--zzt-fg-muted); }
+  .close:hover { background: var(--zzt-zinc-200); }
+  .close:hover i { color: var(--zzt-fg); }
+  .close.sm { width: 20px; height: 20px; }
+  .close.sm i { width: 10px; height: 10px; }
+  .close.lg { width: 32px; height: 32px; }
+  .close.lg i { width: 14px; height: 14px; }
+  .close.transparent { background: transparent; }
+  .close.dark { background: rgba(255,255,255,0.18); }
+  .close.dark i { color: #fff; }
+  .close.dark:hover { background: rgba(255,255,255,0.28); }
+  .close.danger:hover { background: rgba(255,15,39,0.16); }
+  .close.danger:hover i { color: var(--zzt-danger-500); }
+  .stage { background: var(--zzt-zinc-100); border-radius: 8px; padding: 14px; display: flex; gap: 18px; align-items: center; }
+  .stage.dark { background: var(--zzt-zinc-900); color: #fff; }
+  .stage span.l { font-size: 11px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); }
+  .stage.dark span.l { color: rgba(255,255,255,0.55); }
+  .row + .row { margin-top: 14px; }
+</style></head><body>
+<div class="col" style="gap: 14px;">
+  <div class="stage">
+    <span class="l">sizes</span>
+    <button class="close sm"><i data-lucide="x"></i></button>
+    <button class="close"><i data-lucide="x"></i></button>
+    <button class="close lg"><i data-lucide="x"></i></button>
+  </div>
+  <div class="stage">
+    <span class="l">variants</span>
+    <button class="close"><i data-lucide="x"></i></button>
+    <button class="close transparent"><i data-lucide="x"></i></button>
+    <button class="close danger"><i data-lucide="x"></i></button>
+  </div>
+  <div class="stage dark">
+    <span class="l">on dark surface</span>
+    <button class="close dark"><i data-lucide="x"></i></button>
+    <button class="close dark lg"><i data-lucide="x"></i></button>
+  </div>
+  <div class="stage">
+    <span class="l">in context</span>
+    <span style="background:#fff; border:1px solid var(--zzt-border-subtle); border-radius:999px; padding: 2px 10px 2px 12px; display:inline-flex; align-items:center; gap:6px; font-size:12px;">已选品类: 手机 <button class="close sm"><i data-lucide="x"></i></button></span>
+    <span style="background:var(--zzt-zinc-900); color:#fff; border-radius:12px; padding: 8px 12px 8px 16px; display:inline-flex; align-items:center; gap:10px; font-size:13px;">已上架 12 件 <button class="close sm dark"><i data-lucide="x"></i></button></span>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

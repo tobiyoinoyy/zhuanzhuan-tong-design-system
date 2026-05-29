@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .res { display:flex; flex-direction: column; align-items: center; gap: 10px; padding: 28px 16px;
+         background: #fff; border-radius: 14px; border: 1px solid rgba(0,0,0,.06); width: 280px; text-align: center; }
+  .res .ic { width: 64px; height: 64px; border-radius: 999px; display:inline-flex; align-items: center; justify-content: center; }
+  .res.success .ic { background: rgba(23,201,100,.12); color: var(--zzt-success-500); }
+  .res.warning .ic { background: rgba(245,165,36,.16); color: var(--zzt-warning-500); }
+  .res.danger .ic  { background: rgba(255,15,39,.12); color: var(--zzt-danger-500); }
+  .res.info .ic    { background: rgba(255,15,39,.12); color: var(--zzt-accent-500); }
+  .res .ic i { width: 32px; height: 32px; }
+  .res h3 { margin: 6px 0 0; font-size: 16px; font-weight: 600; }
+  .res p { margin: 0; font-size: 13px; color: var(--zzt-fg-muted); line-height: 1.5; max-width: 240px; }
+  .res .acts { display: flex; gap: 8px; margin-top: 6px; }
+</style></head><body>
+<div class="row" style="gap: 14px; align-items: flex-start;">
+  <div class="res success">
+    <div class="ic"><i data-lucide="check"></i></div>
+    <h3>批量上架成功</h3>
+    <p>12 个 SKU 已上架并同步至搜索、活动会场。</p>
+    <div class="acts"><button class="btn primary sm">查看商品</button><button class="btn ghost sm">继续上架</button></div>
+  </div>
+  <div class="res warning">
+    <div class="ic"><i data-lucide="alert-triangle"></i></div>
+    <h3>部分操作未完成</h3>
+    <p>9 / 12 已上架；3 个 SKU 缺少质检报告，已退回待处理。</p>
+    <div class="acts"><button class="btn primary sm">前往处理</button><button class="btn ghost sm">查看失败项</button></div>
+  </div>
+  <div class="res danger">
+    <div class="ic"><i data-lucide="x"></i></div>
+    <h3>操作失败</h3>
+    <p>本次操作未提交至服务端，已保存为草稿。错误代码 E-1042</p>
+    <div class="acts"><button class="btn primary sm">重新提交</button><button class="btn ghost sm">联系客服</button></div>
+  </div>
+  <div class="res info">
+    <div class="ic"><i data-lucide="shield-off"></i></div>
+    <h3>没有访问权限</h3>
+    <p>该模块仅对 KA 商户开放。如需启用，请联系您的客户经理。</p>
+    <div class="acts"><button class="btn outline sm">了解 KA 权益</button></div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

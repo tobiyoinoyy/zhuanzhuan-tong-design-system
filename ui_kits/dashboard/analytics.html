@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>转转通 · 数据看板</title>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="analytics.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-screen-label="04 Analytics">
+<div class="shell">
+
+  <!-- ============ Top Bar (full-width) — unchanged ============ -->
+  <header class="top">
+    <div class="brand"><img class="lockup" src="../../assets/logo-zhuanzhuan.svg" alt="转转通"></div>
+    <div class="links">
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>快捷入口</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/medal.svg)"></span>转转学堂</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/comment.svg)"></span>我要反馈</span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>公告<span class="badge">2</span></span>
+      <span class="top-link"><span class="ic" style="--src: url(../../assets/icons/bell.svg)"></span>通知<span class="badge">5</span></span>
+      <span class="sep-v"></span>
+      <span class="me">
+        <span class="av"></span>
+        <span class="name"><b>张超</b>（管理员）</span>
+      </span>
+      <span class="top-link top-logout" style="margin-left: 6px;">退出</span>
+    </div>
+  </header>
+
+  <div class="shell-row">
+
+  <!-- ============ Side Nav — unchanged ============ -->
+  <aside class="side">
+    <nav class="nav">
+
+      <button class="nav-item" onclick="location.href='index.html'">
+        <span class="ic" style="--src: url(../../assets/icons/home.svg)"></span>
+        <span class="lab">工作台</span>
+      </button>
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/star.svg)"></span>
+        <span class="lab">常用</span>
+      </button>
+      <button class="nav-item active">
+        <span class="ic" style="--src: url(../../assets/icons/chart-line.svg)"></span>
+        <span class="lab">数据看板</span>
+      </button>
+
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/building.svg)"></span>
+          <span class="lab">商户中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商家认证</button>
+          <button class="nav-sub">对账信息中心</button>
+          <button class="nav-sub">合同管理</button>
+          <button class="nav-sub">银行卡管理<span class="hot">热</span></button>
+          <button class="nav-sub">服务评分</button>
+          <button class="nav-sub">退货地址管理</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shopping-bag.svg)"></span>
+          <span class="lab">店铺管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">店铺信息</button>
+          <button class="nav-sub">店铺装修</button>
+          <button class="nav-sub">店铺评分</button>
+          <button class="nav-sub">客服设置</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/box.svg)"></span>
+          <span class="lab">商品管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub" onclick="location.href='products.html'">商品管理<span class="hot">热</span></button>
+          <button class="nav-sub">高库龄商品</button>
+          <button class="nav-sub">退库商品</button>
+          <button class="nav-sub">商品评价</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/boxes.svg)"></span>
+          <span class="lab">供货管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub" onclick="location.href='supply.html'">自主供货</button>
+          <button class="nav-sub">供货单管理</button>
+          <button class="nav-sub">需求大厅</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/trolley.svg)"></span>
+          <span class="lab">订单售后</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">订单列表</button>
+          <button class="nav-sub">售后工单</button>
+          <button class="nav-sub">退货管理</button>
+          <button class="nav-sub">物流跟踪</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/megaphone.svg)"></span>
+          <span class="lab">营销活动</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">活动管理</button>
+          <button class="nav-sub">优惠券</button>
+          <button class="nav-sub">商品推广</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/shield-check.svg)"></span>
+          <span class="lab">质检管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">商品录入</button>
+          <button class="nav-sub">扫码质检</button>
+          <button class="nav-sub">扫码复检</button>
+          <button class="nav-sub">出库调拨</button>
+          <button class="nav-sub">调拨单</button>
+          <button class="nav-sub">单据中心</button>
+          <button class="nav-sub">分站审核</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/archive.svg)"></span>
+          <span class="lab">仓储管理</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">入库订单</button>
+          <button class="nav-sub">发货订单</button>
+          <button class="nav-sub">拣货波次</button>
+          <button class="nav-sub">出库复核</button>
+          <button class="nav-sub">出库打单</button>
+          <button class="nav-sub">盘点管理</button>
+          <button class="nav-sub">商品查询</button>
+          <button class="nav-sub">库存流水</button>
+          <button class="nav-sub">耗材申请</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/wallet.svg)"></span>
+          <span class="lab">成本中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">收支明细</button>
+          <button class="nav-sub">保证金</button>
+          <button class="nav-sub">提现记录</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/chart-bar.svg)"></span>
+          <span class="lab">数据中心</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">经营报表</button>
+          <button class="nav-sub">商品分析</button>
+          <button class="nav-sub">流量分析</button>
+        </div>
+      </div>
+
+      <div class="nav-group" data-expanded="false">
+        <button class="nav-grouphead">
+          <span class="ic" style="--src: url(../../assets/icons/key.svg)"></span>
+          <span class="lab">商户权限</span>
+          <span class="chev"></span>
+        </button>
+        <div class="nav-sublist">
+          <button class="nav-sub">子账号管理</button>
+          <button class="nav-sub">角色权限</button>
+        </div>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <button class="nav-item">
+        <span class="ic" style="--src: url(../../assets/icons/hammer.svg)"></span>
+        <span class="lab">工具</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <!-- ============ Body (single column) ============ -->
+    <div class="page">
+
+
+      <!-- ============================================================
+           1) 流量数据 — 筛选 + 3 KPI（全 0 暂无数据）
+           ============================================================ -->
+      <section class="panel">
+        <div class="panel-head">
+          <div class="ttl">流量数据</div>
+        </div>
+
+        <!-- 筛选行：品类/品牌/型号 + 快捷时间 segmented + 自定义日期 -->
+        <div class="flow-filter">
+          <div class="ff-group ff-dim">
+            <div class="inp compact" style="width: 160px;">
+              <span class="placeholder">品类</span>
+              <span class="caret"></span>
+            </div>
+            <div class="inp compact" style="width: 160px;">
+              <span class="placeholder">品牌</span>
+              <span class="caret"></span>
+            </div>
+            <div class="inp compact" style="width: 160px;">
+              <span class="placeholder">型号</span>
+              <span class="caret"></span>
+            </div>
+          </div>
+
+          <div class="ff-group ff-time">
+            <div class="seg" role="tablist" aria-label="时间范围">
+              <button class="active" type="button">近1天</button>
+              <button type="button">近7天</button>
+              <button type="button">近30天</button>
+            </div>
+            <div class="inp range compact" style="width: 240px;">
+              <span class="slot">2026-05-20</span>
+              <span class="arrow">→</span>
+              <span class="slot">2026-05-26</span>
+              <span class="ic-cal" style="--src: url(../../assets/icons/calendar.svg)"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 KPI：全 0 + 暂无数据 -->
+        <div class="kpi-3">
+          <div class="kpi empty">
+            <div class="top-r">
+              <span class="name">流量指数 <span class="info"></span></span>
+              <span class="arr"></span>
+            </div>
+            <div class="v">0</div>
+            <span class="empty-tip">暂无数据</span>
+          </div>
+          <div class="kpi empty">
+            <div class="top-r">
+              <span class="name">支付单数 <span class="info"></span></span>
+              <span class="arr"></span>
+            </div>
+            <div class="v">0</div>
+            <span class="empty-tip">暂无数据</span>
+          </div>
+          <div class="kpi empty">
+            <div class="top-r">
+              <span class="name">成交金额 <span class="info"></span></span>
+              <span class="arr"></span>
+            </div>
+            <div class="v"><span class="unit">¥</span>0.00</div>
+            <span class="empty-tip">暂无数据</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           2) 商品数据 — 6 项内嵌灰卡
+           ============================================================ -->
+      <section class="panel">
+        <div class="panel-head">
+          <div class="ttl">商品数据 <span class="stamp">统计时间 2026-05-27 15:17:48</span></div>
+        </div>
+
+        <div class="tile-grid cols-6">
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">未上架（未定价）</span>
+              <a class="link">查看明细</a>
+            </div>
+            <div class="v">307</div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">未上架（可退回）</span>
+              <a class="link">查看明细</a>
+            </div>
+            <div class="v">536</div>
+          </div>
+          <div class="tile zero">
+            <div class="row1">
+              <span class="lbl">昨日动销天数 <span class="info"></span></span>
+            </div>
+            <div class="v">0.00<span style="font-size:13px; color:var(--zzt-fg-subtle); font-weight:500; margin-left:4px;">天</span></div>
+          </div>
+          <div class="tile zero">
+            <div class="row1">
+              <span class="lbl">昨日平均在库时长 <span class="info"></span></span>
+            </div>
+            <div class="v">0.00<span style="font-size:13px; color:var(--zzt-fg-subtle); font-weight:500; margin-left:4px;">天</span></div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">在售库存</span>
+              <span class="pick">全部品类<span class="caret"></span></span>
+            </div>
+            <div class="v">207</div>
+            <div class="yday">昨日 <b>0</b></div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">整体库存</span>
+              <span class="pick">全部品类<span class="caret"></span></span>
+            </div>
+            <div class="v">3,034</div>
+            <div class="yday">昨日 <b>0</b></div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           3) 交易数据 — 3 项 + 昨日对比
+           ============================================================ -->
+      <section class="panel">
+        <div class="panel-head">
+          <div class="ttl">交易数据 <span class="stamp">统计时间 2026-05-27 15:17:48</span></div>
+        </div>
+
+        <div class="tile-grid cols-3">
+          <div class="tile zero">
+            <div class="row1"><span class="lbl">今日销量 <span class="info"></span></span></div>
+            <div class="v">0</div>
+            <div class="yday">昨日 <b>1</b></div>
+          </div>
+          <div class="tile zero">
+            <div class="row1"><span class="lbl">今日销售额（元）<span class="info"></span></span></div>
+            <div class="v">0.00</div>
+            <div class="yday">昨日 <b>188.00</b></div>
+          </div>
+          <div class="tile zero">
+            <div class="row1"><span class="lbl">实时客单价（元）<span class="info"></span></span></div>
+            <div class="v">0</div>
+            <div class="yday">昨日 <b>188.00</b></div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           4) 在售数据 — 5 个品类
+           ============================================================ -->
+      <section class="panel">
+        <div class="panel-head">
+          <div class="ttl">在售数据 <span class="stamp">统计时间 2026-05-27 15:17:48</span></div>
+        </div>
+
+        <div class="tile-grid cols-5">
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">手机</span>
+              <span class="pick">全部等级<span class="caret"></span></span>
+            </div>
+            <div class="v">174</div>
+            <div class="yday">昨日 <b>174</b></div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">笔记本</span>
+              <span class="pick">全部等级<span class="caret"></span></span>
+            </div>
+            <div class="v">12</div>
+            <div class="yday">昨日 <b>12</b></div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">智能手表</span>
+              <span class="pick">全部等级<span class="caret"></span></span>
+            </div>
+            <div class="v">6</div>
+            <div class="yday">昨日 <b>6</b></div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">平板电脑</span>
+              <span class="pick">全部等级<span class="caret"></span></span>
+            </div>
+            <div class="v">5</div>
+            <div class="yday">昨日 <b>5</b></div>
+          </div>
+          <div class="tile">
+            <div class="row1">
+              <span class="lbl">耳机/耳麦</span>
+              <span class="pick">全部等级<span class="caret"></span></span>
+            </div>
+            <div class="v">4</div>
+            <div class="yday">昨日 <b>—</b></div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           5) 销售走势 — 时间 segmented + 导出 + 双轴图
+           ============================================================ -->
+      <section class="panel">
+        <div class="panel-head">
+          <div class="ttl">销售走势</div>
+          <div class="actions">
+            <div class="seg">
+              <button class="active" type="button">近7天</button>
+              <button type="button">近15天</button>
+              <button type="button">近30天</button>
+              <button type="button">近1年</button>
+            </div>
+            <button class="btn btn-outline">
+              <span class="ic" style="--src: url(../../assets/icons/download.svg)"></span>
+              导出
+            </button>
+          </div>
+        </div>
+
+        <!-- 6) 走势筛选行 — 先选条件再看图，所以放在图表上方 -->
+        <div class="trend-filter">
+          <div class="inp compact">
+            <span class="placeholder">选择品类</span>
+            <span class="caret"></span>
+          </div>
+          <div class="inp compact">
+            <span class="placeholder">选择品牌</span>
+            <span class="caret"></span>
+          </div>
+          <div class="inp compact">
+            <span class="placeholder">选择型号</span>
+            <span class="caret"></span>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">查询</button>
+            <button class="btn btn-outline">重置</button>
+          </div>
+        </div>
+
+        <div class="trend-chart">
+          <div class="trend-legend">
+            <span class="lg"><span class="bar"></span>销售额（元）</span>
+            <span class="lg"><span class="line"></span>销量（件）</span>
+          </div>
+
+          <!-- SVG: 7 个日期，仅 05/26 有数据 188 / 1
+               不要用 preserveAspectRatio="none" — 那会把 720×240 viewBox 拉伸到容器宽，
+               文字会被横向拉宽成扁字。默认 xMidYMid meet 让 SVG 按宽度等比缩放即可。 -->
+          <svg viewBox="0 0 720 240" aria-label="销售走势图">
+            <!-- 网格线 (horizontal) -->
+            <g class="grid">
+              <line x1="56" y1="32"  x2="688" y2="32" />
+              <line x1="56" y1="80"  x2="688" y2="80" />
+              <line x1="56" y1="128" x2="688" y2="128" />
+              <line x1="56" y1="176" x2="688" y2="176" />
+            </g>
+
+            <!-- Y 轴左 (销售额) -->
+            <text class="axis-label" x="48" y="36" text-anchor="end">200</text>
+            <text class="axis-label" x="48" y="84" text-anchor="end">150</text>
+            <text class="axis-label" x="48" y="132" text-anchor="end">100</text>
+            <text class="axis-label" x="48" y="180" text-anchor="end">50</text>
+            <text class="axis-label" x="48" y="216" text-anchor="end">0</text>
+
+            <!-- Y 轴右 (销量) -->
+            <text class="axis-label" x="696" y="36" text-anchor="start">2.0</text>
+            <text class="axis-label" x="696" y="84" text-anchor="start">1.5</text>
+            <text class="axis-label" x="696" y="132" text-anchor="start">1.0</text>
+            <text class="axis-label" x="696" y="180" text-anchor="start">0.5</text>
+            <text class="axis-label" x="696" y="216" text-anchor="start">0.0</text>
+
+            <!-- 横轴底线 -->
+            <line class="axis" x1="56" y1="212" x2="688" y2="212" />
+
+            <!-- 7 根柱子: x positions 90, 180, 270, 360, 450, 540, 630 (centers); width 28 -->
+            <!-- y=212 (baseline). 销售额 188 / 200 max → height ≈ 169 → y=43 -->
+            <rect class="bar zero" x="76"  y="208" width="28" height="4" rx="2"></rect>
+            <rect class="bar zero" x="166" y="208" width="28" height="4" rx="2"></rect>
+            <rect class="bar zero" x="256" y="208" width="28" height="4" rx="2"></rect>
+            <rect class="bar zero" x="346" y="208" width="28" height="4" rx="2"></rect>
+            <rect class="bar zero" x="436" y="208" width="28" height="4" rx="2"></rect>
+            <rect class="bar zero" x="526" y="208" width="28" height="4" rx="2"></rect>
+            <rect class="bar"      x="616" y="32"  width="28" height="180" rx="3"></rect>
+            <text class="value-label" x="630" y="22">188</text>
+
+            <!-- 销量折线: 7 点全部接近 0；第 7 点 = 1，y = 212 - (1/2)*180 = 122 -->
+            <polyline class="line"
+              points="90,212 180,212 270,212 360,212 450,212 540,212 630,122" />
+            <circle class="dot" cx="90"  cy="212" r="3"></circle>
+            <circle class="dot" cx="180" cy="212" r="3"></circle>
+            <circle class="dot" cx="270" cy="212" r="3"></circle>
+            <circle class="dot" cx="360" cy="212" r="3"></circle>
+            <circle class="dot" cx="450" cy="212" r="3"></circle>
+            <circle class="dot" cx="540" cy="212" r="3"></circle>
+            <circle class="dot" cx="630" cy="122" r="4"></circle>
+
+            <!-- X 轴日期 -->
+            <text class="x-tick" x="90"  y="232" text-anchor="middle">05月20日</text>
+            <text class="x-tick" x="180" y="232" text-anchor="middle">05月21日</text>
+            <text class="x-tick" x="270" y="232" text-anchor="middle">05月22日</text>
+            <text class="x-tick" x="360" y="232" text-anchor="middle">05月23日</text>
+            <text class="x-tick" x="450" y="232" text-anchor="middle">05月24日</text>
+            <text class="x-tick" x="540" y="232" text-anchor="middle">05月25日</text>
+            <text class="x-tick" x="630" y="232" text-anchor="middle">05月26日</text>
+          </svg>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           7) 商品销售排行
+           ============================================================ -->
+      <section class="panel">
+        <div class="panel-head">
+          <div class="ttl">商品销售排行</div>
+        </div>
+
+        <div class="rank-wrap">
+          <div class="rank-inner">
+            <table class="rank-table full">
+              <thead>
+                <tr>
+                  <th class="col-rank">排行</th>
+                  <th>商品信息</th>
+                  <th>当前库存</th>
+                  <th><span class="sortable">昨日销量<span class="ic"></span></span></th>
+                  <th><span class="sortable desc">近7日销量<span class="ic"></span></span></th>
+                  <th><span class="sortable">15天销量<span class="ic"></span></span></th>
+                  <th><span class="sortable">30天销量<span class="ic"></span></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rank 1 — 华为 P30，金牌 -->
+                <tr>
+                  <td class="col-rank-cell">
+                    <span class="medal m1"><span class="ribbon"></span><span class="num">1</span></span>
+                  </td>
+                  <td>
+                    <div class="sku-cell">
+                      <div class="sku-thumb has-img" style="--img: url(../../assets/products/huawei-p30-blue.png)"></div>
+                      <div class="sku-body">
+                        <div class="sku-title-row">
+                          <span class="cond-badge"><span class="ap"><b>90</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                          <span class="sku-title">华为 HUAWEI P30 8GB+128GB 极光色</span>
+                        </div>
+                        <div class="sku-tags">
+                          <span class="tag-out">自质检</span>
+                        </div>
+                        <div class="sku-spec">
+                          <span>极光色</span>
+                          <span class="sep">|</span><span>全网通</span>
+                          <span class="sep">|</span><span>8GB+128GB</span>
+                          <span class="sep">|</span><span>国行</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="num">15</td>
+                  <td class="num">1</td>
+                  <td class="num">1</td>
+                  <td class="num">1</td>
+                  <td class="num">1</td>
+                </tr>
+
+                <!-- Rank 2 — DJI Mavic Pro，银牌 -->
+                <tr>
+                  <td class="col-rank-cell">
+                    <span class="medal m2"><span class="ribbon"></span><span class="num">2</span></span>
+                  </td>
+                  <td>
+                    <div class="sku-cell">
+                      <div class="sku-thumb placeholder"></div>
+                      <div class="sku-body">
+                        <div class="sku-title-row">
+                          <span class="cond-badge"><span class="ap"><b>95</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                          <span class="sku-title">DJI 大疆 Mavic Pro 御 标准版</span>
+                        </div>
+                        <div class="sku-tags">
+                          <span class="tag-out accent">官方质检</span>
+                        </div>
+                        <div class="sku-spec">
+                          <span>经典灰</span>
+                          <span class="sep">|</span><span>标准版</span>
+                          <span class="sep">|</span><span>4K 航拍</span>
+                          <span class="sep">|</span><span>国行</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="num">5</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num">1</td>
+                </tr>
+
+                <!-- Rank 3 — THE MONSTERS 挂件，铜牌 -->
+                <tr>
+                  <td class="col-rank-cell">
+                    <span class="medal m3"><span class="ribbon"></span><span class="num">3</span></span>
+                  </td>
+                  <td>
+                    <div class="sku-cell">
+                      <div class="sku-thumb placeholder"></div>
+                      <div class="sku-body">
+                        <div class="sku-title-row">
+                          <span class="cond-badge"><span class="ap zh">全新</span><span class="fn">A</span></span>
+                          <span class="sku-title">THE MONSTERS 拉布布 LABUBU 挂件</span>
+                        </div>
+                        <div class="sku-tags">
+                          <span class="tag-out accent">官方质检</span>
+                        </div>
+                        <div class="sku-spec">
+                          <span>盲盒</span>
+                          <span class="sep">|</span><span>多色随机</span>
+                          <span class="sep">|</span><span>未拆封</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="num">1</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num">1</td>
+                </tr>
+
+                <!-- Rank 4-6 占位（真实排行通常多于 3 行）-->
+                <tr>
+                  <td class="col-rank-cell"><span class="rk-n">4</span></td>
+                  <td>
+                    <div class="sku-cell">
+                      <div class="sku-thumb placeholder"></div>
+                      <div class="sku-body">
+                        <div class="sku-title-row">
+                          <span class="cond-badge"><span class="ap"><b>90</b><span class="suf">新</span></span><span class="fn">B</span></span>
+                          <span class="sku-title">小米 Xiaomi 13 Pro 12GB+256GB 远山蓝</span>
+                        </div>
+                        <div class="sku-tags">
+                          <span class="tag-out">自质检</span>
+                        </div>
+                        <div class="sku-spec">
+                          <span>远山蓝</span>
+                          <span class="sep">|</span><span>全网通 5G</span>
+                          <span class="sep">|</span><span>12GB+256GB</span>
+                          <span class="sep">|</span><span>国行</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="num">8</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                </tr>
+                <tr>
+                  <td class="col-rank-cell"><span class="rk-n">5</span></td>
+                  <td>
+                    <div class="sku-cell">
+                      <div class="sku-thumb has-img" style="--img: url(../../assets/products/iphone-11-white.png)"></div>
+                      <div class="sku-body">
+                        <div class="sku-title-row">
+                          <span class="cond-badge"><span class="ap"><b>90</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                          <span class="sku-title">Apple iPhone 11 128GB 白色 国行双卡</span>
+                        </div>
+                        <div class="sku-tags">
+                          <span class="tag-out accent">官方质检</span>
+                        </div>
+                        <div class="sku-spec">
+                          <span>白色</span>
+                          <span class="sep">|</span><span>全网通</span>
+                          <span class="sep">|</span><span>128GB</span>
+                          <span class="sep">|</span><span>国行双卡</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="num">23</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                </tr>
+                <tr>
+                  <td class="col-rank-cell"><span class="rk-n">6</span></td>
+                  <td>
+                    <div class="sku-cell">
+                      <div class="sku-thumb has-img" style="--img: url(../../assets/products/iphone-11-red.png)"></div>
+                      <div class="sku-body">
+                        <div class="sku-title-row">
+                          <span class="cond-badge"><span class="ap"><b>95</b><span class="suf">新</span></span><span class="fn">A</span></span>
+                          <span class="sku-title">Apple iPhone 11 128GB 红色 国行双卡</span>
+                        </div>
+                        <div class="sku-tags">
+                          <span class="tag-out accent">官方质检</span>
+                        </div>
+                        <div class="sku-spec">
+                          <span>红色</span>
+                          <span class="sep">|</span><span>全网通</span>
+                          <span class="sep">|</span><span>128GB</span>
+                          <span class="sep">|</span><span>国行双卡</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="num">11</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                  <td class="num zero">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+    </div><!-- /.page -->
+  </div><!-- /.main -->
+
+  </div><!-- /.shell-row -->
+</div><!-- /.shell -->
+
+<script>
+  // Segmented control: click to switch active
+  document.querySelectorAll('.seg').forEach(function (seg) {
+    seg.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn || !seg.contains(btn)) return;
+      seg.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  // Sortable header cycling: none → desc → asc → none (single-column at a time)
+  document.querySelectorAll('.rank-table .sortable').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var was = el.classList.contains('desc') ? 'desc' : (el.classList.contains('asc') ? 'asc' : 'none');
+      // clear all
+      document.querySelectorAll('.rank-table .sortable').forEach(function (s) {
+        s.classList.remove('asc', 'desc');
+      });
+      // cycle this one
+      if (was === 'none') el.classList.add('desc');
+      else if (was === 'desc') el.classList.add('asc');
+      // 'asc' → cleared
+    });
+  });
+</script>
+<script>
+  // Sidebar: group expand/collapse + click-to-activate.
+  (function () {
+    var nav = document.querySelector('.side .nav');
+    if (!nav) return;
+    function setActive(el) {
+      nav.querySelectorAll('.nav-item.active, .nav-sub.active').forEach(function (n) { n.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    nav.addEventListener('click', function (e) {
+      var head = e.target.closest('.nav-grouphead');
+      if (head) {
+        var g = head.closest('.nav-group');
+        g.dataset.expanded = g.dataset.expanded === 'true' ? 'false' : 'true';
+        return;
+      }
+      var leaf = e.target.closest('.nav-item, .nav-sub');
+      if (leaf) setActive(leaf);
+    });
+    // Scroll active item into view on load
+    var active = nav.querySelector('.nav-sub.active, .nav-item.active');
+    if (active) nav.scrollTop = Math.max(0, active.offsetTop - 80);
+  })();
+</script>
+</body>
+</html>

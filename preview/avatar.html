@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .av { display:inline-flex; align-items:center; justify-content:center; border-radius:999px;
+        background: var(--zzt-zinc-150); color: var(--zzt-fg);
+        font-weight: 500; font-family: var(--zzt-font-sans); flex-shrink:0; overflow:hidden; }
+  .av.xs { width: 20px; height: 20px; font-size: 10px; }
+  .av.sm { width: 28px; height: 28px; font-size: 11px; }
+  .av.md { width: 36px; height: 36px; font-size: 13px; }
+  .av.lg { width: 44px; height: 44px; font-size: 16px; }
+  .av.xl { width: 56px; height: 56px; font-size: 20px; }
+  .av.accent  { background: var(--zzt-accent-500); color:#fff; }
+  .av.success { background: var(--zzt-success-500); color:#fff; }
+  .av.danger  { background: var(--zzt-danger-500); color:#fff; }
+  .av.purple  { background: var(--zzt-purple-500); color:#fff; }
+  .av.img { background-image: linear-gradient(135deg, #C5D6F2 0%, #84A8E1 100%); }
+  .av i { width: 60%; height: 60%; }
+  .stack { display:inline-flex; }
+  .stack > .av { margin-left:-8px; border: 2px solid #fff; }
+  .stack > .av:first-child { margin-left: 0; }
+  .ring { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--zzt-accent-500); }
+  .row + .row { margin-top: 12px; }
+</style></head><body>
+<div class="row">
+  <span class="lab" style="width:80px">letter</span>
+  <div class="av xs">A</div>
+  <div class="av sm">明</div>
+  <div class="av md">明</div>
+  <div class="av lg accent">明</div>
+  <div class="av xl purple">YJ</div>
+</div>
+<div class="row">
+  <span class="lab" style="width:80px">icon</span>
+  <div class="av xs"><i data-lucide="user"></i></div>
+  <div class="av sm"><i data-lucide="user"></i></div>
+  <div class="av md accent"><i data-lucide="package"></i></div>
+  <div class="av lg success"><i data-lucide="shield-check"></i></div>
+  <div class="av xl danger"><i data-lucide="alert-triangle"></i></div>
+</div>
+<div class="row">
+  <span class="lab" style="width:80px">image</span>
+  <div class="av sm img"></div>
+  <div class="av md img"></div>
+  <div class="av lg img"></div>
+  <div class="av xl img ring"></div>
+  <span class="lab" style="margin-left:24px">stack →</span>
+  <div class="stack">
+    <div class="av md">明</div>
+    <div class="av md img"></div>
+    <div class="av md accent">A</div>
+    <div class="av md">+3</div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,61 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .bgrp { display:inline-flex; border: 1px solid var(--zzt-border-strong); border-radius: 999px; overflow: hidden; background: #fff; }
+  .bgrp button { background: transparent; border: 0; padding: 7px 14px; font-size: 13.5px; font-family: inherit; cursor: pointer;
+                 display:inline-flex; align-items:center; gap: 6px; color: var(--zzt-fg); border-right: 1px solid var(--zzt-border-strong); }
+  .bgrp button:last-child { border-right: 0; }
+  .bgrp button.active { background: var(--zzt-zinc-100); }
+  .bgrp.primary { border: 0; background: var(--zzt-accent-500); }
+  .bgrp.primary button { color: #fff; border-right: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; }
+  .bgrp.primary button.split { padding: 8px 10px; }
+  .bgrp button i { width: 13px; height: 13px; }
+  .toolbar { display:inline-flex; align-items:center; gap: 2px; background: #fff; border: 1px solid var(--zzt-border-strong);
+             border-radius: 999px; padding: 4px; box-shadow: var(--zzt-shadow-sm); }
+  .toolbar button { background: transparent; border: 0; width: 32px; height: 32px; border-radius: 999px;
+                    display:inline-flex; align-items:center; justify-content:center; cursor: pointer; color: var(--zzt-fg); }
+  .toolbar button:hover, .toolbar button.active { background: var(--zzt-zinc-100); }
+  .toolbar button.active { color: var(--zzt-accent-500); }
+  .toolbar .sepv { width: 1px; height: 16px; background: var(--zzt-border-strong); margin: 0 4px; }
+  .toolbar button i { width: 16px; height: 16px; }
+  .col-gap { display: flex; flex-direction: column; gap: 18px; }
+  .col-gap .l { font-size: 12px; color: var(--zzt-fg-muted); margin-bottom: 6px; }
+</style></head><body>
+<div class="col-gap">
+  <div>
+    <div class="l">Button group · attached buttons (segmented)</div>
+    <div class="row" style="gap: 14px;">
+      <div class="bgrp"><button>日</button><button class="active">周</button><button>月</button><button>年</button></div>
+      <div class="bgrp"><button><i data-lucide="align-left"></i></button><button class="active"><i data-lucide="align-center"></i></button><button><i data-lucide="align-right"></i></button></div>
+    </div>
+  </div>
+  <div>
+    <div class="l">Split button · 主操作 + 下拉</div>
+    <div class="row">
+      <div class="bgrp primary">
+        <button><i data-lucide="check"></i>批量上架</button>
+        <button class="split"><i data-lucide="chevron-down"></i></button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="l">Floating toolbar · 编辑器 / 卡片悬停操作</div>
+    <div class="row">
+      <div class="toolbar">
+        <button><i data-lucide="bold"></i></button>
+        <button class="active"><i data-lucide="italic"></i></button>
+        <button><i data-lucide="underline"></i></button>
+        <span class="sepv"></span>
+        <button><i data-lucide="list"></i></button>
+        <button><i data-lucide="list-ordered"></i></button>
+        <span class="sepv"></span>
+        <button><i data-lucide="link"></i></button>
+        <button><i data-lucide="image"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

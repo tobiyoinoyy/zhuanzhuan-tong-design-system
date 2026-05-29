@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>Type · Specimen</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:22px; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .col h5 { margin:0 0 10px; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--zzt-fg-muted); font-weight:500;}
+  .stack > div { font-size:18px; line-height:1.5; }
+  .latin .stack > div { font-family:"Inter", sans-serif; }
+  .han .stack > div { font-family:"PingFang SC", sans-serif; }
+  .w400 { font-weight:400; }
+  .w500 { font-weight:500; }
+  .w600 { font-weight:600; }
+  .w700 { font-weight:700; }
+</style></head><body>
+<div class="grid">
+  <div class="col latin">
+    <h5>Inter — Latin & Numerals</h5>
+    <div class="stack">
+      <div class="w400">Regular ¥ 128,540 · Aa</div>
+      <div class="w500">Medium  ¥ 128,540 · Aa</div>
+      <div class="w600">Semibold ¥ 128,540 · Aa</div>
+      <div class="w700">Bold     ¥ 128,540 · Aa</div>
+    </div>
+  </div>
+  <div class="col han">
+    <h5>PingFang SC — Chinese</h5>
+    <div class="stack">
+      <div class="w400">常规 转转通商户经营管理</div>
+      <div class="w500">中等 转转通商户经营管理</div>
+      <div class="w600">中粗 转转通商户经营管理</div>
+      <div class="w400" style="font-weight:200">特细 转转通商户经营管理</div>
+    </div>
+  </div>
+</div>
+</body></html>

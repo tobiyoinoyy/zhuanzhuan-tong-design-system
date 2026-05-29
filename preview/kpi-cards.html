@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><title>KPI Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { margin:0; padding:18px 22px; background:var(--zzt-bg-secondary); font-family:var(--zzt-font-sans); }
+  .row { display:flex; gap:14px; }
+  .kpi { flex:1; background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px; padding:14px 16px; cursor:pointer; transition: box-shadow .2s; }
+  .kpi:hover { box-shadow: var(--zzt-shadow-sm); }
+  .head { display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--zzt-fg-muted); }
+  .v { font-family: var(--zzt-font-num); font-size:26px; font-weight:600; letter-spacing:-.02em; margin:6px 0 4px; color: var(--zzt-fg); font-variant-numeric: tabular-nums;}
+  .v .unit { font-size:13px; color: var(--zzt-fg-muted); font-weight:500; margin-left:3px; }
+  .delta { font-size:11.5px; display:inline-flex; align-items:center; gap:3px; }
+  .up { color: var(--zzt-success-500); }
+  .down { color: var(--zzt-danger-500); }
+  .head i { width:14px; height:14px; }
+</style></head><body>
+<div class="row">
+  <div class="kpi">
+    <div class="head"><span>今日 GMV</span><i data-lucide="chevron-right"></i></div>
+    <div class="v"><span class="unit">¥</span>128,540</div>
+    <span class="delta up"><i data-lucide="trending-up" style="width:11px;height:11px"></i>+12.4% vs 昨日</span>
+  </div>
+  <div class="kpi">
+    <div class="head"><span>待发货订单</span><i data-lucide="chevron-right"></i></div>
+    <div class="v">86<span class="unit">单</span></div>
+    <span class="delta down"><i data-lucide="trending-down" style="width:11px;height:11px"></i>-3 vs 昨日</span>
+  </div>
+  <div class="kpi">
+    <div class="head"><span>质检通过率</span><i data-lucide="chevron-right"></i></div>
+    <div class="v">94.2<span class="unit">%</span></div>
+    <span class="delta up"><i data-lucide="trending-up" style="width:11px;height:11px"></i>+1.8 pt</span>
+  </div>
+  <div class="kpi">
+    <div class="head"><span>在售 SKU</span><i data-lucide="chevron-right"></i></div>
+    <div class="v">1,284</div>
+    <span class="delta" style="color: var(--zzt-fg-muted)">— 与昨日持平</span>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,89 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .tree { background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px; padding: 8px; width: 280px; }
+  .node { display:flex; align-items:center; gap:6px; padding: 6px 8px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .node:hover { background: var(--zzt-zinc-100); }
+  .node.selected { background: var(--zzt-accent-soft); color: var(--zzt-accent-700); font-weight: 500; }
+  .node .chev { width: 14px; height: 14px; color: var(--zzt-fg-muted); transition: transform .15s ease; }
+  .node.open > .chev { transform: rotate(90deg); }
+  .node .ico { width: 14px; height: 14px; color: var(--zzt-fg-muted); }
+  .node .cnt { margin-left:auto; font-size: 11px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-num); }
+  .children { padding-left: 22px; }
+  .children .node { padding: 4px 8px; }
+  .leaf { padding-left: 28px; }
+  .spacer { width: 14px; }
+
+  /* cascader */
+  .casc { display:flex; background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px; overflow:hidden; box-shadow: var(--zzt-shadow-md); }
+  .casc-col { width: 160px; border-right: 1px solid var(--zzt-border-subtle); padding: 6px; max-height: 220px; overflow:auto; }
+  .casc-col:last-child { border-right: 0; }
+  .casc-item { display:flex; align-items:center; gap:6px; padding: 6px 8px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .casc-item:hover { background: var(--zzt-zinc-100); }
+  .casc-item.active { background: rgba(255,15,39,.06); color: var(--zzt-accent-700); }
+  .casc-item i { width: 12px; height: 12px; margin-left:auto; color: var(--zzt-fg-muted); }
+  .casc-item.leaf-sel { background: var(--zzt-accent-soft); color: var(--zzt-accent-700); font-weight: 500; }
+</style></head><body>
+<div class="row" style="gap: 22px; align-items: flex-start;">
+  <div>
+    <div class="lab" style="margin-bottom:8px;">Tree · 商品分类树</div>
+    <div class="tree">
+      <div class="node open"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder-open" class="ico"></i>全部品类<span class="cnt">1,284</span></div>
+      <div class="children">
+        <div class="node open"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder-open" class="ico"></i>手机<span class="cnt">682</span></div>
+        <div class="children">
+          <div class="node selected leaf"><i data-lucide="smartphone" class="ico"></i>Apple iPhone<span class="cnt">412</span></div>
+          <div class="node leaf"><i data-lucide="smartphone" class="ico"></i>三星 Galaxy<span class="cnt">142</span></div>
+          <div class="node leaf"><i data-lucide="smartphone" class="ico"></i>小米<span class="cnt">86</span></div>
+          <div class="node leaf"><i data-lucide="smartphone" class="ico"></i>其他<span class="cnt">42</span></div>
+        </div>
+        <div class="node"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder" class="ico"></i>平板<span class="cnt">182</span></div>
+        <div class="node open"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder-open" class="ico"></i>笔记本<span class="cnt">126</span></div>
+        <div class="children">
+          <div class="node leaf"><i data-lucide="laptop" class="ico"></i>MacBook<span class="cnt">72</span></div>
+          <div class="node leaf"><i data-lucide="laptop" class="ico"></i>ThinkPad<span class="cnt">34</span></div>
+          <div class="node leaf"><i data-lucide="laptop" class="ico"></i>其他<span class="cnt">20</span></div>
+        </div>
+        <div class="node"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder" class="ico"></i>耳机 / 音频<span class="cnt">186</span></div>
+        <div class="node"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder" class="ico"></i>手表<span class="cnt">82</span></div>
+        <div class="node"><i data-lucide="chevron-right" class="chev"></i><i data-lucide="folder" class="ico"></i>摄影摄像<span class="cnt">46</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lab" style="margin-bottom:8px;">Cascader · 三级品类选择 → 已选: 手机 / Apple / iPhone 14 系列</div>
+    <div class="casc">
+      <div class="casc-col">
+        <div class="casc-item active">手机<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">平板<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">笔记本<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">耳机 / 音频<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">手表<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">摄影摄像<i data-lucide="chevron-right"></i></div>
+      </div>
+      <div class="casc-col">
+        <div class="casc-item active">Apple<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">三星 Samsung<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">小米 Xiaomi<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">华为<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">OPPO<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">vivo<i data-lucide="chevron-right"></i></div>
+        <div class="casc-item">其他</div>
+      </div>
+      <div class="casc-col">
+        <div class="casc-item">iPhone 15 系列</div>
+        <div class="casc-item leaf-sel">iPhone 14 系列</div>
+        <div class="casc-item">iPhone 13 系列</div>
+        <div class="casc-item">iPhone 12 系列</div>
+        <div class="casc-item">iPhone 11 系列</div>
+        <div class="casc-item">iPhone X / XS</div>
+        <div class="casc-item">更早</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

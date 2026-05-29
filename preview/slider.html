@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .sl-wrap { padding: 6px 0; }
+  .sl-row { display:flex; justify-content:space-between; font-size:12px; color: var(--zzt-fg-muted); margin-bottom: 8px; }
+  .sl-row b { color: var(--zzt-fg); font-family: var(--zzt-font-num); font-weight: 600; }
+  .sl { position: relative; height: 24px; }
+  .sl-track { position: absolute; top: 10px; left: 0; right: 0; height: 4px; background: var(--zzt-zinc-150); border-radius: 999px; }
+  .sl-fill { position: absolute; top: 10px; height: 4px; background: var(--zzt-accent-500); border-radius: 999px; }
+  .sl-thumb { position: absolute; top: 4px; width: 16px; height: 16px; background:#fff; border-radius:999px;
+              box-shadow: 0 0 0 2px var(--zzt-accent-500), 0 1px 3px rgba(0,0,0,.15);
+              transform: translateX(-50%); cursor: pointer; }
+  .sl-thumb.focus { box-shadow: 0 0 0 2px var(--zzt-accent-500), 0 0 0 6px rgba(255,15,39,.20); }
+  .sl-tip { position:absolute; top: -22px; transform: translateX(-50%);
+            background:#18181B; color:#fff; font-size:11px; padding: 1px 7px; border-radius:6px;
+            font-family: var(--zzt-font-num); }
+  .marks { position:absolute; top: 18px; left: 0; right: 0; display:flex; justify-content: space-between; font-size: 10px; color: var(--zzt-fg-subtle); }
+  .marks span { transform: translateX(-50%); }
+</style></head><body>
+<div class="col" style="gap: 28px;">
+  <div class="sl-wrap">
+    <div class="sl-row"><span>售价区间</span><span><b>¥ 2,000 ~ ¥ 5,000</b></span></div>
+    <div class="sl">
+      <div class="sl-track"></div>
+      <div class="sl-fill" style="left: 20%; width: 30%"></div>
+      <div class="sl-thumb" style="left: 20%"><div class="sl-tip">2,000</div></div>
+      <div class="sl-thumb focus" style="left: 50%"><div class="sl-tip">5,000</div></div>
+    </div>
+  </div>
+  <div class="sl-wrap">
+    <div class="sl-row"><span>折扣力度</span><span><b>15%</b></span></div>
+    <div class="sl">
+      <div class="sl-track"></div>
+      <div class="sl-fill" style="left: 0; width: 15%"></div>
+      <div class="sl-thumb" style="left: 15%"></div>
+    </div>
+  </div>
+  <div class="sl-wrap">
+    <div class="sl-row"><span>质检严格度</span><span><b>3 / 5</b></span></div>
+    <div class="sl">
+      <div class="sl-track"></div>
+      <div class="sl-fill" style="left: 0; width: 50%"></div>
+      <div class="sl-thumb" style="left: 50%"></div>
+      <div class="marks">
+        <span>宽松</span><span>低</span><span>中</span><span>高</span><span>严格</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

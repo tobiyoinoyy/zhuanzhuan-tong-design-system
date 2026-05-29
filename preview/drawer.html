@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  body { background: var(--zzt-zinc-75); padding: 16px; }
+  .drawer { display: flex; gap: 24px; align-items: stretch; }
+  .stage { width: 360px; height: 280px; background: var(--zzt-zinc-200); border-radius: 12px;
+           position: relative; overflow: hidden; }
+  .stage .scrim { position: absolute; inset: 0; background: rgba(24,24,27,0.45); backdrop-filter: blur(2px); }
+  .panel { position: absolute; background:#fff; box-shadow: var(--zzt-shadow-xl); padding: 14px;
+           display: flex; flex-direction: column; gap: 8px; }
+  .panel h5 { margin: 0; font-size: 13px; font-weight: 600; }
+  .panel .lbl { font-size: 11px; color: var(--zzt-fg-muted); }
+  .right { right: 0; top: 0; bottom: 0; width: 220px; border-radius: 12px 0 0 12px; }
+  .left  { left: 0; top: 0; bottom: 0; width: 220px; border-radius: 0 12px 12px 0; }
+  .top   { left: 0; right: 0; top: 0; height: 130px; border-radius: 12px 12px 0 0; }
+  .bot   { left: 0; right: 0; bottom: 0; height: 160px; border-radius: 16px 16px 0 0; }
+  .grab { width: 36px; height: 4px; background: var(--zzt-zinc-300); border-radius: 999px; margin: 4px auto 8px; }
+  .stage-lab { position: absolute; top: 8px; left: 12px; font-size:11px; color: var(--zzt-fg-muted); font-family: var(--zzt-font-mono); z-index: 1; }
+</style></head><body>
+<div class="drawer">
+  <div class="stage">
+    <span class="stage-lab">right</span>
+    <div class="scrim"></div>
+    <div class="panel right">
+      <h5>质检结果</h5>
+      <span class="lbl">侧栏 detail / inspection</span>
+      <span class="lbl">PC 端默认</span>
+    </div>
+  </div>
+  <div class="stage">
+    <span class="stage-lab">left</span>
+    <div class="scrim"></div>
+    <div class="panel left">
+      <h5>筛选条件</h5>
+      <span class="lbl">filters · slide-in</span>
+    </div>
+  </div>
+  <div class="stage">
+    <span class="stage-lab">bottom</span>
+    <div class="scrim"></div>
+    <div class="panel bot">
+      <div class="grab"></div>
+      <h5>批量操作</h5>
+      <span class="lbl">mobile · action sheet</span>
+    </div>
+  </div>
+  <div class="stage">
+    <span class="stage-lab">top</span>
+    <div class="scrim"></div>
+    <div class="panel top">
+      <h5>系统通知</h5>
+      <span class="lbl">notification banner</span>
+    </div>
+  </div>
+</div>
+<div class="note" style="margin-top: 14px;">Right = inspection / detail (PC). Bottom = action sheet (mobile). Top = system banner. Left = filters / nav. All sit above a <code>rgba(24,24,27,0.45)</code> scrim with 2 px blur.</div>
+</body></html>

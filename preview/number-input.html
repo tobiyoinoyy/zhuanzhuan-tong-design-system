@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .stepper { display:inline-flex; align-items: center; height: 36px; border: 1px solid var(--zzt-border); border-radius: 8px; background:#fff; }
+  .stepper button { width: 32px; height: 32px; background: transparent; border: 0; cursor: pointer; color: var(--zzt-fg); display:inline-flex; align-items:center; justify-content:center; }
+  .stepper button:hover { color: var(--zzt-accent-500); }
+  .stepper button[disabled] { opacity: .3; pointer-events: none; }
+  .stepper input { width: 64px; text-align: center; border: 0; background: transparent; outline: 0; font-size: 14px; font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums; font-weight: 500; }
+  .stepper i { width: 14px; height: 14px; }
+  .stepper.focus { border-color: var(--zzt-accent-500); box-shadow: 0 0 0 3px rgba(255,15,39,.16); }
+  .stepper.error { border-color: var(--zzt-danger-500); }
+  .stepper.disabled { background: var(--zzt-zinc-100); color: var(--zzt-fg-subtle); pointer-events: none; opacity: .8; }
+  .with-affix { display:inline-flex; align-items: center; height: 36px; border: 1px solid var(--zzt-border); border-radius: 8px; background:#fff; overflow: hidden; }
+  .with-affix .pre, .with-affix .post { padding: 0 12px; height:100%; display:inline-flex; align-items:center;
+                                       background: var(--zzt-zinc-100); color: var(--zzt-fg-muted); font-size: 13px; border-right: 1px solid var(--zzt-border); }
+  .with-affix .post { border-left: 1px solid var(--zzt-border); border-right: 0; }
+  .with-affix input { border: 0; outline: 0; height: 100%; padding: 0 12px; font-size: 14px; width: 120px; font-family: var(--zzt-font-num); font-variant-numeric: tabular-nums; }
+  .col-gap { display:flex; flex-direction: column; gap: 14px; }
+  .col-gap .l { font-size: 12px; color: var(--zzt-fg-muted); margin-bottom: 4px; }
+</style></head><body>
+<div class="col-gap">
+  <div>
+    <div class="l">数字步进器 · stepper</div>
+    <div class="row" style="gap: 12px;">
+      <div class="stepper"><button><i data-lucide="minus"></i></button><input value="1"><button><i data-lucide="plus"></i></button></div>
+      <div class="stepper focus"><button><i data-lucide="minus"></i></button><input value="28"><button><i data-lucide="plus"></i></button></div>
+      <div class="stepper error"><button><i data-lucide="minus"></i></button><input value="-1"><button><i data-lucide="plus"></i></button></div>
+      <div class="stepper disabled"><button><i data-lucide="minus"></i></button><input value="0"><button><i data-lucide="plus"></i></button></div>
+    </div>
+  </div>
+  <div>
+    <div class="l">前后缀输入 · with affix</div>
+    <div class="row" style="gap: 12px;">
+      <div class="with-affix"><span class="pre">¥</span><input value="4599"></div>
+      <div class="with-affix"><input value="92" style="text-align:right;"><span class="post">%</span></div>
+      <div class="with-affix"><span class="pre">+86</span><input value="138 0013 8000" style="width: 150px;"></div>
+      <div class="with-affix"><input value="SKU-58219" style="width: 150px;"><span class="post" style="background: var(--zzt-accent-soft); color: var(--zzt-accent-700); cursor:pointer;">复制</span></div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

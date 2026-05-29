@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="_card.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .field { display: flex; flex-direction: column; gap: 6px; max-width: 320px; }
+  .label { display: flex; align-items: center; gap: 4px; font-size: 12.5px; color: var(--zzt-fg); font-weight: 500; }
+  .req { color: var(--zzt-danger-500); }
+  .opt { color: var(--zzt-fg-muted); font-weight: 400; font-size: 11px; }
+  .info i { width: 12px; height: 12px; color: var(--zzt-fg-muted); }
+  .help { font-size: 11.5px; color: var(--zzt-fg-muted); line-height: 1.5; }
+  .help.error { color: var(--zzt-danger-500); }
+  .help.success { color: var(--zzt-success-500); }
+  .help.warning { color: var(--zzt-warning-500); }
+  .help i { width: 12px; height: 12px; margin-right: 3px; vertical-align: -1px; }
+  .counter { float: right; font-family: var(--zzt-font-num); }
+  .row { gap: 22px; align-items: flex-start; }
+</style>
+<script src="https://unpkg.com/lucide@latest"></script>
+</head><body>
+<div class="row">
+  <div class="field">
+    <span class="label">SKU 名称<span class="req">*</span>
+      <span class="info" title="商品标题"><i data-lucide="info"></i></span>
+    </span>
+    <div class="input">iPhone 14 Pro 256GB 深空黑</div>
+    <div class="help">建议长度 8 – 32 个字符<span class="counter">22 / 32</span></div>
+  </div>
+  <div class="field">
+    <span class="label">售价 <span class="req">*</span></span>
+    <div class="input error">¥ -</div>
+    <div class="help error"><i data-lucide="alert-circle"></i>售价不能为空</div>
+  </div>
+  <div class="field">
+    <span class="label">店铺 ID <span class="opt">可选</span></span>
+    <div class="input">ZZT-K-04812</div>
+    <div class="help success"><i data-lucide="check"></i>店铺 ID 可用</div>
+  </div>
+  <div class="field">
+    <span class="label">回款账户</span>
+    <div class="input">招商 6225-…-3982</div>
+    <div class="help warning"><i data-lucide="alert-triangle"></i>账户未完成实名认证</div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>
