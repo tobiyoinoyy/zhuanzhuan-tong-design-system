@@ -1,7 +1,30 @@
 {
   "schema": "open-design.design-manifest.v1",
-  "title": "转转通 Design System (0526更新)",
+  "title": "转转通 Design System v0.29.2",
   "entryFile": "index.html",
+  "version": "0.29.2",
+  "agentEntry": "AGENTS.md",
+  "aiMap": "llms.txt",
+  "docs": {
+    "agentGuide": "AGENTS.md",
+    "tokensSource": "colors_and_type.css",
+    "componentNotes": "CLAUDE.md",
+    "productContext": "README.md",
+    "componentDemos": "preview/",
+    "uiKits": [
+      "ui_kits/dashboard/index.html",
+      "ui_kits/pc_console/index.html",
+      "ui_kits/mobile_companion/index.html"
+    ]
+  },
+  "agentIgnore": {
+    "note": "Human-reference material; not required for producing design output.",
+    "paths": [
+      "uploads/",
+      "screenshots/",
+      "DESIGN-HANDOFF.md"
+    ]
+  },
   "sourceFiles": {
     "all": [
       "assets/icons/alert-triangle.svg",

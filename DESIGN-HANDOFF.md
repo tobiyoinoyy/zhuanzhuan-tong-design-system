@@ -1,4 +1,4 @@
-# 转转通 Design System (0526更新) implementation handoff
+# 转转通 Design System v0.29.2 implementation handoff
 
 This archive is the source of truth for turning the design into production code. Start from `index.html`, then preserve the visual system, responsive behavior, and interactions found in the exported files.
 
